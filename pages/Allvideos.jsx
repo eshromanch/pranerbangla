@@ -24,7 +24,7 @@ function Allvideos({data}) {
             })} */}
                 {
                     data?.map(items=>{
-                        return <Video link={items.video_url} img={items.image}/>
+                        return <Video key={items.id} link={items.video_url} img={items.image}/>
                     })
                 }
         </div>

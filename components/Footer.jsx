@@ -55,7 +55,7 @@ function Footer(props) {
   <Link href={`/Subscription`}><a href="" className="link link-hover text-base font-bold text-black dark:text-white">সাবস্ক্রিপশন </a></Link>
   <Link href={`/Contact`}><a href="" className="link link-hover text-base font-bold text-black dark:text-white">যোগাযোগ</a></Link>
   {data?.filter(e=> e.name_en !== "About Us").map(items=>{
-    return <Link href={`footerPages/${items.id}`}><a href="" className="link link-hover  text-base font-bold text-black dark:text-white">{items.name_bn}</a></Link>
+    return <Link key={items.id} href={`footerPages/${items.id}`}><a href="" className="link link-hover  text-base font-bold text-black dark:text-white">{items.name_bn}</a></Link>
   })}
 
    
@@ -82,7 +82,7 @@ function Footer(props) {
 
     {
       footerdata?.slice(0,4).map(items=>{
-        return <a className="link link-hover text-base text-black dark:text-white">{items.name_bn}</a> 
+        return <a key={items.id} className="link link-hover text-base text-black dark:text-white">{items.name_bn}</a> 
       })
     }
     {/* <a className="link link-hover text-base text-black dark:text-white">Branding</a> 
@@ -95,7 +95,7 @@ function Footer(props) {
     <br />
     {
       footerdata?.slice(4,8).map(items=>{
-        return <a className="link link-hover text-base text-black dark:text-white">{items.name_bn}</a> 
+        return <a key={items.id} className="link link-hover text-base text-black dark:text-white">{items.name_bn}</a> 
       })
     }
   </div> 
@@ -104,7 +104,7 @@ function Footer(props) {
     <br />
     {
       footerdata?.slice(9,14)?.map(items=>{
-        return <a className="link link-hover text-base text-black dark:text-white">{items.name_bn}</a> 
+        return <a key={items.id} className="link link-hover text-base text-black dark:text-white">{items.name_bn}</a> 
       })
     }
   </div> 

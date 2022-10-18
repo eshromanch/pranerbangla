@@ -100,9 +100,9 @@ function Writer_signup(props) {
     </select> */}
     
     <div className='flex  gap-4 '>
-    <div className='flex  items-center gap-4'><input value={"Male"} type="radio" name="gender"  class="radio radio-primary radio-xs"  /> <h1 className='font-semibold text-lg text-center text-black dark:text-white'>Male</h1> </div>
-    <div className='flex  items-center gap-4'><input value={"Female"} type="radio" name="gender"  class="radio radio-primary radio-xs"  /><h1 className='font-semibold text-lg text-center text-black dark:text-white'>Female</h1> </div>
-    <div className='flex  items-center gap-4'><input value={"Other"} type="radio" name="gender"  class="radio radio-primary radio-xs"  /><h1 className='font-semibold text-lg text-center text-black dark:text-white'>Other</h1> </div>
+    <div className='flex  items-center gap-4'><input value={"Male"} type="radio" name="gender"  className="radio radio-primary radio-xs"  /> <h1 className='font-semibold text-lg text-center text-black dark:text-white'>Male</h1> </div>
+    <div className='flex  items-center gap-4'><input value={"Female"} type="radio" name="gender"  className="radio radio-primary radio-xs"  /><h1 className='font-semibold text-lg text-center text-black dark:text-white'>Female</h1> </div>
+    <div className='flex  items-center gap-4'><input value={"Other"} type="radio" name="gender"  className="radio radio-primary radio-xs"  /><h1 className='font-semibold text-lg text-center text-black dark:text-white'>Other</h1> </div>
     
     </div>
     

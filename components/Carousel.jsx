@@ -33,7 +33,7 @@ useEffect(()=>{
   <div className="grid-rows-2  h-full w-full hero-content  text-neutral-content sm:flex sm:flex-col">
     <div className="w-full">
       {props.route.map(cat=>{
-        return  <Link href={`categories/${cat.category_id}/articles/${cat.post_id}`}><a href=""> <h1 className="text-5xl text-white  group transition duration-300 sm:text-xl">{props.mainTitle}<span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary"></span></h1></a></Link>
+        return  <Link key={cat.id} href={`categories/${cat.category_id}/articles/${cat.post_id}`}><a href=""> <h1 className="text-5xl text-white  group transition duration-300 sm:text-xl">{props.mainTitle}<span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary"></span></h1></a></Link>
       })}
     </div>
     <div className="flex flex-col  justify-center items-center w-full gap-4 p-10">
@@ -45,7 +45,7 @@ if (item.status==="1") {
     return <div key={item.id} className='flex flex-rows justify-start items-center h-full w-full gap-4  ' >
 
     <img className='w-32 h-32 sm:w-14 sm:h-14 object-cover' src={`${item.image}`} alt="" />
-    <Link href={`categories/${cat.category_id}/articles/${cat.post_id}`}><a href=""><h1 className="text-2xl text-white font-semibold group transition duration-300 sm:text-xs sm:font-normal">{item.title_bn}<span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary"></span></h1></a></Link>
+    <Link href={`categories/${cat.category_id}/articles/${cat.post_id}`}><a href=""><h1 className="text-2xl text-white font-semibold group transition duration-300 sm:text-xs sm:font-normal">{item.title_bn}<span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary"></span></h1></a></Link>
   </div> 
   }) 
 } 

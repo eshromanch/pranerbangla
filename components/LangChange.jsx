@@ -27,9 +27,9 @@ function LAngChange(props) {
 
     return (
         <div>
-            <div class="dropdown dropdown-hover">
-  <label tabindex="0" class="btn btn-ghost "><Globe className="h-5 dark:stroke-white"/></label>
-  <ul tabindex="0" class="dropdown-content menu p-4 shadow bg-base-100 rounded-box ">
+            <div className="dropdown dropdown-hover">
+  <label tabIndex="0" className="btn btn-ghost "><Globe className="h-5 dark:stroke-white"/></label>
+  <ul tabIndex="0" className="dropdown-content menu p-4 shadow bg-base-100 rounded-box ">
     <li><button value={1} onClick={handleLang} className="text-white text-center">Bangla</button></li>
     <li><button value={2} onClick={handleLang} className="text-white text-center">English</button></li>
   </ul>

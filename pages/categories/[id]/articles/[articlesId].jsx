@@ -157,7 +157,7 @@ const { asPath, pathname } = useRouter();
 {
   data?.map(items=>{
 
- return <div className='relative flex flex-col mx-48 lg:mx-10'>
+ return <div key={items.id} className='relative flex flex-col mx-48 lg:mx-10'>
     <span
 style={{ transform: `translateX(${completion - 100}%)` }}
 className="absolute -mx-48 bg-primary z-10 h-1 w-[100vw] top-0 sticky overflow-hidden"
@@ -184,7 +184,7 @@ className="absolute -mx-48 bg-primary z-10 h-1 w-[100vw] top-0 sticky overflow-h
 <div className='w-full '>
 {add.slice(0,1).map(item=>{
 
-    return <img className='my-12' src={item.image} alt="" />
+    return <img key={item.id} className='my-12' src={item.image} alt="" />
 
 })}
 </div>
@@ -199,7 +199,7 @@ className="absolute -mx-48 bg-primary z-10 h-1 w-[100vw] top-0 sticky overflow-h
 <div className='w-full '>
 {add.slice(1,2).map(item=>{
 
-    return <img className='my-12' src={item.image} alt="" />
+    return <img key={item.id} className='my-12' src={item.image} alt="" />
 
 })}
 </div>
@@ -221,7 +221,7 @@ className="absolute -mx-48 bg-primary z-10 h-1 w-[100vw] top-0 sticky overflow-h
 <div className='flex justify-between items-center'><b><h1 className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 mb-1"/>আরো পড়ুন   </h1></b>
 {data?.map(items=>{
   return items.post_to_cat?.map(it=>{
-    return <Link href={`/categories/${it.category_id}`}><b><a className='btn btn-ghost text-lg text-base-100 mb-4 dark:text-white'>
+    return <Link key={it.category_id} href={`/categories/${it.category_id}`}><b><a className='btn btn-ghost text-lg text-base-100 mb-4 dark:text-white'>
   <h4 className='flex '><Plus className="h-5 pr-2 mt-1"/>আরো পড়ুন</h4>
   </a></b></Link>
   })
@@ -231,11 +231,11 @@ className="absolute -mx-48 bg-primary z-10 h-1 w-[100vw] top-0 sticky overflow-h
 
 
 {dataAll?.map(pageItems=>{
- return <div className='w-full'>
+ return <div key={pageItems.id} className='w-full'>
   <div className='grid grid-cols-4 mb-4  gap-10 mx-48 lg:mx-10 md:grid-cols-2'>
   {pageItems.articles.map(pageItem=>{
 
- return <Link href={`/categories/${catId}/articles/${pageItem.id}`}><a ><Cards title={pageItem.title_bn} catagory={pageItem.category_name_bn} time={pageItem.created_at} imgSrc={pageItem.image} route={pageItem.id} status={pageItem.status}  readed={pageItem.count_post}/></a></Link>
+ return <Link key={pageItem.id} href={`/categories/${catId}/articles/${pageItem.id}`}><a ><Cards title={pageItem.title_bn} catagory={pageItem.category_name_bn} time={pageItem.created_at} imgSrc={pageItem.image} route={pageItem.id} status={pageItem.status}  readed={pageItem.count_post}/></a></Link>
   })}
 
   </div>

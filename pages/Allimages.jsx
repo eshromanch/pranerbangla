@@ -27,7 +27,7 @@ function Allvideos({data}) {
                 {
                     data?.map(items=>{
                         // return <Link href={`${ids}/articles/${items.id}`}><a ><Cards title={pageItem.title_bn} catagory={pageItem.category_name_bn} time={pageItem.created_at} imgSrc={pageItem.image} route={pageItem.id} status={pageItem.status} ids={ids} readed={pageItem.count_post} postId={pageItem.id} is_visibility={pageItem.is_visibility}/></a></Link>
-                       return <Link href={`/gallery/${items.id}`}><a ><Cards title={items.title_bn} catagory={items.category_name_bn} time={items.created_at} imgSrc={items.image} route={items.id} status={items.status} readed={items.count_post} postId={items.id} is_visibility={items.is_visibility}/></a></Link>
+                       return <Link key={items.id} href={`/gallery/${items.id}`}><a ><Cards title={items.title_bn} catagory={items.category_name_bn} time={items.created_at} imgSrc={items.image} route={items.id} status={items.status} readed={items.count_post} postId={items.id} is_visibility={items.is_visibility}/></a></Link>
                     })
                 }
         </div>

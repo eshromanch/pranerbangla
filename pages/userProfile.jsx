@@ -48,7 +48,7 @@ function userProfile(props) {
             </div>
             <div className='bg-gray-50 my-1 rounded w-full h-0.5'></div>
 
-            <div class="">
+            <div >
   {/* <table class="my-12 -z-1 table table-zebra w-full ">
 
     <thead className=' color-[#CDD7E5]'>

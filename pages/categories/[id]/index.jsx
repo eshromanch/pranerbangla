@@ -176,7 +176,7 @@ const num  = parseInt(ids)
 if (ad.add_space==="categoty") {
   return <div className='-my-12 flex justify-center items-center lg:mx-10  '>
               
-   <a href={ad.add_url}><img className=' w-[60.625rem] my-24 object-cover' src= {`${ad.image}`} alt="" srcset="" /></a>
+   <a href={ad.add_url}><img className=' w-[60.625rem] my-24 object-cover' src= {`${ad.image}`} alt=""  /></a>
    </div>
 }
             })}
@@ -207,7 +207,7 @@ if (ad.add_space==="categoty") {
               return <div className='flex mx-48 gap-10 mb-4'>
               {main.childs?.map((items)=>{
               // console.log(items.id)
-            return <Link href={  {pathname: `${ids}/filter/${items.id}`, query: items.id}}><a href=""><h1 className='flex   items-center text-base text-md text-black mb-4 dark:text-white'><Circle className=" h-2 pr-2 mb-1"/>{items.name_bn}</h1></a></Link>
+            return <Link key={items.id} href={  {pathname: `${ids}/filter/${items.id}`, query: items.id}}><a href=""><h1 className='flex   items-center text-base text-md text-black mb-4 dark:text-white'><Circle className=" h-2 pr-2 mb-1"/>{items.name_bn}</h1></a></Link>
               })}
 
  {/* <h1 className='flex   items-center text-base text-md text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 mb-1"/>নির্বাচিত</h1>
@@ -231,19 +231,19 @@ pages?.map(pageItem=>{
 
 </div>
 {dataAll.map((group) => {
-    return <div className='w-full'>
+    return <div key={group.id} className='w-full'>
         <div className="grid grid-cols-4 mb-4 gap-10 mx-48 lg:mx-10  md:grid-cols-2">
          
 {
   [language]?.map(e=>{
 
     if (e.language_name==="English") {
-     return group.articles.map(pageItem =>  <Link href={`${ids}/articles/${pageItem.id}`}><a ><Cards title={pageItem.title_en} catagory={pageItem.category_name_en} time={pageItem.created_at} imgSrc={pageItem.image} route={pageItem.id} status={pageItem.status} ids={ids} readed={pageItem.count_post}/></a></Link>
+     return group.articles.map(pageItem =>  <Link key={pageItem.id} href={`${ids}/articles/${pageItem.id}`}><a ><Cards title={pageItem.title_en} catagory={pageItem.category_name_en} time={pageItem.created_at} imgSrc={pageItem.image} route={pageItem.id} status={pageItem.status} ids={ids} readed={pageItem.count_post}/></a></Link>
             
       )
     }
     if (e.language_name==="Bangla") {
-    return  group.articles.map(pageItem =>  <Link href={`${ids}/articles/${pageItem.id}`}><a ><Cards title={pageItem.title_bn} catagory={pageItem.category_name_bn} time={pageItem.created_at} imgSrc={pageItem.image} route={pageItem.id} status={pageItem.status} ids={ids} readed={pageItem.count_post} postId={pageItem.id} is_visibility={pageItem.is_visibility}/></a></Link>
+    return  group.articles.map(pageItem =>  <Link key={pageItem.id} href={`${ids}/articles/${pageItem.id}`}><a ><Cards title={pageItem.title_bn} catagory={pageItem.category_name_bn} time={pageItem.created_at} imgSrc={pageItem.image} route={pageItem.id} status={pageItem.status} ids={ids} readed={pageItem.count_post} postId={pageItem.id} is_visibility={pageItem.is_visibility}/></a></Link>
             
       )
     }

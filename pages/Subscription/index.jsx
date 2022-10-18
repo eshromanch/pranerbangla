@@ -33,7 +33,7 @@ function subscriptions({data}) {
   </div>
   <div className="my-8 mt-12 flex flex-row md:flex-col items-center justify-center gap-4">
 {data.map(items=>{
-  return     <div className="max-w-xs rounded-md border-2 border-solid border-primary border-opacity-25 hover:border-opacity-100 px-8 pt-8 pb-4">
+  return     <div key={items.id} className="max-w-xs rounded-md border-2 border-solid border-primary border-opacity-25 hover:border-opacity-100 px-8 pt-8 pb-4">
   <h3 className="text-2xl font-semibold text-gray-100">Starter</h3>
   <p className="mt-1 text-gray-500">Go beyond email and customize your workflow</p>
   <div className="flex items-center mt-2 mb-4">

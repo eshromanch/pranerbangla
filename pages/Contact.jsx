@@ -93,8 +93,8 @@ function Contact({data}) {
                 <div className=' grid grid-cols-2 gap-4'>
 
 {data?.map(items=>{
-  return <div class="card dark:bg-base-100 shadow-xl">
-  <div class="card-body">
+  return <div key={ items.id} className="card dark:bg-base-100 shadow-xl">
+  <div className="card-body">
 <div className='flex flex-col'>
     <h1 className='text-lg text-black font-bold dark:text-white'>{items.title_bn}</h1>
     <span className='bg-black w-10 h-0.5 rounded rounded-2 dark:bg-white'></span>
@@ -102,8 +102,8 @@ function Contact({data}) {
 <h1 className='text-md text-black dark:text-white' dangerouslySetInnerHTML={{ __html: items.content_bn }}></h1>
 <a href={`tel:${items.phone}`}><h1 className='text-md text-black dark:text-white' >Phone:{items.phone}</h1></a>
 <a href={`mailto:${items.email}`}><h1 className='text-md text-black dark:text-white' >{items.email}</h1></a>
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary">→</button>
+    <div className="card-actions justify-end">
+      <button className="btn btn-primary">→</button>
     </div>
   </div>
 </div>
@@ -117,7 +117,7 @@ function Contact({data}) {
                 <input type="text" placeholder="Email address" name='email' className="input input-bordered text-black border-gray-400 input-md w-full  bg-transparent focus:border-primary" required/>
                 <input type="text" placeholder="Country" name='country' className="input input-bordered text-black border-gray-400 input-md w-full  bg-transparent focus:border-primary" required/>
                 {/* <input type="text" placeholder="department" name='department' className="input input-bordered text-black border-gray-400 input-md w-full  bg-transparent focus:border-primary" required/> */}
-                <select name='selected' class="select select-primary bg-transparent text-black w-full ">
+                <select name='selected' className="select select-primary bg-transparent text-black w-full ">
   <option disabled selected>Choose department</option>
   <option value={"General Enquiries"}> General Enquiries</option>
   <option value={"Partnerships"}>Partnerships</option>
@@ -127,17 +127,17 @@ function Contact({data}) {
   <option value={"Other"}>Other </option>
 </select>
                 <div className='w-full'>
-                <textarea class="textarea textarea-primary bg-transparent text-black input-md w-full h-48  " name='message' placeholder="Message"></textarea> 
+                <textarea className="textarea textarea-primary bg-transparent text-black input-md w-full h-48  " name='message' placeholder="Message"></textarea> 
                 </div>
-                <div class="form-control">
-  <label class="label cursor-pointer ">
+                <div className="form-control">
+  <label className="label cursor-pointer ">
    
-    <input type="checkbox" class="checkbox checkbox-primary" required />
-    <span class="label-text text-black dark:text-white -my-12">By clicking 'Submit', I agree to Pranerbangla’s Terms of Services and Privacy Policy.</span> 
+    <input type="checkbox" className="checkbox checkbox-primary" required />
+    <span className="label-text text-black dark:text-white -my-12">By clicking &apos;Submit&apos;, I agree to Pranerbangla&apos;s Terms of Services and Privacy Policy.</span> 
   </label>
 </div>
                <div >
-               <button type='submit' class="btn btn-outline btn-primary hover:bg-primary">Submit</button>
+               <button type='submit' className="btn btn-outline btn-primary hover:bg-primary">Submit</button>
                </div>
 
                     </form>
