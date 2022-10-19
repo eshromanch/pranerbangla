@@ -20,7 +20,7 @@ export async function getStaticPaths() {
         })
         return {
           paths,
-          fallback: true // true or 'blocking'
+          fallback: false // true or 'blocking'
         };
       }
       
@@ -28,7 +28,7 @@ export async function getStaticPaths() {
         const id = context.params.pageId
 
         const res = await fetch('https://pranerbangla.com.bd/api/vb1/page-content/' +id )
-        const posts = await res.json()
+        const posts = await res?.json()
         const data = posts["data"]
 
     

@@ -54,9 +54,13 @@ function Footer(props) {
   })}
   <Link href={`/Subscription`}><a href="" className="link link-hover text-base font-bold text-black dark:text-white">সাবস্ক্রিপশন </a></Link>
   <Link href={`/Contact`}><a href="" className="link link-hover text-base font-bold text-black dark:text-white">যোগাযোগ</a></Link>
-  {data?.filter(e=> e.name_en !== "About Us").map(items=>{
+
+  {data?.slice(3).map(items=>{
     return <Link key={items.id} href={`footerPages/${items.id}`}><a href="" className="link link-hover  text-base font-bold text-black dark:text-white">{items.name_bn}</a></Link>
   })}
+  {/* {data?.filter(e=> e.name_en !== "About Us").map(items=>{
+    return <Link key={items.id} href={`footerPages/${items.id}`}><a href="" className="link link-hover  text-base font-bold text-black dark:text-white">{items.name_bn}</a></Link>
+  })} */}
 
    
     {/* <a className="link link-hover text-base text-base font-bold text-black dark:text-white">যোগাযোগ</a> 

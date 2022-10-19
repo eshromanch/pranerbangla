@@ -15,7 +15,7 @@ function userProfile(props) {
         window.localStorage.removeItem('token');
         Router.push("/")
     }
-    const userData =JSON.parse(user)
+    const userData =JSON.stringify(user)
     return (
         
         <div className='mx-52 font-enbody'>

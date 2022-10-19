@@ -36,11 +36,11 @@ if(!mounted) return null
     <div className='flex flex-col justify-center items-center'>
       <div className='h-full w-full flex justify-center items-center  md:hidden  '>
 {aboutData?.map(items=>{
-  return         <div key={items.id} className='grid grid-cols-2 w-4/6  my-24 gap-5 p-10 bg-[#ede1be]'>
+  return         <div key={items?.id} className='grid grid-cols-2 w-4/6  my-24 gap-5 p-10 bg-[#ede1be]'>
   <div className='flex flex-col'>
-  <h1 className='text-4xl font-medium text-primary flex flex-col '>{items.title_bn} </h1>
-    {/* <h1 className='text-4xl font-medium text-primary flex flex-col '>{items.title_bn} <br /> <span className='text-black text-4xl'>কেন  ?  </span></h1> */}
-    <p className='text-black'  dangerouslySetInnerHTML={{ __html: items.content_bn }}></p>
+  <h1 className='text-4xl font-medium text-primary flex flex-col '>{items?.title_bn} </h1>
+    {/* <h1 className='text-4xl font-medium text-primary flex flex-col '>{items?.title_bn} <br /> <span className='text-black text-4xl'>কেন  ?  </span></h1> */}
+    <p className='text-black'  dangerouslySetInnerHTML={{ __html: items?.content_bn }}></p>
   </div>
 {aboutLogo?.map(e=>{
   return  <div key={e.id} className='flex flex-col'>
@@ -57,11 +57,11 @@ if(!mounted) return null
 
       <div className='h-full w-full  justify-center hidden items-center  md:flex  '>
 {aboutData?.map(items=>{
-  return         <div key={items.id}  className='flex flex-col w-4/6 my-24 gap-5 p-10 bg-[#ede1be]'>
+  return         <div key={items?.id}  className='flex flex-col w-4/6 my-24 gap-5 p-10 bg-[#ede1be]'>
   <div className='flex flex-col'>
-  <h1 className='text-4xl font-medium text-primary flex flex-col '>{items.title_bn} </h1>
-    {/* <h1 className='text-4xl font-medium text-primary flex flex-col '>{items.title_bn} <br /> <span className='text-black text-4xl'>কেন  ?  </span></h1> */}
-    <p className='text-black'  dangerouslySetInnerHTML={{ __html: items.content_bn }}></p>
+  <h1 className='text-4xl font-medium text-primary flex flex-col '>{items?.title_bn} </h1>
+    {/* <h1 className='text-4xl font-medium text-primary flex flex-col '>{items?.title_bn} <br /> <span className='text-black text-4xl'>কেন  ?  </span></h1> */}
+    <p className='text-black'  dangerouslySetInnerHTML={{ __html: items?.content_bn }}></p>
   </div>
 {aboutLogo?.map(e=>{
   return  <div key={e.id} className='flex flex-col'>
