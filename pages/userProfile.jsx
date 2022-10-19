@@ -21,19 +21,19 @@ function userProfile(props) {
         <div className='mx-52 font-enbody'>
 
             <div className='mt-12 flex justify-between'>
-           <h1 className='text-black text-2xl font-bold'>{userData.name}</h1> 
+           <h1 className='text-black text-2xl font-bold'>{userData?.name}</h1> 
             <button className='btn btn-primary' onClick={logout}>logout</button>
             </div>
             <div className='bg-primary my-1 rounded w-1/6 h-1'></div>
 
             <div className='mx-48 my-12 bg-[#F5F7FF] h-[40vh] flex justify-center items-center  rounded-md  p-10'>
                 <div className='grid grid-cols-2 gap-5 w-full '>
-                <h1 className='text-black text-lg '>Email: {userData.email}</h1>
-            <h1 className='text-black text-lg  '>Country: {userData.county}</h1>
-            <h1 className='text-black text-lg  '  >Gender: {userData.gender}</h1>
-            <h1 className='text-black text-lg '>Date of birth: {userData.date_of_birth}</h1>
-            <h1 className='text-black text-lg '>Address: {userData.address}</h1>
-            <h1 className='text-black text-lg '>Mobile: {userData.mobile}</h1>
+                <h1 className='text-black text-lg '>Email: {userData?.email}</h1>
+            <h1 className='text-black text-lg  '>Country: {userData?.county}</h1>
+            <h1 className='text-black text-lg  '  >Gender: {userData?.gender}</h1>
+            <h1 className='text-black text-lg '>Date of birth: {userData?.date_of_birth}</h1>
+            <h1 className='text-black text-lg '>Address: {userData?.address}</h1>
+            <h1 className='text-black text-lg '>Mobile: {userData?.mobile}</h1>
                 </div>
             </div>
             {/* <h1 className='text-black text-2xl'>{userData.name}</h1>
@@ -43,7 +43,7 @@ function userProfile(props) {
             <h1 className='text-black text-2xl'>{userData.date_of_birth}</h1> */}
       
       <div className='mt-12 flex justify-between'>
-           <h1 className='text-black text-2xl font-bold'>{userData.name}</h1> 
+           <h1 className='text-black text-2xl font-bold'>{userData?.name}</h1> 
            <h1 className='text-black text-2xl font-bold'>Package name</h1>
             </div>
             <div className='bg-gray-50 my-1 rounded w-full h-0.5'></div>
@@ -89,3 +89,5 @@ function userProfile(props) {
 }
 
 export default userProfile;
+
+

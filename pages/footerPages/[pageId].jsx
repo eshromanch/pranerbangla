@@ -46,9 +46,9 @@ function SubPages({data}) {
     return (
 <>
 {[data]?.map(items=>{
-    return         <div key={items.id} className='mx-48 my-12'>
-    <h1 className='text-black text-4xl my-12 dark:text-white '>{items.title_bn}</h1>
-  <div className=' text-black dark:text-white' dangerouslySetInnerHTML={{ __html: items.content_bn }}>
+    return         <div key={items?.id} className='mx-48 my-12'>
+    <h1 className='text-black text-4xl my-12 dark:text-white '>{items?.title_bn}</h1>
+  <div className=' text-black dark:text-white' dangerouslySetInnerHTML={{ __html: items?.content_bn }}>
        
   </div>
 </div>
