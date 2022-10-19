@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@netlify/plugin-nextjs": "^4.27.2",
     "daisyui": "^2.15.3",
     "next": "12.1.6",
     "next-share": "^0.14.0",
