@@ -173,10 +173,10 @@ const num  = parseInt(ids)
     return (
         <div className='w-full'>
            {[advertise[0]].map((ad)=> {
-if (ad.add_space==="categoty") {
+if (ad?.add_space==="categoty") {
   return <div className='-my-12 flex justify-center items-center lg:mx-10  '>
               
-   <a href={ad.add_url}><img className=' w-[60.625rem] my-24 object-cover' src= {`${ad.image}`} alt=""  /></a>
+   <a href={ad?.add_url}><img className=' w-[60.625rem] my-24 object-cover' src= {`${ad?.image}`} alt=""  /></a>
    </div>
 }
             })}
@@ -184,17 +184,17 @@ if (ad.add_space==="categoty") {
             <div className='flex justify-between mx-48 border-b-2 my-8 lg:mx-10'>
            
             {[pages[0]]?.map((pageItem,i)=>{
-       return  <h1 key={i} className='flex   items-center text-base text-3xl text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 mb-1"/>{pageItem.category_name_bn}</h1>
+       return  <h1 key={i} className='flex   items-center text-base text-3xl text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 mb-1"/>{pageItem?.category_name_bn}</h1>
       })}
        { [language]?.map(e=>{
         if (e.language_name==="Bangla") {
-          // [hedarCount]?.map(count=> {
+          // [hedarCount?]?.map(count=> {
           //   return <h1 className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'>সাম্প্রতিক পোস্ট  {count.post_to_category_count}</h1>
           // })
-          return <h1 className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'>{`সাম্প্রতিক পোস্ট (${hedarCount.post_to_category_count})`}</h1>
+          return <h1 className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'>{`সাম্প্রতিক পোস্ট (${hedarCount?.post_to_category_count})`}</h1>
         }
         if (e.language_name==="English") {
-          return <h1 className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'> {`Total Post (${hedarCount.post_to_category_count})`}</h1>
+          return <h1 className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'> {`Total Post (${hedarCount?.post_to_category_count})`}</h1>
         }
        })}
            
@@ -206,8 +206,8 @@ if (ad.add_space==="categoty") {
               // console.log(main.childs)
               return <div className='flex mx-48 gap-10 mb-4'>
               {main.childs?.map((items)=>{
-              // console.log(items.id)
-            return <Link key={items.id} href={  {pathname: `${ids}/filter/${items.id}`, query: items.id}}><a href=""><h1 className='flex   items-center text-base text-md text-black mb-4 dark:text-white'><Circle className=" h-2 pr-2 mb-1"/>{items.name_bn}</h1></a></Link>
+              // console.log(items?.id)
+            return <Link key={items?.id} href={  {pathname: `${ids}/filter/${items?.id}`, query: items?.id}}><a href=""><h1 className='flex   items-center text-base text-md text-black mb-4 dark:text-white'><Circle className=" h-2 pr-2 mb-1"/>{items?.name_bn}</h1></a></Link>
               })}
 
  {/* <h1 className='flex   items-center text-base text-md text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 mb-1"/>নির্বাচিত</h1>
@@ -224,7 +224,7 @@ if (ad.add_space==="categoty") {
             {/* {    
 pages?.map(pageItem=>{
 
-        return  <Cards title={pageItem.title_bn} catagory={pageItem.category_name_bn} time={pageItem.created_at} imgSrc={pageItem.image} route={pageItem.id} status={pageItem.status}/>
+        return  <Cards title={pageItem?.title_bn} catagory={pageItem?.category_name_bn} time={pageItem?.created_at} imgSrc={pageItem?.image} route={pageItem?.id} status={pageItem?.status}/>
        
         
       })} */}
@@ -238,12 +238,12 @@ pages?.map(pageItem=>{
   [language]?.map(e=>{
 
     if (e.language_name==="English") {
-     return group.articles.map(pageItem =>  <Link key={pageItem.id} href={`${ids}/articles/${pageItem.id}`}><a ><Cards title={pageItem.title_en} catagory={pageItem.category_name_en} time={pageItem.created_at} imgSrc={pageItem.image} route={pageItem.id} status={pageItem.status} ids={ids} readed={pageItem.count_post}/></a></Link>
+     return group.articles.map(pageItem =>  <Link key={pageItem?.id} href={`${ids}/articles/${pageItem?.id}`}><a ><Cards title={pageItem?.title_en} catagory={pageItem?.category_name_en} time={pageItem?.created_at} imgSrc={pageItem?.image} route={pageItem?.id} status={pageItem?.status} ids={ids} readed={pageItem?.count_post}/></a></Link>
             
       )
     }
     if (e.language_name==="Bangla") {
-    return  group.articles.map(pageItem =>  <Link key={pageItem.id} href={`${ids}/articles/${pageItem.id}`}><a ><Cards title={pageItem.title_bn} catagory={pageItem.category_name_bn} time={pageItem.created_at} imgSrc={pageItem.image} route={pageItem.id} status={pageItem.status} ids={ids} readed={pageItem.count_post} postId={pageItem.id} is_visibility={pageItem.is_visibility}/></a></Link>
+    return  group.articles.map(pageItem =>  <Link key={pageItem?.id} href={`${ids}/articles/${pageItem?.id}`}><a ><Cards title={pageItem?.title_bn} catagory={pageItem?.category_name_bn} time={pageItem?.created_at} imgSrc={pageItem?.image} route={pageItem?.id} status={pageItem?.status} ids={ids} readed={pageItem?.count_post} postId={pageItem?.id} is_visibility={pageItem?.is_visibility}/></a></Link>
             
       )
     }
