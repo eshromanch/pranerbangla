@@ -43,8 +43,8 @@ useEffect(()=>{
 if (item.status==="1") {
   return item.post_to_cat.map(cat=>{
     return <div key={item.id} className='flex flex-rows justify-start items-center h-full w-full gap-4  ' >
-
-    <img className='w-32 h-32 sm:w-14 sm:h-14 object-cover' src={`${item.image}`} alt="" />
+<Image   className='w-32 h-32 sm:w-14 sm:h-14 object-cover' src={`${item.image}`} width="100%" height="100%" quality={75}></Image>
+    {/* <img className='w-32 h-32 sm:w-14 sm:h-14 object-cover' src={`${item.image}`} alt="" /> */}
     <Link href={`categories/${cat.category_id}/articles/${cat.post_id}`}><a href=""><h1 className="text-2xl text-white font-semibold group transition duration-300 sm:text-xs sm:font-normal">{item.title_bn}<span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary"></span></h1></a></Link>
   </div> 
   }) 

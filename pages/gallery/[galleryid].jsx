@@ -1,6 +1,5 @@
 import React from 'react';
-import { useRouter } from 'next/router';
-import {useState, useEffect} from "react"
+
 
 export async function getStaticPaths() {
     const res = await fetch("https://pranerbangla.com.bd/api/vb1/image-gallery")
@@ -19,7 +18,7 @@ export async function getStaticPaths() {
     })
     return {
       paths,
-      fallback: true // true or 'blocking'
+      fallback: false // true or 'blocking'
     };
   }
   export async function getStaticProps(context) {

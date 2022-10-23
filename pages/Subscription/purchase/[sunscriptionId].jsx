@@ -36,6 +36,7 @@ function Purchase(props) {
   const items = Router.query
 
 
+  console.log(items.id)
     const handleSubmit = async (event) => {
       
         event.preventDefault()

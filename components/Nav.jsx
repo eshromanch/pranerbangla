@@ -41,7 +41,7 @@ const userData =JSON.parse(user)
 
 
     return (
-        <div className='sticky top-0 w-full bg-gray-50 z-20 dark:bg-slate-800 shadow-xl '>
+        <div className='sticky top-0 w-full bg-gray-50 z-20 dark:bg-slate-800 shadow-xl font-body'>
           <div className='mx-48  md:mx-2 lg:mx-10 '>
             
      <div className="navbar bg-gray-50 border border-l-0 border-t-0  border-r-0 dark:bg-slate-800 dark:border-b-gray-700 ">

@@ -5,12 +5,15 @@ import Cards from "../components/GridCards"
 import Plus from '../components/svgs/Plus'
 import LongCarousel from '../components/LongCarousel'
 import Circle from '../components/svgs/Circle'
-import styles from '../styles/Home.module.css'
-import CardImage from "../public/anna-kolosyuk-D5nh6mCW52c-unsplash.jpg"
+
 import StagedImages from '../components/HomepageComponents/StagedImages'
-import Video from '../components/HomepageComponents/Video'
+// import Video from '../components/HomepageComponents/Video'
 import Gridimages from '../components/HomepageComponents/Gridimages'
 import Link from "next/link"
+import dynamic from 'next/dynamic'
+
+
+const Video = dynamic(()=> import ('../components/HomepageComponents/Video'))
 // import PostDetails from './categories/post'
 import React, { useEffect,useState } from 'react'
 
@@ -38,7 +41,10 @@ export async function getStaticProps() {
  const adData = await resAdd.json()
  const contentAd = adData["data"]
 
- 
+//  const edotorialFetch = await fetch("http://pranerbangla.com.bd/api/vb1/editorial")
+//  const edotorial = await edotorialFetch.json()
+
+
  const gallery = galleries.reverse()
 
 
@@ -54,14 +60,15 @@ const allVideos = allVideo.filter(items=> items.add_to_featured=="1")
       homeData,
       allVideos,
       gallery,
-      adds
+      adds,
+      // edotorial
       
     },
   }
 }
 
 let ids;
-export default function Home({carouselItems, featuredData,homeData,allVideos,gallery, adds}) {
+export default function Home({carouselItems, featuredData,homeData,allVideos,gallery, adds, edotorial}) {
 
 
   const [mounted,setMounted] = useState(false)
@@ -116,9 +123,12 @@ const dataAll2 = groupArticle2.map((item, index) => ({
 <div className='col-span-2'><div><b><h1 className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 "/> শেষ সংযুক্তি </h1></b></div>
 <div className='grid grid-cols-3 gap-4'>
       <div className='col-span-2 w-full h-full'>
-{[featuredData[0]].map(items=>{
+{/* {[featuredData[0]].map(items=>{
   return <StagedImages key={items.id} image={items.image} title= {items.title_bn} route={items.post_to_cat}/>
-})}
+})} */}
+ <StagedImages key={featuredData[0]['id']} image={featuredData[0]['image']} title= {featuredData[0]['title_bn']} route={featuredData[0]['post_to_cat']}/>
+{/* <h1>{featuredData[0]['id']}</h1> */}
+
          </div>
 {featuredData.slice(1,5).map(items =>{
   return  <div key={items.id} className=' w-full h-full '>
@@ -130,8 +140,9 @@ const dataAll2 = groupArticle2.map((item, index) => ({
   </div>
   <div className='flex flex-col '><b><h1 className='mb-4 text-lg text-black dark:text-white'>সম্পাদকীয়</h1></b>
   <div className='flex flex-col'>
-    <div className='h-40 w-40 bg-gray-500'></div>
-    <p className='mb-4 text-base text-black dark:text-white'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore sunt similique repellat dolore quibusdam corporis, excepturi magnam modi nostrum, vitae ipsum quos rem, aspernatur consequatur? Laborum fugiat illo placeat facilis.</p>
+    {/* <div className='h-40 w-40 bg-gray-500'></div> */}
+    <img src={edotorial?.data?.image} alt="" srcset="" />
+    <p className='mb-4 text-base text-black dark:text-white' dangerouslySetInnerHTML={edotorial?.data?.content_bn}></p>
   </div>
   </div>
 </div>

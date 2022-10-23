@@ -5,7 +5,7 @@ const nextConfig = {
     domains: ['pranerbangla.com.bd'],
 
   },
-  // staticPageGenerationTimeout: 1000,
+  // staticPageGenerationTimeout: 3000,
 }
 
 module.exports = nextConfig
