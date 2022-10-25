@@ -46,24 +46,35 @@ return (
         <div className="flex  navbar  bg-gray-50 dark:bg-slate-800 md:flex-col md:bg-white lg:overflow-x-scroll">
         <Link href={"/"}><button className='btn btn-ghost md:hidden'> <Home className="dark:stroke-white"/></button></Link>
 {
-sortedActivities?.slice(0,16).map((nav) =>{
-if (langData.language_name==="Bangla") {
-  if (nav.status==="1") {
-    return <Link key={nav.id} href={"/categories/" + nav.id}>
-  <a className="p-4 whitespace-nowrap tracking-wide text-base font-semibold font-sans text-black border-b-2 border-double 
-  border-transparent hover:border-primary cursor-pointer select-none dark:text-white   ">{nav.name_bn} </a>
-  </Link> 
-   }
-}
-if (langData.language_name==="English") {
-  if (nav.status==="1") {
-    return <Link key={nav.id} href={"/categories/" + nav.id}>
-  <a className="p-4 whitespace-nowrap  font-bold font-sans text-black text-base border-b-2 border-double 
-  border-transparent hover:border-primary cursor-pointer select-none dark:text-white">{nav.name_en} </a>
-  </Link> 
-   }
-}
-})
+  sortedActivities?.slice(0,16).map((nav) =>{
+
+      if (nav.status==="1") {
+        return <Link key={nav.id} href={"/categories/" + nav.id}>
+      <a className="p-4 whitespace-nowrap tracking-wide text-base font-semibold font-sans text-black border-b-2 border-double 
+      border-transparent hover:border-primary cursor-pointer select-none dark:text-white   ">{nav.name_bn} </a>
+      </Link> 
+       }
+    
+
+    })
+// sortedActivities?.slice(0,16).map((nav) =>{
+// if (langData.language_name==="Bangla") {
+//   if (nav.status==="1") {
+//     return <Link key={nav.id} href={"/categories/" + nav.id}>
+//   <a className="p-4 whitespace-nowrap tracking-wide text-base font-semibold font-sans text-black border-b-2 border-double 
+//   border-transparent hover:border-primary cursor-pointer select-none dark:text-white   ">{nav.name_bn} </a>
+//   </Link> 
+//    }
+// }
+// if (langData.language_name==="English") {
+//   if (nav.status==="1") {
+//     return <Link key={nav.id} href={"/categories/" + nav.id}>
+//   <a className="p-4 whitespace-nowrap  font-bold font-sans text-black text-base border-b-2 border-double 
+//   border-transparent hover:border-primary cursor-pointer select-none dark:text-white">{nav.name_en} </a>
+//   </Link> 
+//    }
+// }
+// })
 }
 
 

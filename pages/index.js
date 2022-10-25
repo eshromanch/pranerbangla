@@ -1,74 +1,67 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Carousel from '../components/Carousel'
+// import Carousel from '../components/Carousel'
 import Cards from "../components/GridCards"
 import Plus from '../components/svgs/Plus'
 import LongCarousel from '../components/LongCarousel'
 import Circle from '../components/svgs/Circle'
 
-import StagedImages from '../components/HomepageComponents/StagedImages'
+// import StagedImages from '../components/HomepageComponents/StagedImages'
 // import Video from '../components/HomepageComponents/Video'
 import Gridimages from '../components/HomepageComponents/Gridimages'
 import Link from "next/link"
 import dynamic from 'next/dynamic'
 
+const Carousel = dynamic(()=> import ('../components/Carousel'),{ssr:false})
 
-const Video = dynamic(()=> import ('../components/HomepageComponents/Video'))
+const StagedImages = dynamic(()=> import ('../components/HomepageComponents/StagedImages'),{ssr:false})
+const Videos = dynamic(()=> import ('../components/HomepageComponents/Videos'),{ssr:false})
+const Edotorial = dynamic(()=> import ('../components/HomepageComponents/Edotorial'),{ssr:false})
 // import PostDetails from './categories/post'
 import React, { useEffect,useState } from 'react'
 
 
 export async function getStaticProps() {
 
-  const res = await fetch('https://pranerbangla.com.bd/api/vb1/cover-post/cover')
   const featuredRes = await fetch("https://pranerbangla.com.bd/api/vb1/featured-post/featuredPost")
   const featured = await featuredRes.json()
   const featuredData = featured["data"]
-  const posts = await res.json()
-  const carouselItems = posts["data"]
+
   const resHome = await fetch("https://pranerbangla.com.bd/api/vb1/home-layout")
   const home = await resHome.json()
   const homeData = home["data"] 
- const resVideo = await fetch('https://pranerbangla.com.bd/api/vb1/video-all')
- const video = await resVideo.json()
- const allVideo = video["data"]
-
  const resImages = await fetch('https://pranerbangla.com.bd/api/vb1/image-gallery')
  const images = await resImages.json()
  const galleries = images["data"]
-
  const resAdd = await fetch("http://pranerbangla.com.bd/api/vb1/advertisement")
  const adData = await resAdd.json()
  const contentAd = adData["data"]
-
-//  const edotorialFetch = await fetch("http://pranerbangla.com.bd/api/vb1/editorial")
-//  const edotorial = await edotorialFetch.json()
-
-
  const gallery = galleries.reverse()
 
 
 const adds = contentAd.filter(items=> items.add_space==="home")
-const allVideos = allVideo.filter(items=> items.add_to_featured=="1")
+// const allVideos = allVideo.filter(items=> items.add_to_featured=="1")
 
 
 
   return {
     props: {
-      carouselItems,
+      // carouselItems,
       featuredData,
       homeData,
-      allVideos,
+      // allVideos,
       gallery,
       adds,
       // edotorial
       
     },
+    // revalidate: 10,
   }
+  
 }
 
 let ids;
-export default function Home({carouselItems, featuredData,homeData,allVideos,gallery, adds, edotorial}) {
+export default function Home({ featuredData,homeData,gallery, adds}) {
 
 
   const [mounted,setMounted] = useState(false)
@@ -106,10 +99,12 @@ const dataAll2 = groupArticle2.map((item, index) => ({
 
   return (
     <div className='bg-gray-50 h-full  dark:bg-slate-800 ' >
-     {[carouselItems[0]].map(items=> {
+
+<Carousel/>
+     {/* {[carouselItems[0]].map(items=> {
 
       return  <Carousel key={items.id} mainTitle={items.title_bn} mainImage={items.image} route={items.post_to_cat}/>
-     })}
+     })} */}
 {/*      
      {advertisement?.map(items=>{
   return <a href={items.add_url}><img className=' w-[60.625rem] my-24 object-cover' src= {`https://pranerbangla.com.bd/${items.image}`} alt="" srcset="" /></a>
@@ -138,13 +133,7 @@ const dataAll2 = groupArticle2.map((item, index) => ({
     </div>
     
   </div>
-  <div className='flex flex-col '><b><h1 className='mb-4 text-lg text-black dark:text-white'>সম্পাদকীয়</h1></b>
-  <div className='flex flex-col'>
-    {/* <div className='h-40 w-40 bg-gray-500'></div> */}
-    <img src={edotorial?.data?.image} alt="" srcset="" />
-    <p className='mb-4 text-base text-black dark:text-white' dangerouslySetInnerHTML={edotorial?.data?.content_bn}></p>
-  </div>
-  </div>
+<Edotorial></Edotorial>
 </div>
 </div>
 
@@ -458,64 +447,10 @@ return catItems.category?.post_to_category.slice(0,rows).map(post=>{
 <h4 className='flex '><Plus className="h-5 pr-2 mt-0"/> আরো দেখুন </h4>
   </a></Link></b>
 </div>
-<div className='mx-80 grid grid-cols-4 gap-10 md:mx-32'>
-  <div className='col-span-2'>
-    {
-      allVideos?.slice(0,1).map(items =>{
-        if (items.add_to_featured=="1") {
-          return <Video link={items.video_url} img={items.image}/>
-        }
-      })
-    }
-   </div>
-  <div className='col-span-2'>
-  {
-      allVideos?.slice(1,2).map(items =>{
-        return <Video  key={items.id}  link={items.video_url} img={items.image}/>
-      })
-    }
-  </div>
-  <div>    {
-      allVideos?.slice(2,3).map(items =>{
-        return <Video  key={items.id}  link={items.video_url} img={items.image} iframe={items.video_embed_code}/>
-      })
-    }</div>
-      <div>    {
-      allVideos?.slice(3,4).map(items =>{
-        return <Video  key={items.id}  link={items.video_url} img={items.image} iframe={items.video_embed_code}/>
-      })
-    }</div>
-      <div>    {
-      allVideos?.slice(4,5).map(items =>{
-        return <Video  key={items.id}  link={items.video_url} img={items.image} iframe={items.video_embed_code}/>
-      })
-    }</div>
-      <div>    {
-      allVideos?.slice(5,6).map(items =>{
-        return <Video  key={items.id}  link={items.video_url} img={items.image} iframe={items.video_embed_code}/>
-      })
-    }</div>
-  {/* <div><Video/></div>
-  <div><Video/></div>
-  <div><Video/></div> */}
-</div>
+<Videos></Videos>
 </div>
 
-{/* <div className='mx-48 my-12'>
-<div>
-<div className='flex justify-between items-center'><b><h1 className='flex  justify-between items-center text-lg  text-black mb-4 dark:text-white'><Circle className=" h-3  pr-2 mb-1"/>নির্বাচিত </h1></b>
-<b><a className='btn btn-ghost text-base text-base-100  dark:text-white' href="#">
-<h4 className='flex '><Plus className="h-5 pr-2 mt-0"/> আরো দেখুন  </h4>
-  </a></b>
-</div>
-</div>
-<div className='grid grid-cols-4  gap-10'>
-<Cards/>
-<Cards/>
-<Cards/>
-<Cards/>
-</div>
-</div> */}
+
 
 {dataAll2.map(homeDatas=>{
 

@@ -21,7 +21,6 @@ useEffect(()=>{
   
   
 
-
     return (
      
 
@@ -29,12 +28,19 @@ useEffect(()=>{
 // <img  src={`https://pranerbangla.com.bd/${props.mainImage}`} alt="" /> 
 // <div className={`hero h-[75vh] bg-[url('http://pranerbangla.com.bd/${props.mainImage}')]  w-full overflow-hidden`} > 
  <div className={`hero relative h-[75vh] w-full overflow-hidden `} > 
-  <img className='absolute -z-1 object-fit w-full h-full ' src={`${props.mainImage}`} alt="" /> 
+  <img className='absolute -z-1 object-fit w-full h-full ' src={`${data?.[0]['image']}`} alt="" /> 
+{/* {data?[0].map(item=>{
+   <img className='absolute -z-1 object-fit w-full h-full ' src={`${item.mainImage}`} alt="" /> 
+})} */}
+
+
   <div className="grid-rows-2  h-full w-full hero-content  text-neutral-content sm:flex sm:flex-col">
     <div className="w-full">
-      {props.route.map(cat=>{
-        return  <Link key={cat.id} href={`categories/${cat.category_id}/articles/${cat.post_id}`}><a href=""> <h1 className="text-5xl text-white  group transition duration-300 sm:text-xl">{props.mainTitle}<span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary"></span></h1></a></Link>
-      })}
+      {/* {data?.post_to_cat?.map(cat=>{
+        return  <Link key={cat.id} href={`categories/${cat.category_id}/articles/${cat.post_id}`}><a href=""> <h1 className="text-5xl text-white  group transition duration-300 sm:text-xl">{data?.[0]['title_bn']}<span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary"></span></h1></a></Link>
+      })} */}
+  <Link key={data?.[0]['id']} href={`categories/${data?.[0]['post_to_cat'][0]["category_id"]}/articles/${data?.[0]['post_to_cat'][0]["post_id"]}`}><a href=""> <h1 className="text-5xl text-white  group transition duration-300 sm:text-xl">{data?.[0]['title_bn']}<span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary"></span></h1></a></Link>
+    
     </div>
     <div className="flex flex-col  justify-center items-center w-full gap-4 p-10">
 {

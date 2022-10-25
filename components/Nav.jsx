@@ -14,9 +14,10 @@ import Globe from './svgs/Globe';
 import Signin from './svgs/Signin-2';
 import Link from "next/link"
 import BookMarkComp from './BookMarkComp';
-import LangChange from './LangChange';
+const LangChange = dynamic(()=>import ('./LangChange'))
 import SearchBar from './SearchBar';
 import Burger from './Burger';
+import dynamic from 'next/dynamic';
 
 
 
@@ -52,7 +53,7 @@ const userData =JSON.parse(user)
     
     <ul className="menu menu-horizontal p-0">
       <SearchBar className="m-5"/>
-      <li  className='md:hidden'><button className='text-black dark:text-white'> <LangChange/></button></li>
+      {/* <li  className='md:hidden'><button className='text-black dark:text-white'> <LangChange/></button></li> */}
       <li className='md:hidden'><Themechanger /></li>
       <li><button><BellIcon className="h-5 dark:stroke-white "/></button></li>
       {/* <li><button><BookmarksIcon className="h-5 dark:stroke-white"/></button></li> */}
