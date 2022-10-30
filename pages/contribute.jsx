@@ -22,7 +22,7 @@ function Contribute({data}) {
                   <div className='mx-80 h-full  w-3/6 flex flex-col justify-center items-center  gap-5 lg:mx-40 md:mx-0 '>
                       <h1 className='text-2xl font-bold text-black dark:text-white text-center'>বাংলা ভাষায় সর্ববৃহৎ কন্টেন্ট বিপ্লবের অংশ হোন আপনিও</h1>
       <p className='text-md  text-black dark:text-white '>প্রাণের বাংলার যাত্রা শুরু হয়েছিল এমন সব গল্প বলার জন্য, যেগুলো জীবনের কথা বলে, স্বপ্নের কথা বলে, ভেঙে পড়ার গল্প বলে, আবার উঠে দাঁড়ানোর গল্প বলে। প্রাণের বাংলা ইতিহাসের গল্প শোনায়, বর্তমানের বিশ্লেষণ করে, ভবিষ্যতের স্বপ্ন দেখায়। প্রাণের  বাংলা এবার পাঠকদের জন্য গল্প শুনতে চায়, পাঠকদের গল্প শুনতে চায়। লিখুন মন খুলে, আপনার গল্প পৌঁছে যাক  গোটা বিশ্বে বাঙালী পাঠকসমাজের কাছে! </p>
-      <Link href={"/writer_signup"}><button className='btn '>কন্ট্রিব্যুট করুন </button></Link>
+      <Link href={"/writer_signup"} legacyBehavior><button className='btn '>কন্ট্রিব্যুট করুন </button></Link>
                   </div>
               </div>
       <div className='bg-[#f6f6f6] dark:bg-slate-900 ' >

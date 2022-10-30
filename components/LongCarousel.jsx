@@ -153,7 +153,7 @@ useEffect(()=>{
     >
       {data?.map(items=>{
         return (
-          <SwiperSlide key={items.id}><Link key={items.id} href={`categories/9/articles/${items.id}`}><div className="w-full h-[20rem] relative flex justify-center  ">
+          <SwiperSlide key={items.id}><Link key={items.id} href={`categories/9/articles/${items.id}`} legacyBehavior><div className="w-full h-[20rem] relative flex justify-center  ">
           <div className='absolute w-full h-full bottom-0 bg-gradient-to-t from-black to-transparent '></div>
           <img className="w-full object-cover" src={items.image} alt="" />
           <h1 className="absolute bottom-1/2 z-10 text-2xl">{items.title_bn}</h1>

@@ -50,13 +50,21 @@ function Burger(props) {
 
                   {(() => {
               if (localStorage.getItem("token")  !== null) {
-                return <li><Link href='/userProfile' className='text-black dark:text-white flex'><UserIcon className="h-5 fill-black dark:fill-white"/> {userData?.name}</Link></li>;
+                return (
+                  <li><Link
+                    href='/userProfile'
+                    className='text-black dark:text-white flex'
+                    legacyBehavior><UserIcon className="h-5 fill-black dark:fill-white"/> {userData?.name}</Link></li>
+                );
               } else {
-                return <li><Link href='/signin' className='text-black dark:text-white flex'><UserIcon className="h-5 fill-black dark:fill-white"/>Log in</Link></li>;
+                return <li><Link href='/signin' className='text-black dark:text-white flex' legacyBehavior><UserIcon className="h-5 fill-black dark:fill-white"/>Log in</Link></li>;
               } 
             })()}
          
-            <li className=''><Link href='/contribute' className='text-black dark:text-white flex'><EditIcon className="h-5  dark:stroke-white "></EditIcon>Write</Link></li>
+            <li className=''><Link
+              href='/contribute'
+              className='text-black dark:text-white flex'
+              legacyBehavior><EditIcon className="h-5  dark:stroke-white "></EditIcon>Write</Link></li>
           </ul>
       </div>
 

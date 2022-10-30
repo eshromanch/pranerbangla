@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 
 
 export async function getStaticPaths() {
@@ -23,19 +23,34 @@ export async function getStaticPaths() {
   }
   export async function getStaticProps(context) {
     const id = context.params.galleryid
-    const res = await fetch("https://pranerbangla.com.bd/api/vb1/image-gallery")
-    const data = await res.json();
-  
-    const content = data["data"]
-
-    const datas= content.filter(e=>  e.id === Number(id))
-
-    return {
-      // Passed to the page component as props
-      props: { datas},
+    // const res = await fetch("https://pranerbangla.com.bd/api/vb1/image-gallery")
+    // const data = await res.json();
+    // const content = data["data"]
+    try {
+      const res = await fetch("https://pranerbangla.com.bd/api/vb1/image-gallery")
+      const data = await res.json();
+      const content = data["data"]
+      const datas= content.filter(e=>  e.id === Number(id))
+      if (!data) {
+        return { notFound: true };
+      }
+      return { props: { datas } };
+    } catch (err) {
+      return { notFound: true };
     }
+
+    
+    // return {
+    //   // Passed to the page component as props
+    //   props: { datas},
+    // }
   }
 function Gallery({datas}) {
+  const [mounted,setMounted] = useState(false)
+  useEffect(()=> {
+    setMounted(true)
+},[])
+if(!mounted) return null
 
 
     return (

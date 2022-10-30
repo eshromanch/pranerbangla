@@ -27,15 +27,27 @@ export async function getStaticPaths() {
       export async function getStaticProps(context) {
         const id = context.params.pageId
 
+        // const res = await fetch('https://pranerbangla.com.bd/api/vb1/page-content/' +id )
+        // const posts = await res?.json()
+        // const data = posts["data"]
+
+    
+        // return {
+        //   props: {
+        //     data,
+        //   },
+        // }
+        try {
+
         const res = await fetch('https://pranerbangla.com.bd/api/vb1/page-content/' +id )
         const posts = await res?.json()
         const data = posts["data"]
-
-    
-        return {
-          props: {
-            data,
-          },
+          if (!data) {
+            return { notFound: true };
+          }
+          return { props: { data } };
+        } catch (err) {
+          return { notFound: true };
         }
       }
       

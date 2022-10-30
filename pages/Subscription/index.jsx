@@ -41,7 +41,9 @@ function subscriptions({data}) {
             <h4 className="text-4xl font-semibold text-gray-100 mr-4">BDT {items.price_bn}</h4>
             <span className="text-xs text-gray-500">per user <br />{items.countMonth} month</span>
           </div>
-        <Link href={{pathname:`Subscription/purchase/${items.id}`, query: items}}><button type="button" className="my-2 w-full font-semibold text-primary hover:text-gray-100 hover:bg-primary rounded border border-solid border-primary border-opacity-25 py-3">Select Plan</button></Link>
+        <Link
+          href={{pathname:`Subscription/purchase/${items.id}`, query: items}}
+          legacyBehavior><button type="button" className="my-2 w-full font-semibold text-primary hover:text-gray-100 hover:bg-primary rounded border border-solid border-primary border-opacity-25 py-3">Select Plan</button></Link>
           {/* <button type="button" className="w-full font-semibold text-gray-100 py-3 rounded border border-solid border-transparent hover:border-indigo-700">Learn More</button> */}
         </div>
         );

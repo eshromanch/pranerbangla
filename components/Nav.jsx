@@ -52,7 +52,7 @@ const userData =JSON.parse(user)
 <div className="flex ">
   
   <ul className="menu menu-horizontal p-0">
-    <SearchBar className="m-5"/>
+    <SearchBar/>
     {/* <li  className='md:hidden'><button className='text-black dark:text-white'> <LangChange/></button></li> */}
     <li className='md:hidden'><Themechanger /></li>
     <li><button><BellIcon className="h-5 dark:stroke-white "/></button></li>
@@ -60,13 +60,17 @@ const userData =JSON.parse(user)
 <BookMarkComp />
           {(() => {
       if (localStorage.getItem("token")  !== null) {
-        return <li><Link href='/userProfile' className='text-black dark:text-white md:hidden'><UserIcon className="h-5 fill-black dark:fill-white"/>{userData?.name}</Link></li>;
+        return (
+          <li><Link
+            href='/userProfile'
+            legacyBehavior><a className='text-black dark:text-white md:hidden'><UserIcon className="h-5 fill-black dark:fill-white"/>{userData?.name}</a></Link></li>
+        );
       } else {
-        return <li><Link href='/signin' className='text-black dark:text-white md:hidden'><UserIcon className="h-5 fill-black dark:fill-white"/>Log in</Link></li>;
+        return <li><Link legacyBehavior href='/signin'><a className='text-black dark:text-white md:hidden'><UserIcon className="h-5 fill-black dark:fill-white"/>Log in</a></Link></li>;
       } 
     })()}
  
-    <li className='md:hidden'><Link href='/contribute' className='text-black dark:text-white '><EditIcon className="h-5  dark:stroke-white "></EditIcon>Write</Link></li>
+    <li className='md:hidden'><Link legacyBehavior href='/contribute'><a className='text-black dark:text-white ' href=""><EditIcon className="h-5  dark:stroke-white "></EditIcon>Write</a></Link></li>
   </ul>
   <Burger/>
 </div>

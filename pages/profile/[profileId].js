@@ -62,7 +62,12 @@ function Profile({cardsData,ids,totalPost,authorInfo}) {
 </div>
 <div className='grid grid-cols-4 mb-4  gap-10 mx-48 md:mx-10 md:grid-cols-2'>
 {cardsData?.map(pageItem =>{
-return <Link  key={pageItem?.id}  href={`/categories/${ids}/articles/${pageItem?.id}`}><Cards title={pageItem?.title_bn} catagory={pageItem?.category_name_bn} time={pageItem?.created_at} imgSrc={pageItem?.image} route={pageItem?.id} status={pageItem?.status}/></Link>;
+return (
+  <Link
+    key={pageItem?.id}
+    href={`/categories/${ids}/articles/${pageItem?.id}`}
+    legacyBehavior><Cards title={pageItem?.title_bn} catagory={pageItem?.category_name_bn} time={pageItem?.created_at} imgSrc={pageItem?.image} route={pageItem?.id} status={pageItem?.status}/></Link>
+);
 })}
 {/* <Cards/>
 <Cards/>

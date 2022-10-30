@@ -18,13 +18,13 @@ const date =new Date(`${props.time}`).toLocaleString('en-uk',{day:"numeric",mont
                  <div className='flex flex-col h-full w-full'>
                  {props.postCat.map(item=>{
                    
-  return <Link key={item.id} href={"/categories/"+item.category_id}><button className='btn btn-primary rounded-none text-lg font-normal w-1/4 m-4 transition ease-in-out   hover:bg-[#4b5767] hover:border-0 hover:rounded-lg duration-400'>{item.category.name_bn}</button></Link>;
+  return <Link key={item.id} href={"/categories/"+item.category_id} legacyBehavior><button className='btn btn-primary rounded-none text-lg font-normal w-1/4 m-4 transition ease-in-out   hover:bg-[#4b5767] hover:border-0 hover:rounded-lg duration-400'>{item.category.name_bn}</button></Link>;
  })
  }
                  <h1 className='text-5xl font-bold text-black dark:text-white  m-4 '>{props.title}</h1>
 
      <div className='flex my-8 '>
-    <Link href={`/profile/${props.writerId}`} >
+    <Link href={`/profile/${props.writerId}`} legacyBehavior>
      <div className="relative  w-28 h-full  ">
         <img src={props.user.image} alt="" className=" w-24 h-24 rounded-full object-cover border-2 border-primary "></img>
         
@@ -32,7 +32,7 @@ const date =new Date(`${props.time}`).toLocaleString('en-uk',{day:"numeric",mont
     </Link>
 
      <div className='w-full'>
-     <Link href={`/profile/${props.writerId}`} ><h1 className='font-bold text-2xl text-black dark:text-white'>{props.user.name}</h1></Link>
+     <Link href={`/profile/${props.writerId}`} legacyBehavior><h1 className='font-bold text-2xl text-black dark:text-white'>{props.user.name}</h1></Link>
          {/* <h1 className='font-normal text-md mb-3 text-black dark:text-white '>প্রযুক্তি লেখক, ঢাকা থেকে</h1> */}
          <h1 className='font-normal text-md mb-3 text-black dark:text-white '>{props.user.designation}, {props.user.address}  </h1>
          <div className='flex'>

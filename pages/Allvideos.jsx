@@ -1,4 +1,4 @@
-import Video from "../components/HomepageComponents/Video"
+import Video from "../components/Video"
 
 export async function getStaticProps() {
 

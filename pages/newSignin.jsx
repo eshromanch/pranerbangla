@@ -79,7 +79,7 @@ function signup(props) {
                 <div className=' flex flex-col  items-end md:items-start md:mx-5'>
 <h1 className='font-enbody font-semibold text-2xl text-center text-black dark:text-white' >Sign In with Email</h1>
 <h1 className='font-enbody text-sm text-center text-gray-500 dark:text-white mt-8' >No account?</h1>
-<Link href={`signup`}><h1 className='font-enbody font-semibold text-xl text-center text-black dark:text-white' >Sign Up here</h1></Link>
+<Link href={`signup`} legacyBehavior><h1 className='font-enbody font-semibold text-xl text-center text-black dark:text-white' >Sign Up here</h1></Link>
                 </div>
                 <form onSubmit={handleSubmit} className='flex flex-col gap-4 w-2/6 font-enbody md:items-center md:w-full'>
                 <input type="text" placeholder="Email" name='email' className="input input-bordered text-black border-gray-300 input-md w-full max-w-xs bg-transparent " />

@@ -171,12 +171,12 @@ const response = await fetch(endpoint, options)
     return (
       <div>
 
-      <div className="dropdown mt-2 ">
+      <div className="dropdown mt-0 ">
         <label tabIndex="0" className="btn btn-ghost m-1"><BookMark className="h-5 dark:stroke-white"/></label>
         <ul tabIndex="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-96 md:-ml-80 sm:w-60 sm:-ml-40">
           {data?.map(items=>{
             
-            return <li key={items.id} className='flex justify-between p-4'><Link href={``} className='text-white w-60 sm:w-36'>{items.post?.title_bn}</Link> <button key={items.id} onClick={()=>removeData(items.id)} className='btn text-white'>-</button></li>;
+            return <li key={items.id} className='flex justify-between p-4'><Link href={``} className='text-white w-60 sm:w-36' legacyBehavior>{items.post?.title_bn}</Link> <button key={items.id} onClick={()=>removeData(items.id)} className='btn text-white'>-</button></li>;
 
               
           })}

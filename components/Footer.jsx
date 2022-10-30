@@ -52,18 +52,18 @@ function Footer(props) {
       <Link key={items.id}
         href={`/about`}
         
-        className="link link-hover text-base font-bold text-black dark:text-white">আমাদের পরিচিতি</Link>
+        ><a className="link link-hover text-base font-bold text-black dark:text-white">আমাদের পরিচিতি</a></Link>
     );
   }
 })}
 <Link
   href={`/Subscription`}
   
-  className="link link-hover text-base font-bold text-black dark:text-white">সাবস্ক্রিপশন </Link>
+><a   className="link link-hover text-base font-bold text-black dark:text-white">সাবস্ক্রিপসন</a></Link>
 <Link
   href={`/Contact`}
   
-  className="link link-hover text-base font-bold text-black dark:text-white">যোগাযোগ</Link>
+  ><a className="link link-hover text-base font-bold text-black dark:text-white">যোগাযোগ</a></Link>
 
 {data?.slice(3).map(items=>{
   return (
@@ -71,7 +71,7 @@ function Footer(props) {
       key={items.id}
       href={`footerPages/${items.id}`}
       
-      className="link link-hover  text-base font-bold text-black dark:text-white">{items.name_bn}</Link>
+      legacyBehavior><a className="link link-hover  text-base font-bold text-black dark:text-white">{items.name_bn}</a></Link>
   );
 })}
 {/* {data?.filter(e=> e.name_en !== "About Us").map(items=>{

@@ -12,22 +12,22 @@ function StagedImages(props) {
   })
 
   return (
-    (<Link href={`/categories/${catId}/articles/${postId}`}>
-      <div className="relative card card-compact  rounded-md w-full h-full bg-transparent  ">
+    <Link href={`/categories/${catId}/articles/${postId}`} legacyBehavior>
+        <div className="relative card card-compact  rounded-md w-full h-full bg-transparent  ">
 
-<figure className='h-full '>
+  <figure className='h-full '>
 
-<img className='w-full h-full object-cover '  src= {`${props.image}`}   />
-</figure>
-<div className="absolute top-1/2 card-body w-full z-10 md:top-0">
-<h2 className="text-2xl text-center w-full lg:text-xl md:text-base ">{props.title}</h2>
-<p></p>
+  <img className='w-full h-full object-cover '  src= {`${props.image}`}   />
+  </figure>
+  <div className="absolute top-1/2 card-body w-full z-10 md:top-0">
+  <h2 className="text-2xl text-center w-full lg:text-xl md:text-base ">{props.title}</h2>
+  <p></p>
 
-</div>
+  </div>
 
-<div className='absolute w-full h-full bottom-0 bg-gradient-to-t from-black to-transparent '></div>
-</div>
-    </Link>)
+  <div className='absolute w-full h-full bottom-0 bg-gradient-to-t from-black to-transparent '></div>
+  </div>
+      </Link>
   );
 }
 

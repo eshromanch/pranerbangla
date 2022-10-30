@@ -92,7 +92,7 @@ const router = useRouter()
         </>
       )}
 
-      <button className="" onClick={openModal}><Search className="h-5 dark:stroke-white mt-[1.55rem] mx-5 md:mb-5 "/></button>
+      <button className="h-full w-full flex justify-center items-center" onClick={openModal}><Search className="h-5 dark:stroke-white mx-5"/></button>
     </div>
   );
 }

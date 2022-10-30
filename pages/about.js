@@ -80,7 +80,7 @@ if(!mounted) return null
       <div className='grid grid-cols-4 gap-4 mx-48 md:grid-cols-2 md:mx-10 '>
     {
       data?.map(item =>{
-        return <Link key={item.id} href={`profile/${item.id}`}><Cards   image={item.image} title={item.name}  designations={item.designation} facebookLink={item.facebook}/></Link>;
+        return <Link key={item.id} href={`profile/${item.id}`} legacyBehavior><Cards   image={item.image} title={item.name}  designations={item.designation} facebookLink={item.facebook}/></Link>;
       })
     }
       {/* <Cards img="https://images.pexels.com/photos/6507483/pexels-photo-6507483.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />

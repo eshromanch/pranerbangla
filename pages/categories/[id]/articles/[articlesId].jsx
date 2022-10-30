@@ -241,7 +241,12 @@ const { asPath, pathname } = useRouter();
       <div className='grid grid-cols-4 mb-4  gap-10 mx-48 lg:mx-10 md:grid-cols-2'>
       {pageItems.articles.map(pageItem=>{
 
-     return <Link key={pageItem.id} href={`/categories/${catId}/articles/${pageItem.id}`}><Cards title={pageItem.title_bn} catagory={pageItem.category_name_bn} time={pageItem.created_at} imgSrc={pageItem.image} route={pageItem.id} status={pageItem.status}  readed={pageItem.count_post}/></Link>;
+     return (
+       <Link
+         key={pageItem.id}
+         href={`/categories/${catId}/articles/${pageItem.id}`}
+         legacyBehavior><Cards title={pageItem.title_bn} catagory={pageItem.category_name_bn} time={pageItem.created_at} imgSrc={pageItem.image} route={pageItem.id} status={pageItem.status}  readed={pageItem.count_post}/></Link>
+     );
       })}
 
       </div>

@@ -36,7 +36,70 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const id = context.params.id
   //  console.log(id)
-  const res = await fetch("https://pranerbangla.com.bd/api/vb1/category-to-post/" + id ,{
+//   const res = await fetch("https://pranerbangla.com.bd/api/vb1/category-to-post/" + id ,{
+//     headers: {
+//       "x-auth-token": token,
+//       "Content-Type": "application/json",
+//     },
+//   } )
+//   const data = await res.json()
+//   const resAdd = await fetch("http://pranerbangla.com.bd/api/vb1/advertisement")
+//   const adData = await resAdd.json()
+
+//   const resChilds = await fetch("https://pranerbangla.com.bd/api/vb1/category-tree/" )
+//   const childData = await resChilds.json()
+
+//   const resData = await fetch(
+//     'http://pranerbangla.com.bd/api/vb1/language'
+//   );
+//   const langData = await resData.json();
+
+//   const content = data["data"]
+//   const contentAd = adData["data"]
+// const childContents = childData["data"]
+
+// const language =langData["data"]
+
+
+
+
+
+// let newNavIds=[]
+//  childContents.map(e=>{
+// if (e.id===parseInt(id)) {
+//   e.childs?.map(i=>{
+//     newNavIds.push(i.id)
+//     })
+// }
+// })
+
+
+// let childNavContentPage=[]
+// // const resChildNav = await fetch("https://pranerbangla.com.bd/api/vb1/category-to-post/" + secondNavId  )
+// // const resChildNavData = await resChildNav.json();
+// for (let index = 0; index < newNavIds.length; index++) {
+//   const resChildNav = await fetch("https://pranerbangla.com.bd/api/vb1/category-to-post/" + newNavIds[index]  )
+// const resChildNavData = await resChildNav.json();
+//   const element = resChildNavData["data"];
+//   element?.map(items=>{
+//     childNavContentPage.push(items)
+//   })
+// }
+
+
+  // return {
+  //   props: {
+  //     pages:content,
+  //     advertise: contentAd,
+  //     childNav :childContents,
+  //     ids:id,
+  //     childNavContents:childNavContentPage,
+  //     language
+  //   },
+  // }
+  try {
+
+    const res = await fetch("https://pranerbangla.com.bd/api/vb1/category-to-post/" + id ,{
     headers: {
       "x-auth-token": token,
       "Content-Type": "application/json",
@@ -85,9 +148,10 @@ const resChildNavData = await resChildNav.json();
     childNavContentPage.push(items)
   })
 }
-
-
-  return {
+      if (!data) {
+        return { notFound: true };
+      }
+        return {
     props: {
       pages:content,
       advertise: contentAd,
@@ -97,6 +161,9 @@ const resChildNavData = await resChildNav.json();
       language
     },
   }
+    } catch (err) {
+      return { notFound: true };
+    }
 }
 
 
@@ -146,7 +213,7 @@ var newAdArray=[]
     newAdArray.push(ads)
   }
 })
-// console.log(newAdArray)
+
 
 const dataAll = groupArticle.map((item, index) => ({
 
@@ -154,20 +221,8 @@ const dataAll = groupArticle.map((item, index) => ({
   ad: newAdArray[index]
   
 }))
-// var newNavData =[]
 
-// childNav.map((i)=>{
-// if ( i.id ===ids) {
-//   newNavData.push(i)
-// }
-// })
 const num  = parseInt(ids)
-// console.log(num)
-
-// let newNavData = childNav.filter(x=> num=== x.id )
-// console.log(newNavData)
-
-// console.log(dataAll) 
 
 
     return (
@@ -183,18 +238,18 @@ return <div key={ad.id} className='-my-12 flex justify-center items-center lg:mx
 
           <div className='flex justify-between mx-48 border-b-2 my-8 lg:mx-10'>
          
-          {[pages[0]]?.map((pageItem,i)=>{
-     return  <h1 key={i} className='flex   items-center text-base text-3xl text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 mb-1"/>{pageItem?.category_name_bn}</h1>
+          {[pages[0]]?.map((pageItem)=>{
+     return  <h1 key={pageItem.id} className='flex   items-center text-base text-3xl text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 mb-1"/>{pageItem?.category_name_bn}</h1>
     })}
      { [language]?.map(e=>{
       if (e?.language_name==="Bangla") {
         // [hedarCount?]?.map(count=> {
         //   return <h1 className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'>সাম্প্রতিক পোস্ট  {count.post_to_category_count}</h1>
         // })
-        return <h1 key={i} className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'>{`সাম্প্রতিক পোস্ট (${hedarCount?.post_to_category_count})`}</h1>
+        return <h1 key={hedarCount.id} className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'>{`সাম্প্রতিক পোস্ট (${hedarCount?.post_to_category_count})`}</h1>
       }
       if (e?.language_name==="English") {
-        return <h1 key={i} className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'> {`Total Post (${hedarCount?.post_to_category_count})`}</h1>
+        return <h1 key={hedarCount.id} className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'> {`Total Post (${hedarCount?.post_to_category_count})`}</h1>
       }
      })}
          
@@ -212,7 +267,7 @@ return <div key={ad.id} className='-my-12 flex justify-center items-center lg:mx
               <Link
                 key={items?.id}
                 href={  {pathname: `${ids}/filter/${items?.id}`, query: items?.id}}
-                ><h1 key={items?.id} className='flex   items-center text-base text-md text-black mb-4 dark:text-white'><Circle className=" h-2 pr-2 mb-1"/>{items?.name_bn}</h1></Link>
+                legacyBehavior><h1 key={items?.id} className='flex   items-center text-base text-md text-black mb-4 dark:text-white'><Circle className=" h-2 pr-2 mb-1"/>{items?.name_bn}</h1></Link>
             );
               })}
 
@@ -246,12 +301,18 @@ pages?.map(pageItem=>{
   [language]?.map(e=>{
 
     if (e?.language_name==="English") {
-     return group?.articles.map(pageItem =>  <Link key={pageItem?.id} href={`${ids}/articles/${pageItem?.id}`}><Cards title={pageItem?.title_en} catagory={pageItem?.category_name_en} time={pageItem?.created_at} imgSrc={pageItem?.image} route={pageItem?.id} status={pageItem?.status} ids={ids} readed={pageItem?.count_post}/></Link>
+     return group?.articles.map(pageItem =>  <Link
+       key={pageItem?.id}
+       href={`${ids}/articles/${pageItem?.id}`}
+       legacyBehavior><Cards title={pageItem?.title_en} catagory={pageItem?.category_name_en} time={pageItem?.created_at} imgSrc={pageItem?.image} route={pageItem?.id} status={pageItem?.status} ids={ids} readed={pageItem?.count_post}/></Link>
             
       );
     }
     if (e?.language_name==="Bangla") {
-    return group?.articles.map(pageItem =>  <Link key={pageItem?.id} href={`${ids}/articles/${pageItem?.id}`}><Cards title={pageItem?.title_bn} catagory={pageItem?.category_name_bn} time={pageItem?.created_at} imgSrc={pageItem?.image} route={pageItem?.id} status={pageItem?.status} ids={ids} readed={pageItem?.count_post} postId={pageItem?.id} is_visibility={pageItem?.is_visibility}/></Link>
+    return group?.articles.map(pageItem =>  <Link
+      key={pageItem?.id}
+      href={`${ids}/articles/${pageItem?.id}`}
+      legacyBehavior><Cards title={pageItem?.title_bn} catagory={pageItem?.category_name_bn} time={pageItem?.created_at} imgSrc={pageItem?.image} route={pageItem?.id} status={pageItem?.status} ids={ids} readed={pageItem?.count_post} postId={pageItem?.id} is_visibility={pageItem?.is_visibility}/></Link>
             
       );
     }
