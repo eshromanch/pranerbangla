@@ -12,7 +12,7 @@ function StagedImages(props) {
   })
 
   return (
-<Link href={`/categories/${catId}/articles/${postId}`}><a>
+    (<Link href={`/categories/${catId}/articles/${postId}`}>
       <div className="relative card card-compact  rounded-md w-full h-full bg-transparent  ">
 
 <figure className='h-full '>
@@ -27,10 +27,8 @@ function StagedImages(props) {
 
 <div className='absolute w-full h-full bottom-0 bg-gradient-to-t from-black to-transparent '></div>
 </div>
-    </a></Link>
-
-
-  )
+    </Link>)
+  );
 }
 
 export default StagedImages

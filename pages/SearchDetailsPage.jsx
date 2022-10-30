@@ -65,9 +65,9 @@ torHeda()
 
 {searchData?.map(pageItem=>{
             if (searchData.length < 1) {
-                return <h1 className='text-black text-4xl w-full'>দুঃখিত আপনি যা খুঁজছেন তা খুঁজে পাওয়া যায়নি! পুনরায় অনুসন্ধান করুণ।</h1>
+                return <h1 key={pageItem.id} className='text-black text-4xl w-full'>দুঃখিত আপনি যা খুঁজছেন তা খুঁজে পাওয়া যায়নি! পুনরায় অনুসন্ধান করুণ।</h1>
             }else{
-                return <Link href={"#"}><a ><Cards title={pageItem.title_bn} catagory={pageItem.category_name_bn} time={pageItem.created_at} imgSrc={pageItem.image} route={pageItem.id} status={pageItem.status}/></a></Link>
+                return <Link key={pageItem.id} href={"#"}><Cards title={pageItem.title_bn} catagory={pageItem.category_name_bn} time={pageItem.created_at} imgSrc={pageItem.image} route={pageItem.id} status={pageItem.status}/></Link>;
             }
            
             })}

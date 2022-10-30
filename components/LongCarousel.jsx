@@ -130,56 +130,56 @@ useEffect(()=>{
     fetchData()
   },[]);
   
-  return (
-    <>
-      <Swiper
-                          style={{
-                            "--swiper-navigation-color": "red",
-                            // "--swiper-navigation-size": "25px",
-                          }}
-        onSwiper={setSwiperRef}
-        slidesPerView={3}
-        centeredSlides={false}
-        spaceBetween={30}
-        navigation={true}
-        modules={[Navigation, Autoplay]}
-        className="mySwiper"
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        }}
-        
-    // loop
-      >
-        {data?.map(items=>{
-          return <SwiperSlide key={items.id}><Link key={items.id} href={`categories/9/articles/${items.id}`}><a href=""><div className="w-full h-[20rem] relative flex justify-center  ">
+  return <>
+    <Swiper
+                        style={{
+                          "--swiper-navigation-color": "red",
+                          // "--swiper-navigation-size": "25px",
+                        }}
+      onSwiper={setSwiperRef}
+      slidesPerView={3}
+      centeredSlides={false}
+      spaceBetween={30}
+      navigation={true}
+      modules={[Navigation, Autoplay]}
+      className="mySwiper"
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      }}
+      
+  // loop
+    >
+      {data?.map(items=>{
+        return (
+          <SwiperSlide key={items.id}><Link key={items.id} href={`categories/9/articles/${items.id}`}><div className="w-full h-[20rem] relative flex justify-center  ">
           <div className='absolute w-full h-full bottom-0 bg-gradient-to-t from-black to-transparent '></div>
           <img className="w-full object-cover" src={items.image} alt="" />
           <h1 className="absolute bottom-1/2 z-10 text-2xl">{items.title_bn}</h1>
           
-          </div></a></Link></SwiperSlide>
-        })}
+          </div></Link></SwiperSlide>
+        );
+      })}
 
-        {/* <SwiperSlide><img src="https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" srcset="" /></SwiperSlide>
-        <SwiperSlide><img src="https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" srcset="" /></SwiperSlide>
-        <SwiperSlide><img src="https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" srcset="" /></SwiperSlide> */}
-      </Swiper>
+      {/* <SwiperSlide><img src="https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" srcset="" /></SwiperSlide>
+      <SwiperSlide><img src="https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" srcset="" /></SwiperSlide>
+      <SwiperSlide><img src="https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" srcset="" /></SwiperSlide> */}
+    </Swiper>
 
-      {/* <p className="append-buttons">
-        <button onClick={() => prepend2()} className="prepend-2-slides">
-          Prepend 2 Slides
-        </button>
-        <button onClick={() => prepend()} className="prepend-slide">
-          Prepend Slide
-        </button>
-        <button onClick={() => append()} className="append-slide">
-          Append Slide
-        </button>
-        <button onClick={() => append2()} className="append-2-slides">
-          Append 2 Slides
-        </button>
-      </p> */}
-    </>
-  );
+    {/* <p className="append-buttons">
+      <button onClick={() => prepend2()} className="prepend-2-slides">
+        Prepend 2 Slides
+      </button>
+      <button onClick={() => prepend()} className="prepend-slide">
+        Prepend Slide
+      </button>
+      <button onClick={() => append()} className="append-slide">
+        Append Slide
+      </button>
+      <button onClick={() => append2()} className="append-2-slides">
+        Append 2 Slides
+      </button>
+    </p> */}
+  </>;
 }

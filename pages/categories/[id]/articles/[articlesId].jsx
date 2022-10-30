@@ -152,113 +152,121 @@ const [fontSize, setFontSize]= useState(16)
 
 const { asPath, pathname } = useRouter();
   return (
-    
     <div className='relative'> 
 {
   data?.map(items=>{
 
- return <div key={items.id} className='relative flex flex-col mx-48 lg:mx-10'>
-    <span
-style={{ transform: `translateX(${completion - 100}%)` }}
-className="absolute -mx-48 bg-primary z-10 h-1 w-[100vw] top-0 sticky overflow-hidden"
-/>
-<Header writerId={items.writer_id} title={items.title_bn} setFontSize={setFontSize} fontSize={fontSize} time={items.created_at} count={items.count_post} user={items.user} headImage ={items.image} postCat={items.post_to_cat}/>
-{/* <ZoomBtn setFontSize={setFontSize} fontSize={fontSize} className="" /> */}
-<div className='my-12 grid grid-cols-3 gap-8 md:flex md:flex-col'>
-   
-<div className='col-span-2 w-full'>
-{/* <Article   fontSize={fontSize} content={items.content_bn} /> */}
-{(() => {
-              if (items.is_visibility=== "premium"){
-                  return (
-                      <PaidArticles content={items.content_bn}/>
-                  )
-              }
-              
-              return <Article content={items.content_bn} />;
-            })()}
+ return (
+   <div key={items.id} className='relative flex flex-col mx-48 lg:mx-10'>
+      <span
+  style={{ transform: `translateX(${completion - 100}%)` }}
+  className="absolute -mx-48 bg-primary z-10 h-1 w-[100vw] top-0 sticky overflow-hidden"
+  />
+  <Header writerId={items.writer_id} title={items.title_bn} setFontSize={setFontSize} fontSize={fontSize} time={items.created_at} count={items.count_post} user={items.user} headImage ={items.image} postCat={items.post_to_cat}/>
+  {/* <ZoomBtn setFontSize={setFontSize} fontSize={fontSize} className="" /> */}
+  <div className='my-12 grid grid-cols-3 gap-8 md:flex md:flex-col'>
+     
+  <div className='col-span-2 w-full'>
+  {/* <Article   fontSize={fontSize} content={items.content_bn} /> */}
+  {(() => {
+                if (items.is_visibility=== "premium"){
+                    return (
+                        <PaidArticles content={items.content_bn}/>
+                    )
+                }
+                
+                return <Article content={items.content_bn} />;
+              })()}
 
-</div>
-
-
-<div className='w-full '>
-{add.slice(0,1).map(item=>{
-
-    return <img key={item.id} className='my-12' src={item.image} alt="" />
-
-})}
-</div>
-</div>
-
-{/* <div>
-<h1 className='flex  items-center text-base font-bold text-xl text-black mb-4 dark:text-white'>
-<Circle className=" h-3 pr-2 mb-1"/>ছবি সমুহ 
-</h1>
-<LongCarousel/> 
-</div> */}
-<div className='w-full '>
-{add.slice(1,2).map(item=>{
-
-    return <img key={item.id} className='my-12' src={item.image} alt="" />
-
-})}
-</div>
-
-<div><h1 className='flex   items-center  text-2xl my-5 font-semibold text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 mb-1"/>মন্তব্য করুন </h1></div>
-<FaceBookComment/>
-<div className='mx-80 lg:mx-24 md-mx-10'>
-<h1 className='text-center text-lg text-black font-bold dark:text-white my-5'>Share Article</h1>
-<ShareArticleButtons url={asPath}/>
-
-<div className="tooltip flex justify-center w-full items-center my-4 " data-tip="Copy url to clipboard">
-<Clipboard url={asPath}/>
-{/* <button className='btn btn lowercase font-normal text-sm' onClick={() => {navigator.clipboard.writeText(this.state.textToCopy)}}>http://localhost:3000{pathname} </button> */}
-</div>
-
-</div>    
-<div className='-mx-48 my-12 bg-[#F1F1F6] dark:bg-[#202426] py-8 lg:-mx-10 '>
-<div className='mx-48 lg:mx-10'>
-<div className='flex justify-between items-center'><b><h1 className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 mb-1"/>আরো পড়ুন   </h1></b>
-{data?.map(items=>{
-  return items.post_to_cat?.map(it=>{
-    return <Link key={it.category_id} href={`/categories/${it.category_id}`}><b><a className='btn btn-ghost text-lg text-base-100 mb-4 dark:text-white'>
-  <h4 className='flex '><Plus className="h-5 pr-2 mt-1"/>আরো পড়ুন</h4>
-  </a></b></Link>
-  })
-})}
-</div>
-</div>
+  </div>
 
 
-{dataAll?.map(pageItems=>{
- return <div key={pageItems.id} className='w-full'>
-  <div className='grid grid-cols-4 mb-4  gap-10 mx-48 lg:mx-10 md:grid-cols-2'>
-  {pageItems.articles.map(pageItem=>{
+  <div className='w-full '>
+  {add.slice(0,1).map(item=>{
 
- return <Link key={pageItem.id} href={`/categories/${catId}/articles/${pageItem.id}`}><a ><Cards title={pageItem.title_bn} catagory={pageItem.category_name_bn} time={pageItem.created_at} imgSrc={pageItem.image} route={pageItem.id} status={pageItem.status}  readed={pageItem.count_post}/></a></Link>
+      return <img key={item.id} className='my-12' src={item.image} alt="" />
+
+  })}
+  </div>
+  </div>
+
+  {/* <div>
+  <h1 className='flex  items-center text-base font-bold text-xl text-black mb-4 dark:text-white'>
+  <Circle className=" h-3 pr-2 mb-1"/>ছবি সমুহ 
+  </h1>
+  <LongCarousel/> 
+  </div> */}
+  <div className='w-full '>
+  {add.slice(1,2).map(item=>{
+
+      return <img key={item.id} className='my-12' src={item.image} alt="" />
+
+  })}
+  </div>
+
+  <div><h1 className='flex   items-center  text-2xl my-5 font-semibold text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 mb-1"/>মন্তব্য করুন </h1></div>
+  <FaceBookComment/>
+  <div className='mx-80 lg:mx-24 md-mx-10'>
+  <h1 className='text-center text-lg text-black font-bold dark:text-white my-5'>Share Article</h1>
+  <ShareArticleButtons url={asPath}/>
+
+  <div className="tooltip flex justify-center w-full items-center my-4 " data-tip="Copy url to clipboard">
+  <Clipboard url={asPath}/>
+  {/* <button className='btn btn lowercase font-normal text-sm' onClick={() => {navigator.clipboard.writeText(this.state.textToCopy)}}>http://localhost:3000{pathname} </button> */}
+  </div>
+
+  </div>    
+  <div className='-mx-48 my-12 bg-[#F1F1F6] dark:bg-[#202426] py-8 lg:-mx-10 '>
+  <div className='mx-48 lg:mx-10'>
+  <div className='flex justify-between items-center'><b><h1 className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 mb-1"/>আরো পড়ুন   </h1></b>
+  {data?.map(items=>{
+    return items.post_to_cat?.map(it=>{
+      return (
+        <Link
+          key={it.category_id}
+          href={`/categories/${it.category_id}`}
+          legacyBehavior><b><a className='btn btn-ghost text-lg text-base-100 mb-4 dark:text-white'>
+      <h4 className='flex '><Plus className="h-5 pr-2 mt-1"/>আরো পড়ুন</h4>
+      </a></b></Link>
+      );
+    });
+  })}
+  </div>
+  </div>
+
+
+  {dataAll?.map(pageItems=>{
+   return (
+     <div key={pageItems.id} className='w-full'>
+      <div className='grid grid-cols-4 mb-4  gap-10 mx-48 lg:mx-10 md:grid-cols-2'>
+      {pageItems.articles.map(pageItem=>{
+
+     return <Link key={pageItem.id} href={`/categories/${catId}/articles/${pageItem.id}`}><Cards title={pageItem.title_bn} catagory={pageItem.category_name_bn} time={pageItem.created_at} imgSrc={pageItem.image} route={pageItem.id} status={pageItem.status}  readed={pageItem.count_post}/></Link>;
+      })}
+
+      </div>
+          <div className='mx-48 flex justify-center items-center lg:mx-10'>   
+           
+          <a href={pageItems.ad?.add_url}><img className=' w-full my-24 object-cover' src= {`${pageItems.ad?.image}`} alt=""/></a>
+          </div>
+          </div>
+   );
   })}
 
   </div>
-      <div className='mx-48 flex justify-center items-center lg:mx-10'>   
-       
-      <a href={pageItems.ad?.add_url}><img className=' w-full my-24 object-cover' src= {`${pageItems.ad?.image}`} alt=""/></a>
-      </div>
-      </div>
-})}
-
-</div>
 
 
 
-{/* <div  className='-mx-48 absolute  bg-primary z-10 h-[50vh] w-100vw bottom-0 sticky overflow-hidden'></div> */}
-</div>
+  {/* <div  className='-mx-48 absolute  bg-primary z-10 h-[50vh] w-100vw bottom-0 sticky overflow-hidden'></div> */}
+  </div>
+ );
 
   })
 }
 
 
     </div>
-  )
+  );
 }
 
 export default Details

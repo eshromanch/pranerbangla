@@ -150,7 +150,7 @@ const dataAll2 = groupArticle2.map((item, index) => ({
   return   <div key={cat.id} className='flex  justify-between items-center'>
   
   <b><h1 className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 mb-1"/>{cat?.name_bn} </h1></b>
-<b><Link href={`/categories/`+ids}><a className='btn btn-ghost text-lg text-base-100  dark:text-white' href="#">
+<b><Link legacyBehavior href={`/categories/`+ids}><a className='btn btn-ghost text-lg text-base-100  dark:text-white' href="#">
 <h4 className='flex -mt-5'><Plus className="h-5 pr-2 mt-1"/> আরো পড়ুন </h4>
   </a></Link></b>
 </div>
@@ -163,7 +163,7 @@ const dataAll2 = groupArticle2.map((item, index) => ({
  return catItems?.post_to_category?.slice(0,rows).map(post=>{
    
 
-      return <Link key={homeDatas.id} href={`/categories/${catItems.category_id}/articles/${post.post_id}`}><a ><Cards title={post?.post?.title_bn} catagory={catItems.name_bn} time={post.created_at} imgSrc={post?.post?.image} route={post?.post?.id} status={homeDatas.status} ids={ids} postId={post.post_id}/></a></Link>
+      return <Link legacyBehavior key={homeDatas.id} href={`/categories/${catItems.category_id}/articles/${post.post_id}`}><a ><Cards title={post?.post?.title_bn} catagory={catItems.name_bn} time={post.created_at} imgSrc={post?.post?.image} route={post?.post?.id} status={homeDatas.status} ids={ids} postId={post.post_id}/></a></Link>
 
   })
 })}
@@ -190,7 +190,7 @@ ids= cat.id;
 return   <div className='flex  justify-between items-center'>
 
 <b><h1 className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 mb-1"/>{cat.name_bn} </h1></b>
-<b><Link href={`/categories/`+ids}><a className='btn btn-ghost text-lg text-base-100  dark:text-white' href="#">
+<b><Link legacyBehavior href={`/categories/`+ids}><a className='btn btn-ghost text-lg text-base-100  dark:text-white' href="#">
 <h4 className='flex '><Plus className="h-5 pr-2 mt-1"/> আরো পড়ুন </h4>
 </a></Link></b>
 </div>
@@ -202,7 +202,7 @@ return   <div className='flex  justify-between items-center'>
 const rows = homeDatas.num_of_row * 4
 return catItems.post_to_category?.slice(0,rows).map(post=>{
 
-    return <Link key={homeDatas.id} href={`/categories/${catItems.category_id}/articles/${post.post_id}`}><a ><Cards title={post?.post?.title_bn} catagory={catItems.name_bn} time={post.created_at} imgSrc={post?.post?.image} route={post?.post?.id} status={homeDatas.status} ids={ids}/></a></Link>
+    return <Link legacyBehavior key={homeDatas.id} href={`/categories/${catItems.category_id}/articles/${post.post_id}`}><a ><Cards title={post?.post?.title_bn} catagory={catItems.name_bn} time={post.created_at} imgSrc={post?.post?.image} route={post?.post?.id} status={homeDatas.status} ids={ids}/></a></Link>
 
 })
 })}
@@ -219,11 +219,11 @@ return catItems.post_to_category?.slice(0,rows).map(post=>{
 
 {homeData?.map(homeDatas =>{
   if (homeDatas.section_name === "Section 3") {
-    return <div className='mb-12 bg-[#F1F1F6] w-full h-full p-10 dark:bg-[#202426] '>
+    return <div key={homeDatas.id}  className='mb-12 bg-[#F1F1F6] w-full h-full p-10 dark:bg-[#202426] '>
       {[homeDatas.category]?.map((cat)=>{
 const ids= cat?.id;
 return <div  key={cat.id}  className='mx-80 flex justify-between items-center lg:mx-24 md:mx-0'><b><h1 className='flex  justify-between items-center text-lg  text-black mb-4 dark:text-white'><Circle className=" h-3  pr-2 mb-1"/>{cat?.name_bn}  </h1></b>
-<b><Link href={`/categories/`+ids}><a className='btn btn-ghost text-lg text-base-100  dark:text-white' href="#">
+<b><Link legacyBehavior href={`/categories/`+ids}><a className='btn btn-ghost text-lg text-base-100  dark:text-white' href="#">
 <h4 className='flex -mt-5'><Plus className="h-5 pr-2 mt-1"/> আরো পড়ুন </h4>
 </a></Link></b>
     </div>
@@ -234,7 +234,7 @@ return <div  key={cat.id}  className='mx-80 flex justify-between items-center lg
 return     <div  key={catItems.id}  className='mx-80 h-[40vh]  grid grid-cols-4  gap-10 lg:mx-0 md:gap-2 md:flex md:flex-col'>
 {   [ catItems?.post_to_category[0]]?.map(post=>{
  return<div  key={post.id}  className=''>
- <Link key={homeDatas.id} href={`/categories/${catItems?.category_id}/articles/${post?.post_id}`}><a><div className="relative card card-compact w-full h-full bg-transparent  ">
+ <Link legacyBehavior key={homeDatas.id} href={`/categories/${catItems?.category_id}/articles/${post?.post_id}`}><a><div className="relative card card-compact w-full h-full bg-transparent  ">
  
  <figure className='h-full w-full'>
  {/* <Image src={post?.post?.image} layout="fill" objectFit='cover' /> */}
@@ -253,7 +253,7 @@ return     <div  key={catItems.id}  className='mx-80 h-[40vh]  grid grid-cols-4 
 
 {   [ catItems?.post_to_category[1]]?.map(post=>{
  return <div  key={post?.post_id}  className='col-span-2'>
-  <Link key={homeDatas.id} href={`/categories/${catItems?.category_id}/articles/${post?.post_id}`}><a><div className="relative card card-compact w-full h-full bg-transparent  ">
+  <Link legacyBehavior key={homeDatas.id} href={`/categories/${catItems?.category_id}/articles/${post?.post_id}`}><a><div className="relative card card-compact w-full h-full bg-transparent  ">
  
  <figure className='h-full w-full'>
  {/* <Image src={post?.post?.image} layout="fill" objectFit='cover' /> */}
@@ -271,7 +271,7 @@ return     <div  key={catItems.id}  className='mx-80 h-[40vh]  grid grid-cols-4 
  })}
 
 {   [ catItems?.post_to_category[2]]?.map(post=>{
- return <Link key={homeDatas.id} href={`/categories/${catItems?.category_id}/articles/${post?.post_id}`}><a><div className="relative card card-compact w-full h-full bg-transparent  ">
+ return <Link legacyBehavior key={homeDatas.id} href={`/categories/${catItems?.category_id}/articles/${post?.post_id}`}><a><div className="relative card card-compact w-full h-full bg-transparent  ">
  
  <figure className='h-full w-full'>
  {/* <Image src={post?.post?.image} layout="fill" objectFit='cover' /> */}
@@ -326,7 +326,7 @@ ids= cat.id;
 return   <div className='flex  justify-between items-center'>
 
 <b><h1 className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 mb-1"/>{cat.name_bn} </h1></b>
-<b><Link href={`/categories/`+ids}><a className='btn btn-ghost text-lg text-base-100  dark:text-white' href="#">
+<b><Link legacyBehavior href={`/categories/`+ids}><a className='btn btn-ghost text-lg text-base-100  dark:text-white' href="#">
 <h4 className='flex -mt-5'><Plus className="h-5 pr-2 mt-1"/> আরো পড়ুন </h4>
 </a></Link></b>
 </div>
@@ -338,7 +338,7 @@ return   <div className='flex  justify-between items-center'>
 const rows = homeDatas.num_of_row * 4
 return catItems.post_to_category?.slice(0,rows).map(post=>{
  
-    return <Link key={homeDatas.id} href={`/categories/${catItems.category_id}/articles/${post.post_id}`}><a ><Cards title={post?.post?.title_bn} catagory={catItems.name_bn} time={post.created_at} imgSrc={post?.post?.image} route={post?.post?.id} status={homeDatas.status} ids={ids}/></a></Link>
+    return <Link legacyBehavior key={homeDatas.id} href={`/categories/${catItems.category_id}/articles/${post.post_id}`}><a ><Cards title={post?.post?.title_bn} catagory={catItems.name_bn} time={post.created_at} imgSrc={post?.post?.image} route={post?.post?.id} status={homeDatas.status} ids={ids}/></a></Link>
 
 })
 })}
@@ -373,7 +373,7 @@ homeDatas.articles.map(item=>{
   return   <div  key={item.id}  className='flex  justify-between items-center'>
     
   <b><h1 className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 mb-1"/>{item.category?.name_bn} </h1></b>
-  <b><Link href={`/categories/`+ids}><a className='btn btn-ghost text-lg text-base-100  dark:text-white'>
+  <b><Link legacyBehavior href={`/categories/`+ids}><a className='btn btn-ghost text-lg text-base-100  dark:text-white'>
   <h4 className='flex -mt-5'><Plus className="h-5 pr-2 mt-1"/> আরো পড়ুন </h4>
   </a></Link></b>
   </div>
@@ -382,7 +382,7 @@ homeDatas.articles.map(item=>{
   //   return   <div className='flex  justify-between items-center'>
     
   //   <b><h1 className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 mb-1"/>{cat.name_bn} </h1></b>
-  //   <b><Link href={`/categories/`+ids}><a className='btn btn-ghost text-lg text-base-100  dark:text-white' href="#">
+  //   <b><Link legacyBehavior href={`/categories/`+ids}><a className='btn btn-ghost text-lg text-base-100  dark:text-white' href="#">
   //   <h4 className='flex -mt-5'><Plus className="h-5 pr-2 mt-1"/> আরো পড়ুন </h4>
   //   </a></Link></b>
   //   </div>
@@ -399,13 +399,13 @@ const rows = catItems.num_of_row * 4
 return catItems.category?.post_to_category.slice(0,rows).map(post=>{
 
 
-  return <Link  key={post.id}   href={`/categories/${catItems.category.category_id}/articles/${post.post_id}`}><a ><Cards title={post.post.title_bn} catagory={catItems.category.name_bn} time={post.created_at} imgSrc={post?.post?.image} route={post?.post?.id} status={catItems.status} ids={ids}  postId={post.post_id}/></a></Link>
+  return <Link legacyBehavior  key={post.id}   href={`/categories/${catItems.category.category_id}/articles/${post.post_id}`}><a ><Cards title={post.post.title_bn} catagory={catItems.category.name_bn} time={post.created_at} imgSrc={post?.post?.image} route={post?.post?.id} status={catItems.status} ids={ids}  postId={post.post_id}/></a></Link>
 
-  // return <Link href={`/categories/${catItems.category.category_id}/articles/${post.post_id}`}><a href=""><div><h1 className='text-black'>{post.post.title_bn}</h1>
+  // return <Link legacyBehavior href={`/categories/${catItems.category.category_id}/articles/${post.post_id}`}><a href=""><div><h1 className='text-black'>{post.post.title_bn}</h1>
   // <h1 className='text-black'>{catItems.category.name_bn}</h1>
   // </div></a></Link>
 // console.log(catItems.id)
-//     return <Link  key={catItems.id}  href={`/categories/${catItems.category.category_id}/articles/${post.post_id}`}><a ><Cards title={post.post.title_bn} catagory={catItems.category.name_bn} time={post.created_at} imgSrc={post?.post?.image} route={post?.post?.id} status={homeDatas.articles.status} ids={ids}/></a></Link>
+//     return <Link legacyBehavior  key={catItems.id}  href={`/categories/${catItems.category.category_id}/articles/${post.post_id}`}><a ><Cards title={post.post.title_bn} catagory={catItems.category.name_bn} time={post.created_at} imgSrc={post?.post?.image} route={post?.post?.id} status={homeDatas.articles.status} ids={ids}/></a></Link>
 })
 // catItems.category.map(cats=>{
 //   console.log(cats)
@@ -417,7 +417,7 @@ return catItems.category?.post_to_category.slice(0,rows).map(post=>{
  
 //     console.log(`/categories/${catItems.category_id}/articles/${post.post_id}`);
 //     console.log( post?.post?.title_bn, post?.post?.created_at,post?.post?.image);
-//     return <Link key={homeDatas.articles.id} href={`/categories/${catItems.category.category_id}/articles/${post.post_id}`}><a ><Cards title={post?.post?.title_bn} catagory={catItems.category.name_bn} time={post.created_at} imgSrc={post?.post?.image} route={post?.post?.id} status={homeDatas.articles.status} ids={ids}/></a></Link>
+//     return <Link legacyBehavior key={homeDatas.articles.id} href={`/categories/${catItems.category.category_id}/articles/${post.post_id}`}><a ><Cards title={post?.post?.title_bn} catagory={catItems.category.name_bn} time={post.created_at} imgSrc={post?.post?.image} route={post?.post?.id} status={homeDatas.articles.status} ids={ids}/></a></Link>
 
 // })
 })}
@@ -443,7 +443,7 @@ return catItems.category?.post_to_category.slice(0,rows).map(post=>{
 
 <div className='w-full bg-[#202426] p-10 mb-4'>
 <div className='mx-80 flex justify-between items-center lg:mx-24'><b><h1 className='flex  justify-between items-center text-lg  text-white mb-4 dark:text-white'><Circle className=" h-3  pr-2 mb-1"/>ভিডিও   </h1></b>
-<b><Link href={"Allvideos"}><a className='btn btn-ghost text-base text-white mb-4 dark:text-white' href="#">
+<b><Link legacyBehavior href={"Allvideos"}><a className='btn btn-ghost text-base text-white mb-4 dark:text-white' href="#">
 <h4 className='flex '><Plus className="h-5 pr-2 mt-0"/> আরো দেখুন </h4>
   </a></Link></b>
 </div>
@@ -468,7 +468,7 @@ homeDatas.articles.map(item=>{
   return   <div  key={item.id}  className='flex  justify-between items-center'>
     
   <b><h1 className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 mb-1"/>{item.category?.name_bn} </h1></b>
-  <b><Link href={`/categories/`+ids}><a className='btn btn-ghost text-lg text-base-100  dark:text-white'>
+  <b><Link legacyBehavior href={`/categories/`+ids}><a className='btn btn-ghost text-lg text-base-100  dark:text-white'>
   <h4 className='flex -mt-5'><Plus className="h-5 pr-2 mt-1"/> আরো পড়ুন </h4>
   </a></Link></b>
   </div>
@@ -477,7 +477,7 @@ homeDatas.articles.map(item=>{
   //   return   <div className='flex  justify-between items-center'>
     
   //   <b><h1 className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 mb-1"/>{cat.name_bn} </h1></b>
-  //   <b><Link href={`/categories/`+ids}><a className='btn btn-ghost text-lg text-base-100  dark:text-white' href="#">
+  //   <b><Link legacyBehavior href={`/categories/`+ids}><a className='btn btn-ghost text-lg text-base-100  dark:text-white' href="#">
   //   <h4 className='flex -mt-5'><Plus className="h-5 pr-2 mt-1"/> আরো পড়ুন </h4>
   //   </a></Link></b>
   //   </div>
@@ -495,13 +495,13 @@ return catItems.category?.post_to_category.slice(0,rows).map(post=>{
 
   // console.log(`/categories/${catItems.category_id}/articles/${post.post_id}`);
   // console.log( post?.post?.title_bn, post?.post?.created_at,post?.post?.image);
-  return <Link  key={post.id}   href={`/categories/${catItems.category.category_id}/articles/${post.post_id}`}><a ><Cards title={post.post.title_bn} catagory={catItems.category.name_bn} time={post.created_at} imgSrc={post?.post?.image} route={post?.post?.id} status={catItems.status} ids={ids}  postId={post.post_id}/></a></Link>
+  return <Link legacyBehavior  key={post.id}   href={`/categories/${catItems.category.category_id}/articles/${post.post_id}`}><a ><Cards title={post.post.title_bn} catagory={catItems.category.name_bn} time={post.created_at} imgSrc={post?.post?.image} route={post?.post?.id} status={catItems.status} ids={ids}  postId={post.post_id}/></a></Link>
 
-  // return <Link href={`/categories/${catItems.category.category_id}/articles/${post.post_id}`}><a href=""><div><h1 className='text-black'>{post.post.title_bn}</h1>
+  // return <Link legacyBehavior href={`/categories/${catItems.category.category_id}/articles/${post.post_id}`}><a href=""><div><h1 className='text-black'>{post.post.title_bn}</h1>
   // <h1 className='text-black'>{catItems.category.name_bn}</h1>
   // </div></a></Link>
 // console.log(catItems.id)
-//     return <Link  key={catItems.id}  href={`/categories/${catItems.category.category_id}/articles/${post.post_id}`}><a ><Cards title={post.post.title_bn} catagory={catItems.category.name_bn} time={post.created_at} imgSrc={post?.post?.image} route={post?.post?.id} status={homeDatas.articles.status} ids={ids}/></a></Link>
+//     return <Link legacyBehavior  key={catItems.id}  href={`/categories/${catItems.category.category_id}/articles/${post.post_id}`}><a ><Cards title={post.post.title_bn} catagory={catItems.category.name_bn} time={post.created_at} imgSrc={post?.post?.image} route={post?.post?.id} status={homeDatas.articles.status} ids={ids}/></a></Link>
 })
 // catItems.category.map(cats=>{
 //   console.log(cats)
@@ -513,7 +513,7 @@ return catItems.category?.post_to_category.slice(0,rows).map(post=>{
  
 //     console.log(`/categories/${catItems.category_id}/articles/${post.post_id}`);
 //     console.log( post?.post?.title_bn, post?.post?.created_at,post?.post?.image);
-//     return <Link key={homeDatas.articles.id} href={`/categories/${catItems.category.category_id}/articles/${post.post_id}`}><a ><Cards title={post?.post?.title_bn} catagory={catItems.category.name_bn} time={post.created_at} imgSrc={post?.post?.image} route={post?.post?.id} status={homeDatas.articles.status} ids={ids}/></a></Link>
+//     return <Link legacyBehavior key={homeDatas.articles.id} href={`/categories/${catItems.category.category_id}/articles/${post.post_id}`}><a ><Cards title={post?.post?.title_bn} catagory={catItems.category.name_bn} time={post.created_at} imgSrc={post?.post?.image} route={post?.post?.id} status={homeDatas.articles.status} ids={ids}/></a></Link>
 
 // })
 })}
@@ -537,7 +537,7 @@ return catItems.category?.post_to_category.slice(0,rows).map(post=>{
 
 <div className='w-full bg-[#202426] p-10 mb-4  '>
 <div className='mx-80 flex justify-between items-center lg:mx-10'><b><h1 className='flex  justify-between items-center text-lg  text-white mb-4 dark:text-white'><Circle className=" h-3  pr-2 mb-1"/>ছবির গল্প </h1></b>
-<b><Link href={"Allimages"}><a className='btn btn-ghost text-base text-white mb-4 dark:text-white' href="#">
+<b><Link legacyBehavior href={"Allimages"}><a className='btn btn-ghost text-base text-white mb-4 dark:text-white' href="#">
 <h4 className='flex '><Plus className="h-5 pr-2 mt-0"/> আরো দেখুন  </h4>
   </a></Link></b>
 </div>
@@ -545,21 +545,21 @@ return catItems.category?.post_to_category.slice(0,rows).map(post=>{
 <div className='mx-80 grid grid-cols-2 bg-white gap-4 p-4 align-center justify-center h-1/2 lg:mx-24 sm:mx-5 sm:p-2'>
 
   {[gallery[0]]?.map(items=>{
-  return  <Link  key={items.id}  href={{pathname:`gallery/${items?.id}`}}><div className='h-full'><Gridimages img={`${items?.image}`} title={items?.title_bn}/> </div></Link>
+  return  <Link legacyBehavior  key={items.id}  href={{pathname:`gallery/${items?.id}`}}><div className='h-full'><Gridimages img={`${items?.image}`} title={items?.title_bn}/> </div></Link>
 })}
  
 <div className='grid grid-cols-2 gap-4 '>
 <div className='col-span-2'>
 {[gallery[1]]?.map(items=>{
-  return  <Link  key={items.id}  href={{pathname:`gallery/${items?.id}`}}><div className='h-full'><Gridimages img={`${items?.image}`} title={items?.title_bn}/> </div></Link>
+  return  <Link legacyBehavior  key={items.id}  href={{pathname:`gallery/${items?.id}`}}><div className='h-full'><Gridimages img={`${items?.image}`} title={items?.title_bn}/> </div></Link>
 })}
  
    </div>
   <div >{[gallery[2]]?.map(items=>{
-  return  <Link  key={items.id}  href={{pathname:`gallery/${items?.id}`}}><div className='h-full'><Gridimages img={`${items?.image}`} title={items?.title_bn}/> </div></Link>
+  return  <Link legacyBehavior  key={items.id}  href={{pathname:`gallery/${items?.id}`}}><div className='h-full'><Gridimages img={`${items?.image}`} title={items?.title_bn}/> </div></Link>
 })}</div>
   <div>{[gallery[3]]?.map(items=>{
-  return  <Link  key={items.id}  href={{pathname:`gallery/${items?.id}`}}><div className='h-full'><Gridimages img={`${items?.image}`} title={items?.title_bn}/> </div></Link>
+  return  <Link legacyBehavior  key={items.id}  href={{pathname:`gallery/${items?.id}`}}><div className='h-full'><Gridimages img={`${items?.image}`} title={items?.title_bn}/> </div></Link>
 })}</div>
 </div>
 

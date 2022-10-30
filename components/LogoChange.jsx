@@ -15,9 +15,11 @@ useEffect(()=> {
     const currentTheme = theme=== "system" ? "systemTheme" : theme;
     if(!mounted) return null
 if (currentTheme==="light") {
-    return <Link href={`/`}><a className="btn btn-ghost normal-case text-xl " ><div className='md:w-40 sm:w-[7rem]'>
-    <Image  src={Logo}/></div></a></Link>
+    return (
+        <Link href={`/`} className="btn btn-ghost normal-case text-xl "><div className='md:w-40 sm:w-[7rem]'>
+        <Image  src={Logo}/></div></Link>
+    );
     
 } else {
-    return <Link href={`/`}><a className="btn btn-ghost normal-case text-xl" ><div className='md:w-40 sm:w-[7rem]'><Image src={DarkLogo}/></div></a></Link>
+    return <Link href={`/`} className="btn btn-ghost normal-case text-xl"><div className='md:w-40 sm:w-[7rem]'><Image src={DarkLogo}/></div></Link>;
 }}
