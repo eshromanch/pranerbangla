@@ -31,12 +31,20 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const id = context.params.profileId
 
+//   const res = await fetch("https://pranerbangla.com.bd/api/vb1/author-post/" + id)
+//   const data = await res.json();
+// const content = data["data"]
+// const authorInfo = data["authorInfo"]
+// const totalPost = data["countPost"]
+try {
   const res = await fetch("https://pranerbangla.com.bd/api/vb1/author-post/" + id)
   const data = await res.json();
 const content = data["data"]
 const authorInfo = data["authorInfo"]
 const totalPost = data["countPost"]
-
+  if (!data) {
+    return { notFound: true };
+  }
   return {
     // Passed to the page component as props
     props: { 
@@ -46,6 +54,19 @@ const totalPost = data["countPost"]
       authorInfo
     },
   }
+} catch (err) {
+  return { notFound: true };
+}
+
+  // return {
+  //   // Passed to the page component as props
+  //   props: { 
+  //     cardsData: content, 
+  //     ids: id,
+  //     totalPost,
+  //     authorInfo
+  //   },
+  // }
 }
 function Profile({cardsData,ids,totalPost,authorInfo}) {
     return (
