@@ -18,7 +18,7 @@ export async function getStaticPaths() {
     })
     return {
       paths,
-      fallback: false // true or 'blocking'
+      fallback: true // true or 'blocking'
     };
   }
   export async function getStaticProps(context) {
@@ -32,12 +32,18 @@ export async function getStaticPaths() {
       const content = data["data"]
       const datas= content.filter(e=>  e.id === Number(id))
       if (!datas) {
-        return { notFound: false };
+        return { notFound: true };
       }
       return { props: { datas } };
     } catch (err) {
       return { notFound: true };
     }
+
+    
+    // return {
+    //   // Passed to the page component as props
+    //   props: { datas},
+    // }
   }
 function Gallery({datas}) {
   const [mounted,setMounted] = useState(false)
