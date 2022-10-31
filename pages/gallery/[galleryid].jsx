@@ -38,12 +38,6 @@ export async function getStaticPaths() {
     } catch (err) {
       return { notFound: true };
     }
-
-    
-    // return {
-    //   // Passed to the page component as props
-    //   props: { datas},
-    // }
   }
 function Gallery({datas}) {
   const [mounted,setMounted] = useState(false)

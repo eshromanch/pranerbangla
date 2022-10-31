@@ -6,22 +6,22 @@ import Home from "../components/svgs/Home"
 function SecondNav() {
 
     const [data, setData]=useState();
-    const [langData, setlangData]=useState();
+    // const [langData, setlangData]=useState();
 
 
-    useEffect(()=>{
-        async function fetchData() {
-          const resData = await fetch(
-            'http://pranerbangla.com.bd/api/vb1/language'
-          );
-          const datlang = await resData.json();
-          const langData = datlang["data"]
-          setlangData(langData)
-          // console.log(resData)
-        }
-        fetchData()
+    // useEffect(()=>{
+    //     async function fetchData() {
+    //       const resData = await fetch(
+    //         'https://pranerbangla.com.bd/api/vb1/language'
+    //       );
+    //       const datlang = await resData.json();
+    //       const langData = datlang["data"]
+    //       setlangData(langData)
+    //       // console.log(resData)
+    //     }
+    //     fetchData()
         
-      },[]);
+    //   },[]);
 
 
     useEffect(()=>{
