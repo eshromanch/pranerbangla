@@ -21,7 +21,44 @@ import React, { useEffect,useState } from 'react'
 
 export async function getStaticProps() {
 
-  const featuredRes = await fetch("https://pranerbangla.com.bd/api/vb1/featured-post/featuredPost")
+//   const featuredRes = await fetch("https://pranerbangla.com.bd/api/vb1/featured-post/featuredPost")
+//   const featured = await featuredRes.json()
+//   const featuredData = featured["data"]
+
+//   const resHome = await fetch("https://pranerbangla.com.bd/api/vb1/home-layout")
+//   const home = await resHome.json()
+//   const homeData = home["data"] 
+//  const resImages = await fetch('https://pranerbangla.com.bd/api/vb1/image-gallery')
+//  const images = await resImages.json()
+//  const galleries = images["data"]
+//  const resAdd = await fetch("http://pranerbangla.com.bd/api/vb1/advertisement")
+//  const adData = await resAdd.json()
+//  const contentAd = adData["data"]
+//  const gallery = galleries.reverse()
+
+
+// const adds = contentAd.filter(items=> items.add_space==="home")
+// // const allVideos = allVideo.filter(items=> items.add_to_featured=="1")
+
+
+
+//   return {
+//     props: {
+//       // carouselItems,
+//       featuredData,
+//       homeData,
+//       // allVideos,
+//       gallery,
+//       adds,
+//       // edotorial
+      
+//     },
+//     // revalidate: 10,
+//   }
+  
+  try {
+
+    const featuredRes = await fetch("https://pranerbangla.com.bd/api/vb1/featured-post/featuredPost")
   const featured = await featuredRes.json()
   const featuredData = featured["data"]
 
@@ -42,20 +79,29 @@ const adds = contentAd.filter(items=> items.add_space==="home")
 
 
 
-  return {
-    props: {
-      // carouselItems,
-      featuredData,
-      homeData,
-      // allVideos,
-      gallery,
-      adds,
-      // edotorial
-      
-    },
-    // revalidate: 10,
-  }
+
   
+      if (!home) {
+        return { notFound: true };
+      }
+      return {
+        props: {
+          // carouselItems,
+          featuredData,
+          homeData,
+          // allVideos,
+          gallery,
+          adds,
+          // edotorial
+          
+        },
+        // revalidate: 10,
+      }
+    } catch (err) {
+      return { notFound: true };
+    }
+
+
 }
 
 let ids;
