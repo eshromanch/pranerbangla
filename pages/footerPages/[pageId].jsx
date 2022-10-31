@@ -2,7 +2,7 @@ import React from 'react';
 
 
 export async function getStaticPaths() {
-      const res = await fetch("https://pranerbangla-j8g6.vercel.app/footerPages/")
+      const res = await fetch("https://pranerbangla.com.bd/api/vb1/page-menu/")
         const data = await res.json();
       
         const content = data["data"]
