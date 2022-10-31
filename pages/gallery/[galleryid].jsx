@@ -32,14 +32,12 @@ export async function getStaticPaths() {
       const content = data["data"]
       const datas= content.filter(e=>  e.id === Number(id))
       if (!datas) {
-        return { notFound: true };
+        return { notFound: false };
       }
       return { props: { datas } };
     } catch (err) {
       return { notFound: true };
     }
-
-
   }
 function Gallery({datas}) {
   const [mounted,setMounted] = useState(false)
