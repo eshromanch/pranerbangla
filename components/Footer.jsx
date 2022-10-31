@@ -60,6 +60,7 @@ function Footer(props) {
   if (items.name_en ==="Subscription") {
     return (
 <Link
+ key={items.id}
   href={`/Subscription`}
   className="link link-hover text-base font-bold text-black dark:text-white">সাবস্ক্রিপসন</Link>
     );
@@ -70,6 +71,7 @@ function Footer(props) {
   if (items.name_en ==="Contact") {
     return (
 <Link
+ key={items.id}
   href={`/Contact`}
   className="link link-hover text-base font-bold text-black dark:text-white">যোগাযোগ</Link>
     );
