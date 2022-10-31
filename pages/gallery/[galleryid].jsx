@@ -1,26 +1,7 @@
 import React,{useState,useEffect} from 'react';
 
 
-export async function getStaticPaths() {
-    const res = await fetch("https://pranerbangla.com.bd/api/vb1/image-gallery")
-    const data = await res.json();
-  
-    const content = data["data"]
-  
-    const paths = content.map(pageName =>{
-     
-  
-        return {
-            params: {galleryid: pageName.id.toString()
-            }
-        }
-     
-    })
-    return {
-      paths,
-      fallback: true // true or 'blocking'
-    };
-  }
+
   export async function getStaticProps(context) {
     const id = context.params.galleryid
     // const res = await fetch("https://pranerbangla.com.bd/api/vb1/image-gallery")
@@ -45,6 +26,28 @@ export async function getStaticPaths() {
     //   props: { datas},
     // }
   }
+
+  export async function getStaticPaths() {
+    const res = await fetch("https://pranerbangla.com.bd/api/vb1/image-gallery")
+    const data = await res.json();
+  
+    const content = data["data"]
+  
+    const paths = content.map(pageName =>{
+     
+  
+        return {
+            params: {galleryid: pageName.id.toString()
+            }
+        }
+     
+    })
+    return {
+      paths,
+      fallback: false // true or 'blocking'
+    };
+  }
+
 function Gallery({datas}) {
   const [mounted,setMounted] = useState(false)
   useEffect(()=> {
