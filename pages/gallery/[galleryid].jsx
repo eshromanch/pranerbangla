@@ -30,16 +30,18 @@ export async function getStaticPaths() {
       const res = await fetch("https://pranerbangla.com.bd/api/vb1/image-gallery")
       const data = await res.json();
       const content = data["data"]
-      // const datas= content.filter(e=>  e.id === Number(id))
-      if (!content) {
+      const datas= content.filter(e=>  e.id === Number(id))
+      if (!datas) {
         return { notFound: true };
       }
-      return { props: { content } };
+      return { props: { datas } };
     } catch (err) {
       return { notFound: true };
     }
+
+
   }
-function Gallery({content}) {
+function Gallery({datas}) {
   const [mounted,setMounted] = useState(false)
   useEffect(()=> {
     setMounted(true)
@@ -49,7 +51,7 @@ if(!mounted) return null
 
     return (
         <div>
-            {content?.map(item=>{
+            {datas?.map(item=>{
  const date =new Date(`${item?.created_at}`).toLocaleString('en-uk',{day:"numeric",month:'short', year:'numeric'})
               return <div key={item?.id} className='mx-48 flex flex-col lg:mx-20 md:mx-0'>
                   <div><h1 className='text-black my-12 text-2xl dark:text-white'>{item?.title_bn}</h1></div>
