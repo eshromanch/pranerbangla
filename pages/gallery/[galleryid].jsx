@@ -31,7 +31,7 @@ export async function getStaticPaths() {
       const data = await res.json();
       const content = data["data"]
       const datas= content.filter(e=>  e.id === Number(id))
-      if (!data) {
+      if (!datas) {
         return { notFound: true };
       }
       return { props: { datas } };

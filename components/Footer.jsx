@@ -49,23 +49,36 @@ function Footer(props) {
 {data?.map(items=>{
   if (items.name_en ==="About Us") {
     return (
-      <Link key={items.id}
+      <Link
+        key={items.id}
         href={`/about`}
-        
-        ><a className="link link-hover text-base font-bold text-black dark:text-white">আমাদের পরিচিতি</a></Link>
+        className="link link-hover text-base font-bold text-black dark:text-white">আমাদের পরিচিতি</Link>
     );
   }
 })}
+{data?.map(items=>{
+  if (items.name_en ==="Subscription") {
+    return (
 <Link
   href={`/Subscription`}
-  
-><a   className="link link-hover text-base font-bold text-black dark:text-white">সাবস্ক্রিপসন</a></Link>
+  className="link link-hover text-base font-bold text-black dark:text-white">সাবস্ক্রিপসন</Link>
+    );
+  }
+})}
+
+{data?.map(items=>{
+  if (items.name_en ==="Contact") {
+    return (
 <Link
   href={`/Contact`}
-  
-  ><a className="link link-hover text-base font-bold text-black dark:text-white">যোগাযোগ</a></Link>
+  className="link link-hover text-base font-bold text-black dark:text-white">যোগাযোগ</Link>
+    );
+  }
+})}
 
-{data?.slice(3).map(items=>{
+
+
+{data?.filter(e=> e.name_en !== "About Us" &&  e.name_en !== "Subscription" &&  e.name_en !== "Contact").map(items=>{
   return (
     <Link
       key={items.id}
@@ -74,7 +87,7 @@ function Footer(props) {
       legacyBehavior><a className="link link-hover  text-base font-bold text-black dark:text-white">{items.name_bn}</a></Link>
   );
 })}
-{/* {data?.filter(e=> e.name_en !== "About Us").map(items=>{
+{/* {data?.filter().map(items=>{
   return <Link key={items.id} href={`footerPages/${items.id}`}><a  className="link link-hover  text-base font-bold text-black dark:text-white">{items.name_bn}</a></Link>
 })} */}
 
