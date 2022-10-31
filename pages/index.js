@@ -333,21 +333,21 @@ return catItems.category?.post_to_category.slice(0,rows).map(post=>{
 <div className='mx-80 grid grid-cols-2 bg-white gap-4 p-4 align-center justify-center h-1/2 lg:mx-24 sm:mx-5 sm:p-2'>
 
   {[gallery[0]]?.map(items=>{
-  return  <Link legacyBehavior  key={items.id}  href={{pathname:`gallery/${items?.id}`}}><div className='h-full'><Gridimages img={`${items?.image}`} title={items?.title_bn}/></div></Link>
+  return  <Link legacyBehavior  key={items.id}  href={`gallery/${items?.id}`}><div className='h-full'><Gridimages img={`${items?.image}`} title={items?.title_bn}/></div></Link>
 })}
  
 <div className='grid grid-cols-2 gap-4 '>
 <div className='col-span-2'>
 {[gallery[1]]?.map(items=>{
-  return  <Link legacyBehavior  key={items.id}  href={{pathname:`gallery/${items?.id}`}}><div className='h-full'><Gridimages img={`${items?.image}`} title={items?.title_bn}/></div></Link>
+  return  <Link legacyBehavior  key={items.id}  href={`gallery/${items?.id}`}><div className='h-full'><Gridimages img={`${items?.image}`} title={items?.title_bn}/></div></Link>
 })}
  
    </div>
   <div >{[gallery[2]]?.map(items=>{
-  return  <Link legacyBehavior  key={items.id}  href={{pathname:`gallery/${items?.id}`}}><div className='h-full'><Gridimages img={`${items?.image}`} title={items?.title_bn}/></div></Link>
+  return  <Link legacyBehavior  key={items.id}  href={`gallery/${items?.id}`}><div className='h-full'><Gridimages img={`${items?.image}`} title={items?.title_bn}/></div></Link>
 })}</div>
   <div>{[gallery[3]]?.map(items=>{
-  return  <Link legacyBehavior  key={items.id}  href={{pathname:`gallery/${items?.id}`}}><div className='h-full'><Gridimages img={`${items?.image}`} title={items?.title_bn}/></div></Link>
+  return  <Link legacyBehavior  key={items.id}  href={`gallery/${items?.id}`}><div className='h-full'><Gridimages img={`${items?.image}`} title={items?.title_bn}/></div></Link>
 })}</div>
 </div>
 
