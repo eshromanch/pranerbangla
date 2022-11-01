@@ -17,7 +17,16 @@ function userProfile(props) {
     }
     const userData =JSON.parse(user)
 
-    console.log(userData?.user)
+    // console.log(userData?.user)
+    // try {
+    //   const userData =JSON.parse(user)
+    //   if (!userData) {
+    //     return { notFound: true };
+    //   }
+    //   return { props: { userData } };
+    // } catch (err) {
+    //   return { notFound: true };
+    // }
     return (
         
         <div className='mx-52 font-enbody'>
