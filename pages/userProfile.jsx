@@ -11,7 +11,7 @@ let user;
 // }
 
 
-function userProfile(props) {
+function UserProfile(props) {
     const logout = ()=>{
         window.localStorage.removeItem('user');
         window.localStorage.removeItem('token');
@@ -117,6 +117,6 @@ setUser(userData)
     );
 }
 
-export default userProfile;
+export default UserProfile;
 
 
