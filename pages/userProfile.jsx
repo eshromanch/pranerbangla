@@ -1,12 +1,14 @@
 
 import  Router  from 'next/router';
-import React from 'react';
+import React,{useEffect, useState} from 'react';
+
 
 let user;
 
-if (typeof window !== 'undefined') {
-  user = localStorage.getItem("user") ; 
-}
+
+// if (typeof window !== 'undefined') {
+//   user = localStorage.getItem("user") ; 
+// }
 
 
 function userProfile(props) {
@@ -15,18 +17,34 @@ function userProfile(props) {
         window.localStorage.removeItem('token');
         Router.push("/")
     }
-    const userData =JSON.parse(user)
+    // const userData =JSON?.parse(user)
 
     // console.log(userData?.user)
-    // try {
-    //   const userData =JSON.parse(user)
-    //   if (!userData) {
-    //     return { notFound: true };
-    //   }
-    //   return { props: { userData } };
-    // } catch (err) {
-    //   return { notFound: true };
-    // }
+const [userData, setUser] =useState()
+    useEffect(() => {
+        async function name(params) {
+          
+if (typeof window !== 'undefined') {
+  user = localStorage.getItem("user") ; 
+  
+}
+const userData = await JSON.parse(user)
+setUser(userData)
+        }
+
+        name()
+    });
+// window.addEventListener("onload", async()=>{
+//       try {
+//       const userData = await JSON.parse(user)
+//       if (!userData) {
+//         return { notFound: true };
+//       }
+//       return { props: { userData } };
+//     } catch (err) {
+//       return { notFound: true };
+//     }
+// })
     return (
         
         <div className='mx-52 font-enbody'>
