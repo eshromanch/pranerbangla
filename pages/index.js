@@ -9,8 +9,8 @@ import Circle from '../components/svgs/Circle'
 import Gridimages from '../components/HomepageComponents/Gridimages'
 import Link from "next/link"
 import dynamic from 'next/dynamic'
-
-const Carousel = dynamic(()=> import ('../components/Carousel'),{ssr:false})
+import Carousel from '../components/Carousel'
+// const Carousel = dynamic(()=> import ('../components/Carousel'),{ssr:false})
 
 const StagedImages = dynamic(()=> import ('../components/HomepageComponents/StagedImages'),{ssr:false})
 const GridVideos = dynamic(()=> import ('../components/HomepageComponents/GridVideos'),{ssr:false})
