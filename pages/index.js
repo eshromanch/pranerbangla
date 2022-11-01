@@ -14,7 +14,7 @@ const Carousel = dynamic(()=> import ('../components/Carousel'),{ssr:false})
 
 const StagedImages = dynamic(()=> import ('../components/HomepageComponents/StagedImages'),{ssr:false})
 const GridVideos = dynamic(()=> import ('../components/HomepageComponents/GridVideos'),{ssr:false})
-// const Edotorial = dynamic(()=> import ('../components/HomepageComponents/'),{ssr:false})
+const Edotorial = dynamic(()=> import ('../components/HomepageComponents/Edotorial'),{ssr:false})
 // import PostDetails from './categories/post'
 import React, { useEffect,useState } from 'react'
 
@@ -168,7 +168,7 @@ const dataAll2 = groupArticle2.map((item, index) => ({
     </div>
     
   </div>
-{/* <Edotorial></Edotorial> */}
+<Edotorial></Edotorial>
 </div>
 </div>
 
@@ -196,7 +196,7 @@ const dataAll2 = groupArticle2.map((item, index) => ({
  return catItems?.post_to_category?.slice(0,rows).map(post=>{
    
 
-      return <Link legacyBehavior key={homeDatas.id} href={`/categories/${catItems.category_id}/articles/${post.post_id}`}><a><Cards title={post?.post?.title_bn} catagory={catItems.name_bn} time={post.created_at} imgSrc={post?.post?.image} route={post?.post?.id} status={homeDatas.status} ids={ids} postId={post.post_id}/></a></Link>
+      return <Link legacyBehavior key={homeDatas.id} href={`/categories/${catItems.category_id}/articles/${post.post_id}`}><a><Cards title={post?.post?.title_bn} catagory={catItems.name_bn} time={post.created_at} imgSrc={post?.post?.image} route={post?.post?.id} status={homeDatas.status} ids={ids} postId={post.post_id} readed={post?.post?.count_post}/></a></Link>
 
   })
 })}

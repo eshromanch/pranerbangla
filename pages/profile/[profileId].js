@@ -87,7 +87,7 @@ return (
   <Link
     key={pageItem?.id}
     href={`/categories/${ids}/articles/${pageItem?.id}`}
-    legacyBehavior><Cards title={pageItem?.title_bn} catagory={pageItem?.category_name_bn} time={pageItem?.created_at} imgSrc={pageItem?.image} route={pageItem?.id} status={pageItem?.status}/></Link>
+    legacyBehavior><Cards title={pageItem?.title_bn} catagory={pageItem?.category_name_bn} time={pageItem?.created_at} imgSrc={pageItem?.image} route={pageItem?.id} status={pageItem?.status} readed={pageItem.count_post}/></Link>
 );
 })}
 {/* <Cards/>

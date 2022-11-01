@@ -17,7 +17,6 @@ function Signup(props) {
       mobile: event.target.mobile.value,
       email: event.target.email.value,
       county: event.target.country.value,
-      // gender: event.target.gender.value,
       gender: event.target.gender.value,
       date_of_birth: event.target.birth.value,
       password: event.target.password.value,
@@ -49,6 +48,7 @@ function Signup(props) {
     // If server returns the name submitted, that means the form works.
     const result = await response.json()
 
+    console.log(result)
 
     localStorage.setItem('token', result["access_token"]);
     localStorage.setItem('user', JSON.stringify( result["userData"]));
@@ -58,7 +58,7 @@ function Signup(props) {
 
 
     if(response.ok) Router.push("/")
-    if(response.status >= "400") alert(result.errors)
+    if(response.status >= "400") alert(result.errors["mobile"])
   }
 
   const [startDate, setStartDate] = useState(new Date());
