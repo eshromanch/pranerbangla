@@ -245,7 +245,7 @@ const { asPath, pathname } = useRouter();
        <Link
          key={pageItem.id}
          href={`/categories/${catId}/articles/${pageItem.id}`}
-         legacyBehavior><Cards title={pageItem.title_bn} catagory={pageItem.category_name_bn} time={pageItem.created_at} imgSrc={pageItem.image} route={pageItem.id} status={pageItem.status}  readed={pageItem.count_post}/></Link>
+         ><Cards title={pageItem.title_bn} catagory={pageItem.category_name_bn} time={pageItem.created_at} imgSrc={pageItem.image} route={pageItem.id} status={pageItem.status}  readed={pageItem.count_post}/></Link>
      );
       })}
 

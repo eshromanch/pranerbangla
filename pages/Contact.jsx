@@ -93,15 +93,15 @@ function Contact({data}) {
                 <div className=' grid grid-cols-2 gap-4'>
 
 {data?.map(items=>{
-  return <div key={ items.id} className="card dark:bg-base-100 shadow-xl">
+  return <div key={ items?.id} className="card dark:bg-base-100 shadow-xl">
   <div className="card-body">
 <div className='flex flex-col'>
-    <h1 className='text-lg text-black font-bold dark:text-white'>{items.title_bn}</h1>
+    <h1 className='text-lg text-black font-bold dark:text-white'>{items?.title_bn}</h1>
     <span className='bg-black w-10 h-0.5 rounded rounded-2 dark:bg-white'></span>
 </div>
-<h1 className='text-md text-black dark:text-white' dangerouslySetInnerHTML={{ __html: items.content_bn }}></h1>
-<a href={`tel:${items.phone}`}><h1 className='text-md text-black dark:text-white' >Phone:{items.phone}</h1></a>
-<a href={`mailto:${items.email}`}><h1 className='text-md text-black dark:text-white' >{items.email}</h1></a>
+<h1 className='text-md text-black dark:text-white' dangerouslySetInnerHTML={{ __html: items?.content_bn }}></h1>
+<a href={`tel:${items?.phone}`}><h1 className='text-md text-black dark:text-white' >Phone:{items?.phone}</h1></a>
+<a href={`mailto:${items?.email}`}><h1 className='text-md text-black dark:text-white' >{items?.email}</h1></a>
     <div className="card-actions justify-end">
       <button className="btn btn-primary">→</button>
     </div>
@@ -117,7 +117,7 @@ function Contact({data}) {
                 <input type="text" placeholder="Email address" name='email' className="input input-bordered text-black border-gray-400 input-md w-full  bg-transparent focus:border-primary" required/>
                 <input type="text" placeholder="Country" name='country' className="input input-bordered text-black border-gray-400 input-md w-full  bg-transparent focus:border-primary" required/>
                 {/* <input type="text" placeholder="department" name='department' className="input input-bordered text-black border-gray-400 input-md w-full  bg-transparent focus:border-primary" required/> */}
-                <select name='selected' className="select select-primary bg-transparent text-black w-full ">
+                <select name='selected' className="select border-gray-400 bg-transparent text-black w-full   focus:select-primary">
   <option disabled selected>Choose department</option>
   <option value={"General Enquiries"}> General Enquiries</option>
   <option value={"Partnerships"}>Partnerships</option>
@@ -127,7 +127,7 @@ function Contact({data}) {
   <option value={"Other"}>Other </option>
 </select>
                 <div className='w-full'>
-                <textarea className="textarea textarea-primary bg-transparent text-black input-md w-full h-48  " name='message' placeholder="Message"></textarea> 
+                <textarea className="textarea input-bordered border-gray-400  focus:textarea-primary bg-transparent text-black input-md w-full h-48  " name='message' placeholder="Message"></textarea> 
                 </div>
                 <div className="form-control">
   <label className="label cursor-pointer ">

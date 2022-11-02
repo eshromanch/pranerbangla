@@ -38,49 +38,49 @@ function ShareArticleButtons(props) {
     return (
         <div className='flex  gap-5 justify-center md:gap-2'>
         <FacebookShareButton
-          url={`https://panerbangla.netlify.app/${props.url}`}
-          quote={'Praner bangla article'}
+          url={`https://pranerbangla.netlify.app/${props.url}`}
+          quote={'Pranerbangla article'}
           hashtag={'#pranerbangla'}
         >
           <FacebookIcon size={32} round />
         </FacebookShareButton>
         <TwitterShareButton
-  url={`https://panerbangla.netlify.app/${props.url}`}
-  title={'Praner bangla article'}
+  url={`https://pranerbangla.netlify.app/${props.url}`}
+  title={'Pranerbangla article'}
 >
   <TwitterIcon size={32} round />
 </TwitterShareButton>
         <PinterestShareButton
-          url={`https://panerbangla.netlify.app/${props.url}`}
-          media={'Praner bangla article'}
+          url={`https://pranerbangla.netlify.app/${props.url}`}
+          media={'Pranerbangla article'}
         >
           <PinterestIcon size={32} round />
         </PinterestShareButton>
         <RedditShareButton
-          url={`https://panerbangla.netlify.app/${props.url}`}
-          title={'Praner bangla article'}
+          url={`https://pranerbangla.netlify.app/${props.url}`}
+          title={'Pranerbangla article'}
         >
           <RedditIcon size={32} round />
         </RedditShareButton>
         <WhatsappShareButton
-  url={`https://panerbangla.netlify.app/${props.url}`}
-  title={'Praner bangla article'}
+  url={`https://pranerbangla.netlify.app/${props.url}`}
+  title={'Pranerbangla article'}
   separator=":: "
 >
   <WhatsappIcon size={32} round />
 </WhatsappShareButton>
-<LinkedinShareButton url={`https://panerbangla.netlify.app/${props.url}`}>
+<LinkedinShareButton url={`https://pranerbangla.netlify.app/${props.url}`}>
   <LinkedinIcon size={32} round />
 </LinkedinShareButton>
 <FacebookMessengerShareButton
-  url={`https://panerbangla.netlify.app/${props.url}`}
+  url={`https://pranerbangla.netlify.app/${props.url}`}
   appId={''}
 >
   <FacebookMessengerIcon size={32} round />
 </FacebookMessengerShareButton>
 <EmailShareButton
-  url={`https://panerbangla.netlify.app/${props.url}`}
-  subject={'Praner bangla article'}
+  url={`https://pranerbangla.netlify.app/${props.url}`}
+  subject={'Pranerbangla article'}
   body="body"
 >
   <EmailIcon size={32} round />

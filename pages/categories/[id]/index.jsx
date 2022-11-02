@@ -298,25 +298,15 @@ pages?.map(pageItem=>{
         <div className="grid grid-cols-4 mb-4 gap-10 mx-48 lg:mx-10  md:grid-cols-2">
          
 {
-  [language]?.map(e=>{
-
-    if (e?.language_name==="English") {
-     return group?.articles.map(pageItem =>  <Link
-       key={pageItem?.id}
-       href={`${ids}/articles/${pageItem?.id}`}
-       legacyBehavior><Cards title={pageItem?.title_en} catagory={pageItem?.category_name_en} time={pageItem?.created_at} imgSrc={pageItem?.image} route={pageItem?.id} status={pageItem?.status} ids={ids} readed={pageItem?.count_post}/></Link>
+ group?.articles.map(pageItem => {
+  return <Link
+  key={pageItem?.id}
+  href={`${ids}/articles/${pageItem?.id}`}
+  ><Cards title={pageItem?.title_bn} catagory={pageItem?.category_name_bn} time={pageItem?.created_at} imgSrc={pageItem?.image} route={pageItem?.id} status={pageItem?.status} ids={ids} readed={pageItem?.count_post} postId={pageItem?.id} is_visibility={pageItem?.is_visibility}/></Link>
+ }
             
-      );
-    }
-    if (e?.language_name==="Bangla") {
-    return group?.articles.map(pageItem =>  <Link
-      key={pageItem?.id}
-      href={`${ids}/articles/${pageItem?.id}`}
-      legacyBehavior><Cards title={pageItem?.title_bn} catagory={pageItem?.category_name_bn} time={pageItem?.created_at} imgSrc={pageItem?.image} route={pageItem?.id} status={pageItem?.status} ids={ids} readed={pageItem?.count_post} postId={pageItem?.id} is_visibility={pageItem?.is_visibility}/></Link>
-            
-      );
-    }
-  })
+    
+  )
 }
         </div>
         <div className='mx-48 flex justify-center items-center lg:mx-10'>   
