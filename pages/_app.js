@@ -1,5 +1,6 @@
 import Layouts from '../components/Layouts'
 import '../styles/globals.css'
+import 'react-quill/dist/quill.snow.css'
 import { ThemeProvider } from 'next-themes'
 import Footer from '../components/Footer';
 import Nav from '../components/Nav';
