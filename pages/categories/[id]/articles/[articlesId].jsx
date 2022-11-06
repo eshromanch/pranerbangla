@@ -210,7 +210,7 @@ const { asPath, pathname } = useRouter();
   <h1 className='text-center text-lg text-black font-bold dark:text-white my-5'>Share Article</h1>
   <ShareArticleButtons url={asPath}/>
 
-  <div className="tooltip flex justify-center w-full items-center my-4 " data-tip="Copy url to clipboard">
+  <div className="tooltip flex justify-center w-full items-center my-4  " data-tip="Copy url to clipboard">
   <Clipboard url={asPath}/>
   {/* <button className='btn btn lowercase font-normal text-sm' onClick={() => {navigator.clipboard.writeText(this.state.textToCopy)}}>http://localhost:3000{pathname} </button> */}
   </div>
@@ -245,7 +245,7 @@ const { asPath, pathname } = useRouter();
        <Link
          key={pageItem.id}
          href={`/categories/${catId}/articles/${pageItem.id}`}
-         ><Cards title={pageItem.title_bn} catagory={pageItem.category_name_bn} time={pageItem.created_at} imgSrc={pageItem.image} route={pageItem.id} status={pageItem.status}  readed={pageItem.count_post}/></Link>
+         ><Cards title={pageItem.title_bn} catagory={pageItem.category_name_bn} time={pageItem.created_at} imgSrc={pageItem.image} route={pageItem.id} status={pageItem.status}  readed={pageItem.count_post} postId={pageItem.id}/></Link>
      );
       })}
 

@@ -41,10 +41,10 @@ const sortedActivities = data?.sort((a, b) =>{return a.serial_num - b.serial_num
 
 
 return (
-  <div className=''>
-
+  <div className='flex justify-center items-center'>
+<Link href={"/"} legacyBehavior><button className='btn btn-ghost md:hidden'><Home className="dark:stroke-white"/></button></Link>
       <div className="flex  navbar  bg-gray-50 dark:bg-slate-800 md:flex-col md:bg-white overflow-x-scroll lg:overflow-x-scroll">
-      <Link href={"/"} legacyBehavior><button className='btn btn-ghost md:hidden'><Home className="dark:stroke-white"/></button></Link>
+      
 {
 sortedActivities?.slice(0,16).map((nav) =>{
 

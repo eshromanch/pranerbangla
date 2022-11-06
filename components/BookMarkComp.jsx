@@ -176,7 +176,7 @@ const response = await fetch(endpoint, options)
         <ul tabIndex="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-96 md:-ml-80 sm:w-60 sm:-ml-40">
           {data?.map(items=>{
             
-            return <li key={items.id} className='flex justify-between p-4'><Link href={``} className='text-white w-60 sm:w-36' legacyBehavior>{items.post?.title_bn}</Link> <button key={items.id} onClick={()=>removeData(items.id)} className='btn text-white'>-</button></li>;
+            return <li key={items.id} className='flex justify-between p-4'><Link href={`categories/`}  legacyBehavior><a className='text-white w-60 sm:w-36'>{items.post?.title_bn}</a></Link> <button key={items.id} onClick={()=>removeData(items.id)} className='btn text-white'>-</button></li>;
 
               
           })}

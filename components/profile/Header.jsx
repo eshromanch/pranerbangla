@@ -33,19 +33,22 @@
 
 // export default Header
 
+import Image from 'next/image';
 import React from 'react'
 import Background from '../../components/svgs/ProfileBg'
 import ShareProfileButtons from '../profile/ShareProfileButtons';
+
+
 function Header(props) {
   return (
-       <div className="w-full h-full relative">
-    <Background className="w-full h-full object-fill"/>
-
+       <div className="w-full h-full relative ">
+    <Background className=" w-full h-full object-fill md:hidden "/>
+<div className="bg-[#001D37] hidden w-full h-[25vh] md:block "></div>
 
 <div className='absolute top-0 grid grid-cols-2 justify-center items-center w-full h-full '>
-<div className='  flex justify-end items-center '>
+<div className=' flex justify-end items-center w-full h-full '>
 <div className="avatar">
-<div className=" w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 lg:w-12 md:w-8">
+<div className=" w-32  rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 lg:w-12 md:w-8">
 <img src= {props.author.image}/>
 </div>
 </div>
@@ -56,10 +59,10 @@ function Header(props) {
 </div>
 </div>
 
-<div className='  flex justify-center items-center  md:justify-start'>
-<div className='w-1 h-10 bg-white rouded rounded-md mx-5'></div>
+<div className='font-enbody  flex justify-center items-center  md:justify-start'>
+<div className='w-1 h-10 bg-white  rouded rounded-md mx-5'></div>
 
-<h1 className='font-bold text-2xl text-white md:text-xs'>{props.totalPost} <span className='font-bold text-sm text-white md:text-xs'>published article</span></h1>
+<h1 className='font-bold text-2xl text-white md:text-xs'>{props.totalPost} <span className='font-bold text-base text-white md:text-xs'>published article</span></h1>
 
 </div>
 </div>
