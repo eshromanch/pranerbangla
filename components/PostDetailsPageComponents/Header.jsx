@@ -23,10 +23,10 @@ const date =new Date(`${props.time}`).toLocaleString('en-uk',{day:"numeric",mont
  }
                  <h1 className='text-5xl font-bold text-black dark:text-white  m-4 '>{props.title}</h1>
 
-     <div className='flex my-8 '>
+     <div className='flex  h-full justify-center items-center my-8 gap-4'>
     <Link href={`/profile/${props.writerId}`} legacyBehavior>
-     <div className="relative  w-28 h-full  ">
-        <img src={props.user.image} alt="" className=" w-24 h-24 rounded-full object-cover border-2 border-primary "></img>
+     <div className=" mt-6 w-36 h-36  ">
+        <img src={props.user.image} alt="" className="  rounded-full object-cover border-2 border-primary "></img>
         
      </div>
     </Link>

@@ -157,7 +157,7 @@ const { asPath, pathname } = useRouter();
   data?.map(items=>{
 
  return (
-   <div key={items.id} className='relative flex flex-col mx-48 lg:mx-10'>
+   <div key={items.id} className='relative flex flex-col mx-48 lg:mx-5'>
       <span
   style={{ transform: `translateX(${completion - 100}%)` }}
   className="absolute -mx-48 bg-primary z-10 h-1 w-[100vw] top-0 sticky overflow-hidden"
@@ -206,7 +206,7 @@ const { asPath, pathname } = useRouter();
 
   <div><h1 className='flex   items-center  text-2xl my-5 font-semibold text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 mb-1"/>মন্তব্য করুন </h1></div>
   <FaceBookComment/>
-  <div className='mx-80 lg:mx-24 md-mx-10'>
+  <div className='mx-80 lg:mx-12 md:mx-5'>
   <h1 className='text-center text-lg text-black font-bold dark:text-white my-5'>Share Article</h1>
   <ShareArticleButtons url={asPath}/>
 
@@ -217,7 +217,7 @@ const { asPath, pathname } = useRouter();
 
   </div>    
   <div className='-mx-48 my-12 bg-[#F1F1F6] dark:bg-[#202426] py-8 lg:-mx-10 '>
-  <div className='mx-48 lg:mx-10'>
+  <div className='mx-48 lg:mx-5'>
   <div className='flex justify-between items-center'><b><h1 className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 mb-1"/>আরো পড়ুন   </h1></b>
   {data?.map(items=>{
     return items.post_to_cat?.map(it=>{
@@ -238,7 +238,7 @@ const { asPath, pathname } = useRouter();
   {dataAll?.map(pageItems=>{
    return (
      <div key={pageItems.id} className='w-full'>
-      <div className='grid grid-cols-4 mb-4  gap-10 mx-48 lg:mx-10 md:grid-cols-2'>
+      <div className='grid grid-cols-4 mb-4  gap-10 mx-48 lg:mx-5 md:grid-cols-2'>
       {pageItems.articles.map(pageItem=>{
 
      return (
@@ -250,7 +250,7 @@ const { asPath, pathname } = useRouter();
       })}
 
       </div>
-          <div className='mx-48 flex justify-center items-center lg:mx-10'>   
+          <div className='mx-48 flex justify-center items-center lg:mx-5'>   
            
           <a href={pageItems.ad?.add_url}><img className=' w-full my-24 object-cover' src= {`${pageItems.ad?.image}`} alt=""/></a>
           </div>
