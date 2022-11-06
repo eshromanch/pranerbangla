@@ -68,16 +68,16 @@ function Header(props) {
 </div>
 
 </div>
-<div className="bg-[#001D37] hidden w-full h-[25vh] justify-center items-center md:flex md:flex-col ">
+<div className="bg-[#001D37] hidden w-full h-[30vh] justify-center items-center md:flex md:flex-col ">
 
-     <div className=" mt-6 w-24 h-24  ">
+     <div className=" mt-6 w-28 h-28  ">
         <img src={props.author.image} alt="" className="  rounded-full object-cover border-2 border-primary "></img>
 </div>
 <div className='my-5'>
-<h1 className='font-bold text-2xl text-white md:text-sm'>{props.author.name}</h1>
-<h1 className='font-normal text-md mb-3 text-white md:text-xs '>{props.author.designation }, {props.author.address}</h1>
+<h1 className='font-bold text-2xl text-white text-center md:text-sm'>{props.author.name}</h1>
+<h1 className='font-normal text-md mb-3 text-center text-white md:text-xs '>{props.author.designation }, {props.author.address}</h1>
 
-<h1 className='font-bold text-2xl text-white md:text-xs'>{props.totalPost} <span className='font-bold text-base text-white md:text-xs'>published article</span></h1>
+<h1 className='font-bold text-2xl text-white text-center md:text-xs'>{props.totalPost} <span className='font-bold text-base text-white md:text-xs'>published article</span></h1>
 </div>
 
 
