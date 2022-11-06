@@ -216,7 +216,7 @@ const { asPath, pathname } = useRouter();
   </div>
 
   </div>    
-  <div className='-mx-48 my-12 bg-[#F1F1F6] dark:bg-[#202426] py-8 lg:-mx-10 '>
+  <div className='-mx-48 my-12 bg-[#F1F1F6] dark:bg-[#202426] py-8 lg:-mx-10 sm:-mx-5 overflow-x-hidden'>
   <div className='mx-48 lg:mx-10'>
   <div className='flex justify-between items-center'><b><h1 className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 mb-1"/>আরো পড়ুন   </h1></b>
   {data?.map(items=>{
