@@ -216,8 +216,8 @@ const { asPath, pathname } = useRouter();
   </div>
 
   </div>    
-  <div className='-mx-48 my-12 bg-[#F1F1F6] dark:bg-[#202426] py-8 lg:-mx-5 '>
-  <div className='mx-48 lg:mx-5'>
+  <div className='-mx-48 my-12 bg-[#F1F1F6] dark:bg-[#202426] py-8 lg:-mx-10 '>
+  <div className='mx-48 lg:mx-10'>
   <div className='flex justify-between items-center'><b><h1 className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 mb-1"/>আরো পড়ুন   </h1></b>
   {data?.map(items=>{
     return items.post_to_cat?.map(it=>{
@@ -238,7 +238,7 @@ const { asPath, pathname } = useRouter();
   {dataAll?.map(pageItems=>{
    return (
      <div key={pageItems.id} className='w-full'>
-      <div className='grid grid-cols-4 mb-4  gap-10 mx-48 lg:mx-5 md:grid-cols-2'>
+      <div className='grid grid-cols-4 mb-4  gap-10 mx-48 lg:mx-10 md:grid-cols-2'>
       {pageItems.articles.map(pageItem=>{
 
      return (
@@ -250,7 +250,7 @@ const { asPath, pathname } = useRouter();
       })}
 
       </div>
-          <div className='mx-48 flex justify-center items-center lg:mx-5'>   
+          <div className='mx-48 flex justify-center items-center lg:mx-10'>   
            
           <a href={pageItems.ad?.add_url}><img className=' w-full my-24 object-cover' src= {`${pageItems.ad?.image}`} alt=""/></a>
           </div>
