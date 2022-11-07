@@ -134,16 +134,15 @@ useEffect(()=>{
     <Swiper
                         style={{
                           "--swiper-navigation-color": "red",
-
                           // "--swiper-navigation-size": "25px",
                         }}
       onSwiper={setSwiperRef}
-      slidesPerView={3}
+      slidesPerView={1}
       centeredSlides={false}
-      spaceBetween={15}
+      spaceBetween={30}
       navigation={true}
       modules={[Navigation, Autoplay]}
-      className="mySwiper dark:bg-slate-800"
+      className="mySwiper"
       autoplay={{
         delay: 2500,
         disableOnInteraction: false,
@@ -154,7 +153,7 @@ useEffect(()=>{
     >
       {data?.map(items=>{
         return (
-          <SwiperSlide key={items.id}><Link key={items.id} href={`categories/9/articles/${items.id}`} legacyBehavior><div className="w-full h-[20rem] relative flex justify-center sm:hidden ">
+          <SwiperSlide key={items.id}><Link key={items.id} href={`categories/9/articles/${items.id}`} legacyBehavior><div className="w-full h-[20rem] relative  justify-center hidden sm:flex ">
           <div className='absolute w-full h-full bottom-0 bg-gradient-to-t from-black to-transparent '></div>
           <img className="w-full object-cover" src={items.image} alt="" />
           <h1 className="absolute bottom-1/2 z-10 text-2xl">{items.title_bn}</h1>

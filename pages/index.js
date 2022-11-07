@@ -15,6 +15,7 @@ import Carousel from '../components/Carousel'
 const StagedImages = dynamic(()=> import ('../components/HomepageComponents/StagedImages'),{ssr:false})
 const GridVideos = dynamic(()=> import ('../components/HomepageComponents/GridVideos'),{ssr:false})
 const Edotorial = dynamic(()=> import ('../components/HomepageComponents/Edotorial'),{ssr:false})
+const LongCarouselMobile= dynamic(()=> import ('../components/LongCarouselMobile'),{ssr:false})
 // import PostDetails from './categories/post'
 import React, { useEffect,useState } from 'react'
 
@@ -408,7 +409,8 @@ return catItems.category?.post_to_category.slice(0,rows).map(post=>{
   </div>
 
 </div>
-<LongCarousel/>
+<LongCarousel className=""/>
+<LongCarouselMobile className=""/>
 </div>
 
     </div>
