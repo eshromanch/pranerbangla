@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react';
-
+import Circle from '../svgs/Circle'
 function Edotorial(props) {
     const [data, setData]=useState();
 
@@ -16,7 +16,7 @@ function Edotorial(props) {
       },[]);
 
     return (
-        <div className='flex flex-col '><b><h1 className='mb-4 text-lg text-black dark:text-white'>সম্পাদকীয়</h1></b>
+        <div className='flex flex-col '><b><h1 className='mb-4 flex text-lg text-black dark:text-white'><Circle className=" h-3 pr-2 mt-1"/>সম্পাদকীয়</h1></b>
         <div className='flex flex-col'>
           {/* <div className='h-40 w-40 bg-gray-500'></div> */}
           <img src={data?.['image']} alt="" />

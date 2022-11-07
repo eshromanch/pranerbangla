@@ -152,7 +152,7 @@ const dataAll2 = groupArticle2.map((item, index) => ({
 
 <div className='mx-48 lg:mx-10'>
 
-<div className='my-12 w-full grid grid-cols-3 gap-20 sm:flex sm:flex-col'>
+<div className='my-12 w-full grid grid-cols-3 gap-10 sm:flex sm:flex-col'>
 <div className='col-span-2'><div><b><h1 className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 "/> শেষ সংযুক্তি </h1></b></div>
 <div className='grid grid-cols-3 gap-4'>
       <div className='col-span-2 w-full h-full'>
