@@ -7,7 +7,7 @@ import Nav from '../components/Nav';
 import React, {useEffect} from "react";
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
-    document.getElementById("__next").className = "dark:bg-slate-800";
+    document.getElementById("__next").className = "dark:bg-slate-800 relative";
   }, []);
   return  <ThemeProvider attribute="class" enableSystem={true}>
                 <Nav/>

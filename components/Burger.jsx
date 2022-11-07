@@ -1,4 +1,4 @@
-import React ,{useState}from 'react';
+import React ,{useState,useEffect}from 'react';
 
 import Styles from "../styles/Search.module.css"
 import Close from "../components/svgs/Close"
@@ -31,12 +31,18 @@ function Burger(props) {
     
     const userData =JSON.parse(user)
 
-  
+    const [mounted,setMounted] = useState(false)
+
+useEffect(()=> {
+    setMounted(true)
+},[])
+if(!mounted) return null
     return (
+      
       <div className="SearchBar ">
       {isOpen && (
         <>
-          <div className={`${Styles.box} -my-3 absolute right-0 z-10 top-0 w-[100vw] h-[100vh] bg-white shadow-xl  dark:bg-slate-800 overflow-y-scroll  hidden md:block md:top-26`}>
+          <div className={`${Styles.box}  absolute right-0  top-0 w-[100vw] h-[100vh] bg-white shadow-xl  dark:bg-slate-800 overflow-y-scroll  hidden md:block md:top-26`}>
       <div className="w-full h-full relative  flex justify-center items-center">
       <button className="absolute top-5 right-10 text-black " onClick={closeModal}><Close className="h-10 dark:stroke-white"/></button>
 
@@ -54,17 +60,17 @@ function Burger(props) {
                   <li><Link
                     href='/userProfile'
                     className='text-black dark:text-white flex'
-                    legacyBehavior><UserIcon className="h-5 fill-black dark:fill-white"/> {userData?.name}</Link></li>
+                    legacyBehavior><a className='flex'><UserIcon className="h-5 fill-black dark:fill-white"/>{userData?.name}</a></Link></li>
                 );
               } else {
-                return <li><Link href='/signin' className='text-black dark:text-white flex' legacyBehavior><UserIcon className="h-5 fill-black dark:fill-white"/>Log in</Link></li>;
+                return <li><Link href='/signin' className='text-black dark:text-white ' legacyBehavior><a className='flex'><UserIcon className="h-5 fill-black dark:fill-white"/>Log in</a></Link></li>;
               } 
             })()}
          
             <li className=''><Link
               href='/contribute'
-              className='text-black dark:text-white flex'
-              legacyBehavior><EditIcon className="h-5  dark:stroke-white "></EditIcon>Write</Link></li>
+              className='text-black dark:text-white'
+              legacyBehavior><a className='flex'><EditIcon className="h-5  dark:stroke-white "></EditIcon>Write</a></Link></li>
           </ul>
       </div>
 

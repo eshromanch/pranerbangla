@@ -7,13 +7,14 @@ function Edotorial(props) {
     useEffect(()=>{
         async function fetchData() {
           const res = await fetch(
-            'http://pranerbangla.com.bd/api/vb1/editorial'
+            'https://pranerbangla.com.bd/api/vb1/editorial'
           );
           const {data} = await res.json();
           setData(data)
         }
         fetchData()
       },[]);
+
     return (
         <div className='flex flex-col '><b><h1 className='mb-4 text-lg text-black dark:text-white'>সম্পাদকীয়</h1></b>
         <div className='flex flex-col'>

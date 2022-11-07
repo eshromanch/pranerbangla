@@ -41,9 +41,9 @@ const sortedActivities = data?.sort((a, b) =>{return a.serial_num - b.serial_num
 
 
 return (
-  <div className='flex justify-center items-center'>
+  <div className='flex justify-center items-center md:justify-start'>
 <Link href={"/"} legacyBehavior><button className='btn btn-ghost md:hidden'><Home className="dark:stroke-white"/></button></Link>
-      <div className="flex  navbar  bg-gray-50 dark:bg-slate-800 md:flex-col md:bg-white overflow-x-scroll lg:overflow-x-scroll">
+      <div className="flex  navbar  bg-gray-50 dark:bg-slate-800 md:hidden md:flex-col md:bg-white overflow-x-scroll lg:overflow-x-scroll">
       
 {
 sortedActivities?.slice(0,16).map((nav) =>{
@@ -63,24 +63,7 @@ sortedActivities?.slice(0,16).map((nav) =>{
   
 
   })
-// sortedActivities?.slice(0,16).map((nav) =>{
-// if (langData.language_name==="Bangla") {
-//   if (nav.status==="1") {
-//     return <Link key={nav.id} href={"/categories/" + nav.id}>
-//   <a className="p-4 whitespace-nowrap tracking-wide text-base font-semibold font-sans text-black border-b-2 border-double 
-//   border-transparent hover:border-primary cursor-pointer select-none dark:text-white   ">{nav.name_bn} </a>
-//   </Link> 
-//    }
-// }
-// if (langData.language_name==="English") {
-//   if (nav.status==="1") {
-//     return <Link key={nav.id} href={"/categories/" + nav.id}>
-//   <a className="p-4 whitespace-nowrap  font-bold font-sans text-black text-base border-b-2 border-double 
-//   border-transparent hover:border-primary cursor-pointer select-none dark:text-white">{nav.name_en} </a>
-//   </Link> 
-//    }
-// }
-// })
+
 }
 
 
@@ -95,6 +78,41 @@ border-transparent hover:border-primary cursor-pointer select-none dark:text-whi
 
 
 </div>
+<div className="hidden bg-gray-50 dark:bg-slate-800 md:flex md:flex-col md:bg-white md:ml-10">
+      
+      {
+      sortedActivities?.slice(0,16).map((nav) =>{
+      
+          if (nav.status==="1") {
+            return (
+              <Link
+                key={nav.id}
+                href={"/categories/" + nav.id}
+               
+                legacyBehavior>
+                <a className="p-2 whitespace-nowrap tracking-wide text-base font-semibold font-sans text-black border-b-2 border-double 
+                border-transparent hover:border-primary cursor-pointer select-none dark:text-white   " href="">{nav.name_bn}</a>
+              </Link>
+            ); 
+           }
+        
+      
+        })
+      
+      }
+      
+      
+      {/* <Link href="/">
+      <a className="p-4 font-bold font-sans text-black text-base border-b-2 border-double 
+      border-transparent hover:border-primary cursor-pointer select-none dark:text-white">প্রচ্ছেদ </a>
+      </Link> */}
+      
+      
+      
+      
+      
+      
+      </div>
   </div>
 );
 
