@@ -43,7 +43,7 @@ const sortedActivities = data?.sort((a, b) =>{return a.serial_num - b.serial_num
 return (
   <div className='flex justify-center items-center md:justify-start'>
 <Link href={"/"} legacyBehavior><button className='btn btn-ghost md:hidden'><Home className="dark:stroke-white"/></button></Link>
-      <div className="flex  navbar  bg-gray-50 dark:bg-slate-800 md:hidden md:flex-col md:bg-white overflow-x-scroll lg:overflow-x-scroll">
+      <div className="flex  navbar  bg-gray-50 dark:bg-slate-800 md:hidden md:flex-col md:bg-white overflow-x-scroll scrollColor">
       
 {
 sortedActivities?.slice(0,16).map((nav) =>{

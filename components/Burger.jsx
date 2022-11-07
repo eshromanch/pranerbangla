@@ -52,25 +52,26 @@ if(!mounted) return null
           <SecondNav/>
           <ul className="flex justify-evenly  w-full my-12 ">
       {/* <li><Link href={"/"}><a><Home className="dark:stroke-white"/></a></Link></li> */}
-            <li className='text-black dark:white text-center'><Themechanger /></li>
-
+           
                   {(() => {
               if (localStorage.getItem("token")  !== null) {
                 return (
                   <li><Link
                     href='/userProfile'
                     className='text-black dark:text-white flex'
-                    legacyBehavior><a className='flex'><UserIcon className="h-5 fill-black dark:fill-white"/>{userData?.name}</a></Link></li>
+                    legacyBehavior><a className='flex gap-4 text-black dark:text-white'><UserIcon className="h-5 fill-black dark:fill-white"/>{userData?.name}</a></Link></li>
                 );
               } else {
-                return <li><Link href='/signin' className='text-black dark:text-white ' legacyBehavior><a className='flex'><UserIcon className="h-5 fill-black dark:fill-white"/>Log in</a></Link></li>;
+                return <li><Link href='/signin' className='text-black dark:text-white ' legacyBehavior><a className='flex gap-4 text-black dark:text-white'><UserIcon className="h-5 fill-black dark:fill-white"/> Log in</a></Link></li>;
               } 
             })()}
          
             <li className=''><Link
               href='/contribute'
-              className='text-black dark:text-white'
-              legacyBehavior><a className='flex'><EditIcon className="h-5  dark:stroke-white "></EditIcon>Write</a></Link></li>
+              className=''
+              legacyBehavior><a className='flex gap-4 text-black dark:text-white'><EditIcon className="h-5  dark:stroke-white "></EditIcon> Write</a></Link></li>
+               <li className='text-black dark:white text-center'><Themechanger /></li>
+
           </ul>
       </div>
 
