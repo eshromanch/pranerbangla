@@ -56,3 +56,6 @@ body {
   }
 }
 
+.ImgSpace img{
+  margin: 1rem;
+}

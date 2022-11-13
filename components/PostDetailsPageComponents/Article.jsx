@@ -18,7 +18,7 @@ export function Article(props) {
 
 
   return <div className=''>
-     <div className='relative text-black dark:text-white' dangerouslySetInnerHTML={{ __html: props.content }}> 
+     <div className='relative text-black dark:text-white ImgSpace' dangerouslySetInnerHTML={{ __html: props.content }}> 
   
   </div>
   

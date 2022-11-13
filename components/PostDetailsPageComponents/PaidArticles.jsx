@@ -16,6 +16,7 @@ import React from 'react';
 
 export function Article(props) {
   function createMarkup() {
+    props.content
     return { __html: props.content };
   }
 
