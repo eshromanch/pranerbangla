@@ -59,9 +59,3 @@ body {
 .ImgSpace img{
   margin: 1rem;
 }
-
-@supports (-webkit-touch-callout: none) {
-  .h-full {
-    height: -webkit-fill-available;
-  }
-}
