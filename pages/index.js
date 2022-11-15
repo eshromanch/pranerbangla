@@ -377,7 +377,7 @@ return catItems.category?.post_to_category.slice(0,rows).map(post=>{
 <h4 className='flex '><Plus className="h-5 pr-2 mt-0"/> আরো দেখুন</h4></a></Link></b>
 </div>
 
-{/* <div className='mx-80 grid grid-cols-2 bg-white gap-4 p-4 align-center justify-center h-1/2 lg:mx-24 sm:mx-5 sm:p-2'>
+<div className='mx-80 grid grid-cols-2 bg-white gap-4 p-4 align-center justify-center h-1/2 lg:mx-24 sm:mx-0 sm:p-2'>
 
   {[gallery[0]]?.map(items=>{
   return  <Link legacyBehavior  key={items.id}  href={`gallery/${items?.id}`}><div className='h-full'><Gridimages img={`${items?.image}`} title={items?.title_bn}/></div></Link>
@@ -398,8 +398,8 @@ return catItems.category?.post_to_category.slice(0,rows).map(post=>{
 })}</div>
 </div>
 
-</div> */}
-<div className='mx-80 grid grid-cols-4 bg-white gap-4 p-4 align-center justify-center h-1/2 lg:mx-24 sm:mx-5 sm:p-2 md:gap-2'>
+</div>
+{/* <div className='mx-80 grid grid-cols-4 bg-white gap-4 p-4 align-center justify-center h-1/2 lg:mx-24 sm:mx-5 sm:p-2 md:gap-2'>
 
 {[gallery[0]]?.map(items=>{
 return  <Link legacyBehavior  key={items.id}  href={`gallery/${items?.id}`}><div className='col-span-2'><Gridimages img={`${items?.image}`} title={items?.title_bn}/></div></Link>
@@ -421,7 +421,7 @@ return  <Link legacyBehavior  key={items.id}  href={`gallery/${items?.id}`}><div
 return  <Link legacyBehavior  key={items.id}  href={`gallery/${items?.id}`}><div className=''><Gridimages img={`${items?.image}`} title={items?.title_bn}/></div></Link>
 })}</div>
 
-</div>
+</div> */}
 </div>
 
 <div className=' my-12'>
