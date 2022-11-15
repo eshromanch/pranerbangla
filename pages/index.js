@@ -409,16 +409,16 @@ return  <Link legacyBehavior  key={items.id}  href={`gallery/${items?.id}`}><div
 })}
 
 <div >{[gallery[2]]?.map(items=>{
-return  <Link legacyBehavior  key={items.id}  href={`gallery/${items?.id}`}><div className='h-full'><Gridimages img={`${items?.image}`} title={items?.title_bn}/></div></Link>
+return  <Link legacyBehavior  key={items.id}  href={`gallery/${items?.id}`}><div className=''><Gridimages img={`${items?.image}`} title={items?.title_bn}/></div></Link>
 })}</div>
 <div>{[gallery[3]]?.map(items=>{
-return  <Link legacyBehavior  key={items.id}  href={`gallery/${items?.id}`}><div className='h-full'><Gridimages img={`${items?.image}`} title={items?.title_bn}/></div></Link>
+return  <Link legacyBehavior  key={items.id}  href={`gallery/${items?.id}`}><div className=''><Gridimages img={`${items?.image}`} title={items?.title_bn}/></div></Link>
 })}</div>
 <div >{[gallery[2]]?.map(items=>{
-return  <Link legacyBehavior  key={items.id}  href={`gallery/${items?.id}`}><div className='h-full'><Gridimages img={`${items?.image}`} title={items?.title_bn}/></div></Link>
+return  <Link legacyBehavior  key={items.id}  href={`gallery/${items?.id}`}><div className=''><Gridimages img={`${items?.image}`} title={items?.title_bn}/></div></Link>
 })}</div>
 <div>{[gallery[3]]?.map(items=>{
-return  <Link legacyBehavior  key={items.id}  href={`gallery/${items?.id}`}><div className='h-full'><Gridimages img={`${items?.image}`} title={items?.title_bn}/></div></Link>
+return  <Link legacyBehavior  key={items.id}  href={`gallery/${items?.id}`}><div className=''><Gridimages img={`${items?.image}`} title={items?.title_bn}/></div></Link>
 })}</div>
 
 </div>
