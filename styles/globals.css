@@ -63,3 +63,8 @@ body {
 .hedarBal{
   height: 100%;
 }
+@supports (-webkit-touch-callout: none) {
+  .h-hedarBal {
+    height: -webkit-fill-available;
+  }
+}
