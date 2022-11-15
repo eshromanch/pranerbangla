@@ -45,7 +45,7 @@ function Footer(props) {
 
     return (
       <div className='w-full flex flex-col bottom-0 bg-gray-50 justify-center items-center pb-6 dark:bg-slate-800  font-body'>
-<div className='flex w-full justify-evenly border-4 border-l-0 border-r-0 py-5 mb-4 dark:border-gray-600'>
+<div className='flex w-full justify-evenly gap-4 scrollColor border-4 border-l-0 border-r-0 py-5 mb-4 dark:border-gray-600 overflow-x-scroll'>
 {data?.map(items=>{
   if (items.name_en ==="About Us") {
     return (
