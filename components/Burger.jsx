@@ -49,7 +49,7 @@ if(!mounted) return null
       <div  className="relative my-5 w-full">
 
          
-          <SecondNav/>
+        <button className='text-left' onClick={closeModal}>  <SecondNav/></button>
           <ul className="flex justify-evenly  w-full my-12 ">
       {/* <li><Link href={"/"}><a><Home className="dark:stroke-white"/></a></Link></li> */}
            
