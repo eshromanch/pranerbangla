@@ -44,7 +44,7 @@ if(!mounted) return null
         <>
           <div className={`${Styles.box}  absolute right-0  top-0 w-[100vw] h-[100vh] bg-white shadow-xl  dark:bg-slate-800 overflow-y-scroll  hidden md:block md:top-26`}>
       <div className="w-full h-full relative  flex justify-center items-center">
-      <button className="absolute top-5 right-10 text-black " onClick={closeModal}><Close className="h-10 dark:stroke-white"/></button>
+      <button className="absolute top-5 z-20 right-10 text-black " onClick={closeModal}><Close className="h-10 dark:stroke-white"/></button>
 
       <div  className="relative my-5 w-full">
 
