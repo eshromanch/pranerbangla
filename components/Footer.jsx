@@ -160,7 +160,7 @@ function Footer(props) {
 
 <div className='my-1'>    <LogoChange/></div>
 <div className='w-full flex flex-col justify-center items-center mb-12'>
-<p className='bold-case text-gray-800 text-base md:text-sm dark:text-white '>স্বত্ব © ২০১৬ - ২০২২ প্রাণের বাংলা। সম্পাদক ও প্রকাশক: আবিদা নাসরীন কলি।</p>
+<p className='bold-case text-gray-800 text-base text-center md:text-sm dark:text-white '>স্বত্ব © ২০১৬ - ২০২২ প্রাণের বাংলা। সম্পাদক ও প্রকাশক: আবিদা নাসরীন কলি।</p>
   <p className='bold-case text-gray-800 text-center text-base md:text-xs dark:text-white'>Email: Article: amar@pranerbangla.com, Avertising: ad@pranerbangla.com
 </p>
 <p className='bold-case text-gray-800 text-base md:text-xs dark:text-white'>Phone:+8801818189677, +8801717256199</p>
