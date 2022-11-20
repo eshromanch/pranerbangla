@@ -56,7 +56,7 @@ if(!mounted) return null
                   {(() => {
               if (localStorage.getItem("token")  !== null) {
                 return (
-                  <li><Link
+                  <li onClick={closeModal}><Link
                     href='/userProfile'
                     className='text-black dark:text-white flex'
                     legacyBehavior><a className='flex gap-4 text-black dark:text-white'><UserIcon className="h-5 fill-black dark:fill-white"/>{userData?.name}</a></Link></li>
@@ -66,7 +66,7 @@ if(!mounted) return null
               } 
             })()}
          
-            <li className=''><Link
+            <li onClick={closeModal} className=''><Link
               href='/contribute'
               className=''
               legacyBehavior><a className='flex gap-4 text-black dark:text-white'><EditIcon className="h-5  dark:stroke-white "></EditIcon> Write</a></Link></li>
