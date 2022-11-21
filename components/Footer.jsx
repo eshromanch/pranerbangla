@@ -46,7 +46,7 @@ function Footer(props) {
 
     return (
       <div className='w-full flex flex-col bottom-0 bg-gray-50 justify-center items-center pb-6 dark:bg-slate-800  font-body'>
-<div className='flex w-full justify-center items-center  scrollColor border-4 border-l-0 border-r-0 py-5 mb-4 dark:border-gray-600 md:overflow-x-scroll sm:gap-4'>
+<div className='flex w-full justify-evenly items-center  scrollColor border-4 border-l-0 border-r-0 py-5 mb-4 dark:border-gray-600 md:overflow-x-scroll sm:gap-4'>
 {data?.map(items=>{
   if (items.name_en ==="About Us") {
     return (
@@ -149,13 +149,16 @@ function Footer(props) {
 <div className="md:mt-6 gap-4"  >
   <span className="text-base font-semibold text-black dark:text-white">অনুসরণ করুন</span> 
   <div className="grid grid-flow-col gap-4 ">
-    <a className=' '><Insta className="h-7 hover:fill-[#405DE6] dark:fill-white dark:hover:fill-[#405DE6]"/></a>
-    <a><Youtube  className="h-8 hover:fill-red-700 dark:fill-white dark:hover:fill-red-700"/></a>
-    <a><Facebook  className="h-7 hover:fill-[#4867aa] dark:fill-white dark:hover:fill-[#4867aa]"/></a>
+      <a><Facebook  className="h-7 hover:fill-[#4867aa] dark:fill-white dark:hover:fill-[#4867aa]"/></a>
+      <a><Tweet  className="h-7 hover:fill-[#1da1f2] dark:fill-white dark:hover:fill-[#1da1f2]"/></a>
+    
+    <a className=' '>
+      <Insta className="h-7 hover:fill-[#dd2a7b] dark:fill-white dark:hover:fill-[#405DE6]"/></a>
     <a><LinkedIn  className="h-7 hover:fill-[#0077b5] dark:fill-white dark:hover:fill-[#0077b5]"/></a>
-    <a><Tweet  className="h-7 hover:fill-[#1da1f2] dark:fill-white dark:hover:fill-[#1da1f2]"/></a>
+    <a><Youtube  className="h-8 hover:fill-red-700 dark:fill-white dark:hover:fill-red-700"/></a>
   </div>
   <div className="w-full flex justify-start items-start">
+    
   <Store className="h-36"/>
   </div>
 </div>

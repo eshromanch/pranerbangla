@@ -20,6 +20,7 @@ const LongCarouselMobile= dynamic(()=> import ('../components/LongCarouselMobile
 import React, { useEffect,useState } from 'react'
 
 
+
 export async function getStaticProps() {
 
 //   const featuredRes = await fetch("https://pranerbangla.com.bd/api/vb1/featured-post/featuredPost")
@@ -144,7 +145,10 @@ const dataAll2 = groupArticle2.map((item, index) => ({
 
   return (
     <div className='bg-gray-50 h-full  dark:bg-slate-800 ' >
-
+ <Head>
+ <link rel="icon" href="/fv-01.png" />
+        
+      </Head>
 <Carousel/>
 
 
