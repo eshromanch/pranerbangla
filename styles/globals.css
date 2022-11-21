@@ -59,3 +59,8 @@ body {
 .ImgSpace img{
   margin: 1rem;
 }
+
+.ImgSpace p{
+  line-height: 33px;
+  font-size: 1.2em;
+}

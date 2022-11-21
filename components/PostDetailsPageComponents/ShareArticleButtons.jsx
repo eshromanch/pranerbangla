@@ -36,7 +36,7 @@ import {
   } from 'next-share'
 function ShareArticleButtons(props) {
     return (
-        <div className='flex  gap-5 justify-center md:gap-2'>
+        <div className=' flex gap-5 md:gap-2'>
         <FacebookShareButton
           url={`https://pranerbangla.netlify.app/${props.url}`}
           quote={'Pranerbangla article'}
@@ -50,18 +50,7 @@ function ShareArticleButtons(props) {
 >
   <TwitterIcon size={32} round />
 </TwitterShareButton>
-        <PinterestShareButton
-          url={`https://pranerbangla.netlify.app/${props.url}`}
-          media={'Pranerbangla article'}
-        >
-          <PinterestIcon size={32} round />
-        </PinterestShareButton>
-        <RedditShareButton
-          url={`https://pranerbangla.netlify.app/${props.url}`}
-          title={'Pranerbangla article'}
-        >
-          <RedditIcon size={32} round />
-        </RedditShareButton>
+
         <WhatsappShareButton
   url={`https://pranerbangla.netlify.app/${props.url}`}
   title={'Pranerbangla article'}

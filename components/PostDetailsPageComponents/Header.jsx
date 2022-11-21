@@ -5,6 +5,7 @@ import ZoomIn from "../svgs/ZoomIn"
 import ZoomOut from "../svgs/ZoomOut"
 import Link from "next/link";
 import ZoomBtn from "./ZoomBtn";
+import ShareArticleButtons from "./ShareArticleButtons";
 
 // {setFontSize,fontSize}
 export function Header( props) {
@@ -45,13 +46,14 @@ const date =new Date(`${props.time}`).toLocaleString('en-uk',{day:"numeric",mont
      </div>
 
      </div>
-     <div className='flex mx-5 gap-4'>
+     {/* <div className='flex mx-5 gap-4'>
        <a href={props.user.facebook}><Facebook className="h-7 fill-[#4867aa] transition ease-in-out  hover:-translate-y-[2px] hover:scale-80  duration-300 " /></a>
        <a><Tweeter className="h-7 fill-[#0077b5] transition ease-in-out  hover:-translate-y-[2px] hover:scale-80  duration-300" /></a>
- {/* <ZoomBtn /> */}
+
       <button onClick={() => setFontSize(fontSize + 2)}><ZoomIn className="h-7 fill-[#0077b5] transition ease-in-out  hover:-translate-y-[2px] hover:scale-80  duration-300" /></button>
       <button onClick={() => setFontSize(fontSize - 2)}><ZoomOut className="h-7 fill-[#0077b5] transition ease-in-out  hover:-translate-y-[2px] hover:scale-80  duration-300" /></button>
-     </div>
+     </div> */}
+     <ShareArticleButtons/>
                  </div>
                  <div className='h-full w-full'>
                  <figure className='h-full w-full'><img className='w-full h-full' src={props.headImage} alt="Shoes" /></figure>

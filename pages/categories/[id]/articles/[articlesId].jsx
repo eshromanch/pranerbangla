@@ -208,7 +208,8 @@ const { asPath, pathname } = useRouter();
   <FaceBookComment/>
   <div className='mx-80 lg:mx-12 md:mx-5'>
   <h1 className='text-center text-lg text-black font-bold dark:text-white my-5'>Share Article</h1>
-  <ShareArticleButtons url={asPath}/>
+  <div className='flex   justify-center '>  <ShareArticleButtons url={asPath}/></div>
+
 
   <div className="tooltip flex justify-center w-full items-center my-4  " data-tip="Copy url to clipboard">
   <Clipboard url={asPath}/>

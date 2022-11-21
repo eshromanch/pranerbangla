@@ -8,6 +8,7 @@ import LinkedIn from "../components/svgs/Linkedin"
 import Tweet from "../components/svgs/Tweeter"
 import RedDot from "../components/svgs/Red-divider"
 import Link from "next/link"
+import Store from "../components/svgs/Store"
 import {useState, useEffect} from "react"
 function Footer(props) {
 
@@ -45,7 +46,7 @@ function Footer(props) {
 
     return (
       <div className='w-full flex flex-col bottom-0 bg-gray-50 justify-center items-center pb-6 dark:bg-slate-800  font-body'>
-<div className='flex w-full justify-center items-center gap-6 scrollColor border-4 border-l-0 border-r-0 py-5 mb-4 dark:border-gray-600 overflow-x-scroll'>
+<div className='flex w-full justify-center items-center  scrollColor border-4 border-l-0 border-r-0 py-5 mb-4 dark:border-gray-600 md:overflow-x-scroll sm:gap-4'>
 {data?.map(items=>{
   if (items.name_en ==="About Us") {
     return (
@@ -145,14 +146,17 @@ function Footer(props) {
 </div> 
 
 <div className='flex justify-center items-center'><Archive className="h-20 dark:fill-white"/> <h1 className='text-black text-2xl font-bold dark:text-white'>আর্কাইভ </h1></div>
-<div className="md:mt-6">
-  <span className="footer-title  text-black dark:text-white">Social</span> 
+<div className="md:mt-6 gap-4"  >
+  <span className="text-base font-semibold text-black dark:text-white">অনুসরণ করুন</span> 
   <div className="grid grid-flow-col gap-4 ">
     <a className=' '><Insta className="h-7 hover:fill-[#405DE6] dark:fill-white dark:hover:fill-[#405DE6]"/></a>
     <a><Youtube  className="h-8 hover:fill-red-700 dark:fill-white dark:hover:fill-red-700"/></a>
     <a><Facebook  className="h-7 hover:fill-[#4867aa] dark:fill-white dark:hover:fill-[#4867aa]"/></a>
     <a><LinkedIn  className="h-7 hover:fill-[#0077b5] dark:fill-white dark:hover:fill-[#0077b5]"/></a>
     <a><Tweet  className="h-7 hover:fill-[#1da1f2] dark:fill-white dark:hover:fill-[#1da1f2]"/></a>
+  </div>
+  <div className="w-full flex justify-start items-start">
+  <Store className="h-36"/>
   </div>
 </div>
 </footer>
