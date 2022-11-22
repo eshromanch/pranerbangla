@@ -149,17 +149,17 @@ function Footer(props) {
 <div className="md:mt-6 gap-4"  >
   <span className="text-base font-semibold text-black dark:text-white">অনুসরণ করুন</span> 
   <div className="grid grid-flow-col gap-4 ">
-      <a><Facebook  className="h-7 hover:fill-[#4867aa] dark:fill-white dark:hover:fill-[#4867aa]"/></a>
-      <a><Tweet  className="h-7 hover:fill-[#1da1f2] dark:fill-white dark:hover:fill-[#1da1f2]"/></a>
+      <a href="https://facebook.com/pranerbanglaplus"><Facebook  className="h-7 hover:fill-[#4867aa] dark:fill-white dark:hover:fill-[#4867aa]"/></a>
+      <a href="https://twitter.com/amarpranerbang1"><Tweet  className="h-7 hover:fill-[#1da1f2] dark:fill-white dark:hover:fill-[#1da1f2]"/></a>
     
-    <a className=' '>
-      <Insta className="h-7 hover:fill-[#dd2a7b] dark:fill-white dark:hover:fill-[#405DE6]"/></a>
-    <a><LinkedIn  className="h-7 hover:fill-[#0077b5] dark:fill-white dark:hover:fill-[#0077b5]"/></a>
-    <a><Youtube  className="h-8 hover:fill-red-700 dark:fill-white dark:hover:fill-red-700"/></a>
+    <a href="https://instagram.com/amarpranerbangla" className=''>
+      <Insta className="h-7 hover:fill-[#dd2a7b]  dark:fill-white dark:hover:fill-[#405DE6]"/></a>
+    <a href="https://linkedin.com/amarpranerbangla"><LinkedIn  className="h-7 hover:fill-[#0077b5] dark:fill-white dark:hover:fill-[#0077b5]"/></a>
+    <a href="https://youtube.com/channel/UCXcUjH-mbLljSWelNzp4fbA"><Youtube  className="h-8 hover:fill-red-700 dark:fill-white dark:hover:fill-red-700"/></a>
   </div>
   <div className="w-full flex justify-start items-start">
     
-  <Store className="h-36"/>
+<a href="#">  <Store className="h-36"/></a>
   </div>
 </div>
 </footer>
@@ -168,7 +168,7 @@ function Footer(props) {
 <div className='my-1'>    <LogoChange/></div>
 <div className='w-full flex flex-col justify-center items-center mb-12'>
 <p className='bold-case text-gray-800 text-base text-center md:text-sm dark:text-white '>স্বত্ব © ২০১৬ - ২০২২ প্রাণের বাংলা। সম্পাদক ও প্রকাশক: আবিদা নাসরীন কলি।</p>
-  <p className='bold-case text-gray-800 text-center text-base md:text-xs dark:text-white'>Email: Article: <a href="mailto:amar@pranerbangla.com">amar@pranerbangla.com</a>, Avertising: <a href="mailto:ad@pranerbangla.com">ad@pranerbangla.com</a>
+  <p className='bold-case text-gray-800 text-center text-base md:text-xs dark:text-white'><b>Email:</b> <b>Article:</b> <a href="mailto:amar@pranerbangla.com">amar@pranerbangla.com</a>, <b>Avertising:</b> <a href="mailto:ad@pranerbangla.com">ad@pranerbangla.com</a>
 </p>
 <p className='bold-case text-gray-800 text-base md:text-xs dark:text-white'>Phone: <a href="tel:8801818189677">+8801818189677</a>, <a href="tel:8801717256199">+8801717256199</a></p>
 </div>
