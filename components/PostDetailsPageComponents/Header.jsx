@@ -26,14 +26,14 @@ const date =new Date(`${props.time}`).toLocaleString('en-uk',{day:"numeric",mont
 
      <div className='flex  h-full justify-center items-center my-8 gap-4'>
     <Link href={`/profile/${props.writerId}`} legacyBehavior>
-     <div className=" mt-6 w-36 h-36  ">
+     <div className="cursor-pointer mt-6 w-36 h-36  ">
         <img src={props.user.image} alt="" className="  rounded-full object-cover border-2 border-primary "></img>
         
      </div>
     </Link>
 
      <div className='w-full'>
-     <Link href={`/profile/${props.writerId}`} legacyBehavior><h1 className='font-bold text-2xl text-black dark:text-white'>{props.user.name}</h1></Link>
+     <Link href={`/profile/${props.writerId}`} legacyBehavior><h1 className='font-bold text-2xl text-black cursor-pointer dark:text-white'>{props.user.name}</h1></Link>
          {/* <h1 className='font-normal text-md mb-3 text-black dark:text-white '>প্রযুক্তি লেখক, ঢাকা থেকে</h1> */}
          <h1 className='font-normal text-md mb-3 text-black dark:text-white '>{props.user.designation}, {props.user.address}  </h1>
          <div className='flex'>

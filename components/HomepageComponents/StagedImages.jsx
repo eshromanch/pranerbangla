@@ -13,7 +13,7 @@ function StagedImages(props) {
 
   return (
     <Link href={`/categories/${catId}/articles/${postId}`} legacyBehavior>
-        <div className="relative card card-compact  rounded-md w-full h-full bg-transparent  ">
+        <div className="relative card card-compact cursor-pointer rounded-md w-full h-full bg-transparent  ">
 
   <figure className='h-full '>
 
