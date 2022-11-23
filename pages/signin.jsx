@@ -4,7 +4,7 @@ import Facebook from "../components/svgs/Facebook"
 function signin(props) {
     return (
         <div>
-            <div className='my-12 h-full w-full flex flex-col justify-center items-center gap-10'>
+            <div className='my-12 h-full w-full flex flex-col justify-center items-center gap-10 overflow-x-hidden'>
             <LogoChange/>
             <h1 className='font-enbody font-semibold text-4xl text-center text-black dark:text-white w-[35rem] sm:w-[15rem] '>Join millions of readers from the region</h1>
             <p className='font-enbody text-xl text-center text-black dark:text-white w-[35rem] sm:w-[15rem]'>Access and engage on thousands of original, refreshing, and inspiring stories which capture the vibrancy of the South Asian region. And if you’ve got a story to tell, we’ve got a platform for you.</p>
