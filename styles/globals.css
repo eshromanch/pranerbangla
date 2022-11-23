@@ -64,3 +64,37 @@ body {
   line-height: 33px;
   font-size: 1.2em;
 }
+
+
+/* Loading */
+
+#bird1{
+  animation: flying 1200ms ease-in-out infinite  alternate  ;
+}
+#Vector_2 , #Vector_3, #Vector_4,#Vector_5{
+  animation: bouncing 1200ms ease-in-out infinite  alternate  ;
+}
+@keyframes flying {
+  from {
+    transform: translate(0px,0px);
+
+
+    }
+  
+    to {
+      transform: translate(-10px,-10px);
+
+    }
+}
+@keyframes bouncing {
+  from {
+    transform: translateY(0px);
+
+
+    }
+  
+    to {
+      transform: translateY(-10px);
+
+    }
+}

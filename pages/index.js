@@ -1,4 +1,4 @@
-import Head from 'next/head'
+
 import Image from 'next/image'
 
 import Cards from "../components/GridCards"
@@ -145,10 +145,7 @@ const dataAll2 = groupArticle2.map((item, index) => ({
 
   return (
     <div className='bg-gray-50 h-full  dark:bg-slate-800 ' >
- <Head>
- <link rel="icon" href="/fv-01.png" />
-        
-      </Head>
+
 <Carousel/>
 
 
