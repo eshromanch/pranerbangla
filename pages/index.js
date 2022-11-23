@@ -298,7 +298,7 @@ const rows = catItems.num_of_row * 4
 return catItems.category?.post_to_category.slice(0,rows).map(post=>{
 
 
-  return <Link legacyBehavior  key={post.id}   href={`/categories/${catItems.category.category_id}/articles/${post.post_id}`}><a><Cards title={post.post.title_bn} catagory={catItems.category.name_bn} time={post.created_at} imgSrc={post?.post?.image} route={post?.post?.id} status={catItems.status} ids={ids}  postId={post.post_id}/></a></Link>
+  return <Link legacyBehavior  key={post.id}   href={`/categories/${catItems.category.category_id}/articles/${post.post_id}`}><a><Cards title={post.post.title_bn} catagory={catItems.category.name_bn} time={post.created_at} imgSrc={post?.post?.image} route={post?.post?.id} status={catItems.status} ids={ids}  postId={post.post_id} readed={post?.post?.count_post}/></a></Link>
 
  
 })
@@ -354,7 +354,7 @@ const rows = catItems.num_of_row * 4
 return catItems.category?.post_to_category.slice(0,rows).map(post=>{
 
 
-  return <Link legacyBehavior  key={post.id}   href={`/categories/${catItems.category.category_id}/articles/${post.post_id}`}><a><Cards title={post.post.title_bn} catagory={catItems.category.name_bn} time={post.created_at} imgSrc={post?.post?.image} route={post?.post?.id} status={catItems.status} ids={ids}  postId={post.post_id}/></a></Link>
+  return <Link legacyBehavior  key={post.id}   href={`/categories/${catItems.category.category_id}/articles/${post.post_id}`}><a><Cards title={post.post.title_bn} catagory={catItems.category.name_bn} time={post.created_at} imgSrc={post?.post?.image} route={post?.post?.id} status={catItems.status} ids={ids}  postId={post.post_id} readed={post?.post?.count_post}/></a></Link>
 
 })
 
