@@ -34,7 +34,7 @@ useEffect(()=>{
        <Link
          key={data?.[0]['id']}
          href={`categories/${data?.[0]['post_to_cat'][0]["category_id"]}/articles/${data?.[0]['post_to_cat'][0]["post_id"]}`}
-         legacyBehavior><h1 className="text-5xl text-white  group transition duration-300 cursor-pointer sm:text-xl">{data?.[0]['title_bn']}<span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary"></span></h1></Link>
+         legacyBehavior><h1 className="text-5xl text-white  group transition duration-300 cursor-pointer drop-shadow-xl sm:text-xl">{data?.[0]['title_bn']}<span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary"></span></h1></Link>
          
          </div>
          <div className="flex flex-col translate-x-1/2 w-full gap-4 lg:translate-x-0 lg:justify-center ">
@@ -49,7 +49,7 @@ useEffect(()=>{
            {/* <img className='w-32 h-32 sm:w-14 sm:h-14 object-cover' src={`${item.image}`} alt="" /> */}
            <Link
              href={`categories/${cat.category_id}/articles/${cat.post_id}`}
-             legacyBehavior><h1 className="text-2xl text-white w-full font-semibold group transition duration-300 cursor-pointer sm:text-xs sm:font-normal">{item.title_bn}<span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary"></span></h1></Link>
+             legacyBehavior><h1 className="text-2xl text-white w-full font-semibold group transition duration-300 cursor-pointer sm:text-xs sm:font-normal drop-shadow-xl ">{item.title_bn}<span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary "></span></h1></Link>
          </div>
          ); 
        }); 
@@ -58,6 +58,7 @@ useEffect(()=>{
      }
          </div>
        </div>
+       {/* <div className='absolute w-full h-full bottom-0 bg-black opacity-5 '></div> */}
      </div>
     );
 }
