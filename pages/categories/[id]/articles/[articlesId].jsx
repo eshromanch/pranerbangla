@@ -177,9 +177,16 @@ const { asPath, pathname } = useRouter();
                 
                 return <Article content={items.content_bn} />;
               })()}
-
+{/* tags */}
+<div className='mt-12 flex gap-2'>
+{
+  items?.post_to_tag?.map(tags => {
+    return <button  key={tags.id} className="btn btn-ghost text-black dark:text-white bg-[#e5e5eb] dark:bg-[#202426] hover:btn-primary transition duration-300 ease-in-out font-semibold hover:text-white">{tags?.tag?.name_bn}</button>
+  })
+}
+</div>
+{/* tags */}
   </div>
-
 
   <div className='w-full '>
   {add.slice(0,1).map(item=>{
