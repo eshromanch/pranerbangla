@@ -56,7 +56,7 @@ sortedActivities?.slice(0,16).map((nav) =>{
          
           legacyBehavior>
           <a className="p-4 whitespace-nowrap tracking-wide text-base font-semibold font-sans text-black border-b-2 border-double 
-          border-transparent hover:border-primary cursor-pointer select-none dark:text-white   " href="">{nav.name_bn}</a>
+          border-transparent hover:border-primary cursor-pointer select-none dark:text-white dark:font-normal  " href="">{nav.name_bn}</a>
         </Link>
       ); 
      }

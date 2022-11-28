@@ -53,7 +53,7 @@ function Footer(props) {
       <Link
         key={items.id}
         href={`/about`}
-        className="link link-hover text-base font-bold text-black dark:text-white">আমাদের পরিচিতি</Link>
+        className="link link-hover text-base font-bold text-black dark:text-white dark:font-normal">আমাদের পরিচিতি</Link>
     );
   }
 })}
@@ -63,7 +63,7 @@ function Footer(props) {
 <Link
  key={items.id}
   href={`/Subscription`}
-  className="link link-hover text-base font-bold text-black dark:text-white">সাবস্ক্রিপসন</Link>
+  className="link link-hover text-base font-bold text-black dark:text-white dark:font-normal">সাবস্ক্রিপসন</Link>
     );
   }
 })}
@@ -74,7 +74,7 @@ function Footer(props) {
 <Link
  key={items.id}
   href={`/Contact`}
-  className="link link-hover text-base font-bold text-black dark:text-white">যোগাযোগ</Link>
+  className="link link-hover text-base font-bold text-black dark:text-white dark:font-normal">যোগাযোগ</Link>
     );
   }
 })}
@@ -87,7 +87,7 @@ function Footer(props) {
       key={items.id}
       href={`footerPages/${items.id}`}
       
-      legacyBehavior><a className="link link-hover  text-base font-bold text-black dark:text-white">{items.name_bn}</a></Link>
+      legacyBehavior><a className="link link-hover  text-base font-bold text-black dark:text-white dark:font-normal">{items.name_bn}</a></Link>
   );
 })}
 {/* {data?.filter().map(items=>{

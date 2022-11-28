@@ -18,6 +18,7 @@ const Edotorial = dynamic(()=> import ('../components/HomepageComponents/Edotori
 const LongCarouselMobile= dynamic(()=> import ('../components/LongCarouselMobile'),{ssr:false})
 // import PostDetails from './categories/post'
 import React, { useEffect,useState } from 'react'
+import PopUp from '../components/HomepageComponents/PopUp'
 
 
 
@@ -144,7 +145,8 @@ const dataAll2 = groupArticle2.map((item, index) => ({
 }))
 
   return (
-    <div className='bg-gray-50 h-full  dark:bg-slate-800 ' >
+    <><PopUp/>
+    <div className='relative bg-gray-50 h-full  dark:bg-slate-800 ' >
 
 <Carousel/>
 
@@ -416,7 +418,7 @@ return catItems.category?.post_to_category.slice(0,rows).map(post=>{
 
     </div>
 
-
+    </>
 
 
 

@@ -37,16 +37,17 @@ useEffect(()=>{
        </div>
       <div className='col-span-2'>
       {
-          allVideo?.slice(1,1).map(items =>{
+          allVideo?.slice(1,2).map(items =>{
+            console.log(items)
             return <Videos key={items.id} link={items.video_url} img={items.image}/>
           })
         }
       </div>
-      <div>    {
+     {
           allVideo?.slice(2,4).map(items =>{
             return <Videos key={items.id} link={items.video_url} img={items.image} iframe={items.video_embed_code}/>
           })
-        }</div>
+        }
     
     </div>
     </div>
