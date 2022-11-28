@@ -271,7 +271,7 @@ const { asPath, pathname } = useRouter();
 {
   add?.slice(2).map(pageItems=>{
     console.log(pageItems)
-    return <div className='mb-12 flex justify-center items-center lg:mx-10'>   
+    return <div key={pageItems.id} className='mb-12 flex justify-center items-center lg:mx-10'>   
            
     <a href={pageItems?.add_url}><img className=' w-full my-24 object-cover' src= {`${pageItems?.image}`} alt=""/></a>
     </div>
