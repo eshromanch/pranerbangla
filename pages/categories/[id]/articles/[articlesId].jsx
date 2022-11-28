@@ -258,17 +258,25 @@ const { asPath, pathname } = useRouter();
       })}
 
       </div>
-          <div className='mx-48 flex justify-center items-center lg:mx-10'>   
+          {/* <div className='mx-48 flex justify-center items-center lg:mx-10'>   
            
           <a href={pageItems.ad?.add_url}><img className=' w-full my-24 object-cover' src= {`${pageItems.ad?.image}`} alt=""/></a>
-          </div>
+          </div> */}
           </div>
    );
   })}
 
   </div>
 
-
+{
+  add?.slice(2).map(pageItems=>{
+    console.log(pageItems)
+    return <div className='mb-12 flex justify-center items-center lg:mx-10'>   
+           
+    <a href={pageItems?.add_url}><img className=' w-full my-24 object-cover' src= {`${pageItems?.image}`} alt=""/></a>
+    </div>
+  })
+}
 
 
   </div>

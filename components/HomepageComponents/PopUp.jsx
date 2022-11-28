@@ -39,10 +39,15 @@ function PopUp(props) {
         )} */}
                {isOpen && ( <div className='fixed flex justify-center top-44 w-full h-full  z-20'>
   
-            <div className=' z-40 w-[45rem] h-[45rem] relative flex justify-end bg-[#e63030] md:w-[25rem] md:h-[25rem] sm:w-[20rem] sm:h-[20rem]'><img className='absolute p-5 ' src={data?.image} alt="" />
-            <button className='absolute text-right text-xl text-white mx-1' onClick={closeModal}>x</button>
+            <div className=' z-40 w-[45rem] h-[45rem] relative flex justify-end md:w-[25rem] md:h-[25rem] sm:w-[20rem] sm:h-[20rem]'><img className='absolute p-5' src={data?.image} alt="" />
+            <button className='absolute z-30 text-right text-xl text-white mx-1' onClick={closeModal}>
+
+              <div className='w-10 h-10 rounded-full bg-primary flex justify-center items-center'>
+                  x
+              </div>
+            </button>
             </div>
-            {/* <div className='bg-black absolute z-10 opacity-20 w-full h-full' ></div> */}
+            <div className='bg-black absolute z-10 -top-6 opacity-20 w-full h-full' ></div>
         </div>
         )}
         </>

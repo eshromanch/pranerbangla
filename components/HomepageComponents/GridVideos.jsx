@@ -44,7 +44,7 @@ useEffect(()=>{
         }
       </div>
      {
-          allVideo?.slice(2,4).map(items =>{
+          allVideo?.slice(2,6).map(items =>{
             return <Videos key={items.id} link={items.video_url} img={items.image} iframe={items.video_embed_code}/>
           })
         }
