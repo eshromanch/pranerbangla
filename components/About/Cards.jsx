@@ -15,8 +15,8 @@ function Cards(props) {
       <a target="_blank" rel='noreferrer' href={props.facebookLink}><Facebook className="h-6  fill-[#ffffff]"/></a>
     </div>
     </figure>
-    <h1 className='text-center text-black font-bold text-lg mt-5'>{props.title} </h1>
-    <h1 className='text-center text-black text-lg '>{props.designations} </h1>
+    <h1 className='text-center text-black font-bold text-lg mt-5 dark:text-white' >{props.title} </h1>
+    <h1 className='text-center text-black text-lg dark:text-white'>{props.designations} </h1>
   </div>
 
   )

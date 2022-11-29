@@ -30,14 +30,14 @@ function subscriptions({data}) {
       <div  className="h-full bg-gray-900 p-12 font-body"  >
         <div className="max-w-lg mx-auto">
           <h2 className="text-2xl md:text-xl font-semibold text-center text-gray-100">সাবস্ক্রিপশন প্ল্যান  </h2>
-          <h3 className="mt-2 text-center text-gray-500">আপনার মোবাইল ও কম্পিউটার থেকে  প্রিমিয়াম কনটেন্ট পড়তে সাবস্ক্রাইব করুন। যা যেকোনো সময় বাতিল করতে পারবেন। </h3>
+          <h3 className="mt-2 text-center text-gray-500">আপনার মোবাইল ও কম্পিউটার থেকে  প্রিমিয়াম কনটেন্ট পড়তে সাবস্ক্রাইব করুন। <br /> যা যেকোনো সময় বাতিল করতে পারবেন। </h3>
         </div>
         <div className="my-8 mt-12 flex flex-row md:flex-col items-center justify-center gap-4">
       {data.map(items=>{
         return (
           <div key={items.id} className="max-w-xs rounded-md border-2 border-solid border-primary border-opacity-25 hover:border-opacity-100 px-8 pt-8 pb-4">
           <h3 className="text-2xl font-semibold text-gray-100">{items.name_bn}</h3>
-          <p className="mt-1 text-gray-500">{items.price_bn}</p>
+          <p className="mt-1 text-gray-500">{items.details_bn}</p>
           <div className="flex items-center mt-2 mb-4">
             <h4 className="text-4xl font-semibold text-gray-100 mr-4">{items.price_bn} টাকা </h4>
             <span className="text-sm text-gray-500"> প্রতি জন <br />{items.countMonth} মাস </span>

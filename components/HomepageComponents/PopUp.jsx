@@ -7,7 +7,7 @@ function PopUp(props) {
 
     const openModal = () => {
       setIsOpen(true);
-      setTimeout(closeModal,30000)
+      setTimeout(closeModal,15000)
     }
   
     const closeModal = () => {
@@ -47,7 +47,7 @@ function PopUp(props) {
               </div>
             </button>
             </div>
-            <div className='bg-black absolute z-10 -top-6 opacity-20 w-full h-full' ></div>
+            <div className='bg-black absolute z-10 -top-6 opacity-50 w-full h-full' ></div>
         </div>
         )}
         </>

@@ -36,7 +36,7 @@ function About({data,aboutData,aboutLogo}) {
 if(!mounted) return null
   return (
     <div className='flex flex-col justify-center items-center'>
-      <div className='h-full w-full mt-24 flex justify-center items-center  md:hidden  '>
+      <div className='h-full w-full  flex justify-center items-center  md:hidden  '>
 {aboutData?.map(items=>{
   return         <div key={items?.id} className='grid grid-cols-2 w-4/6  my-24 gap-5 p-10 bg-[#ede1be]'>
   <div className='flex flex-col'>
@@ -78,7 +78,7 @@ if(!mounted) return null
 
       </div>
 
-      <h1 className='text-6xl text-base-100 p-5'>প্রাণসঞ্চালক </h1>
+      <h1 className='text-6xl text-base-100 p-5 dark:text-white'>প্রাণসঞ্চালক </h1>
       <div className='grid grid-cols-4 gap-4 mx-48 md:grid-cols-2 md:mx-10 '>
     {
       data?.map(item =>{
