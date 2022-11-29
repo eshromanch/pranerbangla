@@ -22,7 +22,9 @@ export async function getStaticProps() {
 
       aboutLogo
     },
+    revalidate: 10,
   }
+  
 }
 
 
