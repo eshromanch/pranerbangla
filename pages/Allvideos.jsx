@@ -3,6 +3,8 @@ import Circle from '../components/svgs/Circle'
 
 export async function getStaticProps() {
 
+  try {
+
     const res = await fetch('https://pranerbangla.com.bd/api/vb1/video-all')
     const posts = await res.json()
     const data = posts["data"]
@@ -32,12 +34,13 @@ const sliceArrayIntoGroups = (arr, size) => {
     ad: add[index]
     
   }))
-
-    return {
-      props: {
-        dataAll,
-      },
+    if (!dataAll) {
+      return { notFound: true };
     }
+    return { props: { dataAll ,add} };
+  } catch (err) {
+    return { notFound: true };
+  }
   }
   
 
