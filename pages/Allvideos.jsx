@@ -37,7 +37,7 @@ const sliceArrayIntoGroups = (arr, size) => {
     if (!dataAll) {
       return { notFound: true };
     }
-    return { props: { dataAll ,add} };
+    return { props: { dataAll } };
   } catch (err) {
     return { notFound: true };
   }

@@ -2,22 +2,30 @@ import React from 'react';
 import  Link from "next/link"
 export async function getStaticProps() {
 
-  const res = await fetch('https://pranerbangla.com.bd/api/vb1/faq')
-  const posts = await res.json()
-  const data = posts["data"]
 
-  const resAdd = await fetch("http://pranerbangla.com.bd/api/vb1/advertisement")
-    const adData = await resAdd.json()
-  const adds = adData["data"]
+  try {
+    const res = await fetch('https://pranerbangla.com.bd/api/vb1/faq')
+    const posts = await res.json()
+    const data = posts["data"]
   
-  const add = adds.filter(items=> items.add_space==="contribute")
-
-  return {
-    props: {
-      data,
-      add
-    },
+    const resAdd = await fetch("http://pranerbangla.com.bd/api/vb1/advertisement")
+      const adData = await resAdd.json()
+    const adds = adData["data"]
+    
+    const add = adds.filter(items=> items.add_space==="contribute")
+    if (!data) {
+      return { notFound: true };
+    }
+    return { props: { data ,add} };
+  } catch (err) {
+    return { notFound: true };
   }
+  // return {
+  //   props: {
+  //     data,
+  //     add
+  //   },
+  // }
 }
 
 function Contribute({data,add}) {

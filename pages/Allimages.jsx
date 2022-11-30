@@ -4,40 +4,44 @@ import Circle from '../components/svgs/Circle'
 
 export async function getStaticProps() {
 
-    const res = await fetch('https://pranerbangla.com.bd/api/vb1/image-gallery')
-    const posts = await res.json()
-    const data = posts["data"]
 
-    const resAdd = await fetch("http://pranerbangla.com.bd/api/vb1/advertisement")
-    const adData = await resAdd.json()
-  const adds = adData["data"]
+    try {
+      const res = await fetch('https://pranerbangla.com.bd/api/vb1/image-gallery')
+      const posts = await res.json()
+      const data = posts["data"]
   
-  const add = adds.filter(items=> items.add_space==="image")
-  
-  
-  const sliceArrayIntoGroups = (arr, size) => {
-      var step = 0, sliceArr = [], len = arr.length;
-     
-      while (step < len ) {
-        sliceArr.push(arr.slice(step, step += size));
-      
+      const resAdd = await fetch("http://pranerbangla.com.bd/api/vb1/advertisement")
+      const adData = await resAdd.json()
+    const adds = adData["data"]
+    
+    const add = adds.filter(items=> items.add_space==="image")
+    
+    
+    const sliceArrayIntoGroups = (arr, size) => {
+        var step = 0, sliceArr = [], len = arr.length;
+       
+        while (step < len ) {
+          sliceArr.push(arr.slice(step, step += size));
+        
+        }
+        return sliceArr;
       }
-      return sliceArr;
-    }
-    
-    const groupArticle = sliceArrayIntoGroups(data, 8);
-    
-    
-    const dataAll = groupArticle.map((item, index) => ({
-    
-      vid: item,
-      ad: add[index]
       
-    }))
-    return {
-      props: {
-        dataAll,
-      },
+      const groupArticle = sliceArrayIntoGroups(data, 8);
+      
+      
+      const dataAll = groupArticle.map((item, index) => ({
+      
+        vid: item,
+        ad: add[index]
+        
+      }))
+      if (!dataAll) {
+        return { notFound: true };
+      }
+      return { props: { dataAll } };
+    } catch (err) {
+      return { notFound: true };
     }
   }
   
