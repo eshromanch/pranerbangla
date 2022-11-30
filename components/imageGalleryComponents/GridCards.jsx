@@ -3,7 +3,7 @@ import React, { useEffect,useState } from 'react';
 
 function GridCards(props) {
   const date =new Date(`${props?.time}`).toLocaleString('en-uk',{day:"numeric",month:'short', year:'numeric'})
-  console.log(date)
+
 if (props.status==="1") {
   return (
 

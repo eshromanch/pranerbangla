@@ -6,19 +6,28 @@ export async function getStaticProps() {
   const posts = await res.json()
   const data = posts["data"]
 
-
+  const resAdd = await fetch("http://pranerbangla.com.bd/api/vb1/advertisement")
+    const adData = await resAdd.json()
+  const adds = adData["data"]
+  
+  const add = adds.filter(items=> items.add_space==="contribute")
 
   return {
     props: {
       data,
+      add
     },
   }
 }
 
-function Contribute({data}) {
+function Contribute({data,add}) {
     return (
       <div>
+              <div className='mx-48 flex justify-center items-center lg:mx-10'>   
+                  <a key={add?.[0]["id"]} href={add?.[0]["add_url"]}><img className=' w-full my-6 object-cover' src= {`${add?.[0]["image"]}`}  alt=""/></a>
+                  </div>
       <div className=' flex justify-center items-center p-20 md:px-0 '>
+
                   <div className='mx-80 h-full  w-3/6 flex flex-col justify-center items-center  gap-5 lg:mx-40 md:mx-0 '>
                       <h1 className='text-2xl font-bold text-black dark:text-white text-center'>বাংলা ভাষায় সর্ববৃহৎ কন্টেন্ট বিপ্লবের অংশ হোন আপনিও</h1>
       <p className='text-md  text-black dark:text-white '>প্রাণের বাংলার যাত্রা শুরু হয়েছিল এমন সব গল্প বলার জন্য, যেগুলো জীবনের কথা বলে, স্বপ্নের কথা বলে, ভেঙে পড়ার গল্প বলে, আবার উঠে দাঁড়ানোর গল্প বলে। প্রাণের বাংলা ইতিহাসের গল্প শোনায়, বর্তমানের বিশ্লেষণ করে, ভবিষ্যতের স্বপ্ন দেখায়। প্রাণের  বাংলা এবার পাঠকদের জন্য গল্প শুনতে চায়, পাঠকদের গল্প শুনতে চায়। লিখুন মন খুলে, আপনার গল্প পৌঁছে যাক  গোটা বিশ্বে বাঙালী পাঠকসমাজের কাছে! </p>
@@ -49,6 +58,7 @@ function Contribute({data}) {
 
       </div>
       </div>
+      
       </div>
     );
 }

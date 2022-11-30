@@ -168,9 +168,9 @@ function Footer(props) {
 <div className='my-1'>    <LogoChange/></div>
 <div className='w-full flex flex-col justify-center items-center mb-12'>
 <p className='bold-case text-gray-800 text-base text-center md:text-sm dark:text-white '>স্বত্ব © ২০১৬ - ২০২২ প্রাণের বাংলা। সম্পাদক ও প্রকাশক: আবিদা নাসরীন কলি।</p>
-  <p className='bold-case text-gray-800 text-center text-base md:text-xs dark:text-white'><b>Email:</b> <b>Article:</b> <a href="mailto:amar@pranerbangla.com">amar@pranerbangla.com</a>, <b>Avertising:</b> <a href="mailto:ad@pranerbangla.com">ad@pranerbangla.com</a>
+  <p className='bold-case text-gray-800 font-enbody text-center text-base md:text-xs dark:text-white'><b>Email:</b> <b>Article:</b> <a href="mailto:amar@pranerbangla.com">amar@pranerbangla.com</a>, <b>Avertising:</b> <a href="mailto:ad@pranerbangla.com">ad@pranerbangla.com</a>
 </p>
-<p className='bold-case text-gray-800 text-base md:text-xs dark:text-white'><b>Phone:</b> <a href="tel:8801818189677">+8801818189677</a>, <a href="tel:8801717256199">+8801717256199</a></p>
+<p className='bold-case font-enbody  text-gray-800 text-base md:text-xs dark:text-white'><b>Phone:</b> <a href="tel:8801818189677">+8801818189677</a>, <a href="tel:8801717256199">+8801717256199</a></p>
 </div>
       </div>
     );

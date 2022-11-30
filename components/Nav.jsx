@@ -63,14 +63,14 @@ const userData =JSON.parse(user)
         return (
           <li><Link
             href={'/userProfile'}
-            legacyBehavior><a className='text-black dark:text-white md:hidden'><UserIcon className="h-5 fill-black dark:fill-white"/>{userData?.name}</a></Link></li>
+            legacyBehavior><a className='text-black dark:text-white md:hidden'><UserIcon className="h-5 font-enbody fill-black dark:fill-white"/>{userData?.name}</a></Link></li>
         );
       } else {
-        return <li><Link legacyBehavior href={'/signin'}><a className='text-black dark:text-white md:hidden'><UserIcon className="h-5 fill-black dark:fill-white"/>Log in</a></Link></li>;
+        return <li><Link legacyBehavior href={'/signin'}><a className='text-black dark:text-white md:hidden'><UserIcon className="h-5 fill-black dark:fill-white"/>লগইন </a></Link></li>;
       } 
     })()}
  
-    <li className='md:hidden'><Link legacyBehavior href='/contribute'><a className='text-black dark:text-white ' ><EditIcon className="h-5  dark:stroke-white "></EditIcon>Write</a></Link></li>
+    <li className='md:hidden'><Link legacyBehavior href='/contribute'><a className='text-black dark:text-white ' ><EditIcon className="h-5  dark:stroke-white "></EditIcon>লিখুন </a></Link></li>
   </ul>
   <Burger/>
 </div>

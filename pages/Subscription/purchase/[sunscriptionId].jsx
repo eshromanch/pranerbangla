@@ -36,7 +36,6 @@ function Purchase(props) {
   const items = Router.query
 
 
-  console.log(items.id)
     const handleSubmit = async (event) => {
       
         event.preventDefault()
@@ -84,7 +83,7 @@ function Purchase(props) {
 
 
     if(response.ok) Router.push("/")
-    if(response.success === "false") alert(result.errors)
+    if(response.status === 401 && token === null) alert("please check if you are logged in or Trxdl number is correct")
     }
 
 
