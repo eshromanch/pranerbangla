@@ -65,7 +65,12 @@ body {
   font-size: 1.2em;
 }
 
-
+.ImgSpace figcaption{
+  margin-top: -15px;
+  background: #f8f8f8;
+  text-align: center;
+  color: black;
+}
 /* Loading */
 
 #bird1{

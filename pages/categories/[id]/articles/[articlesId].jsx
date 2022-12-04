@@ -13,6 +13,7 @@ import PaidArticles from '../../../../components/PostDetailsPageComponents/PaidA
 import { Header } from '../../../../components/PostDetailsPageComponents/Header';
 import { useRouter } from 'next/router'
 import Link from "next/link"
+import Head from 'next/head'
 import React,{useEffect, useState} from 'react'
 import ZoomBtn from '../../../../components/PostDetailsPageComponents/ZoomBtn';
 // import Router from 'next/router';
@@ -153,8 +154,10 @@ const [fontSize, setFontSize]= useState(16)
 const { asPath, pathname } = useRouter();
   return (
     <div className='relative'> 
+
 {
   data?.map(items=>{
+
 
  return (
    <div key={items.id} className='relative flex flex-col mx-48 lg:mx-5'>
@@ -162,6 +165,11 @@ const { asPath, pathname } = useRouter();
   style={{ transform: `translateX(${completion - 100}%)` }}
   className="absolute -mx-48 bg-primary z-10 h-1 w-[100vw] top-0 sticky overflow-hidden"
   />
+      <Head>
+    <title>{items.meta_title} | Pranerbangla</title>
+    <meta name="description" content={items.meta_description} />
+    <meta name="keywords" content={items.meta_tag} />
+  </Head>
   <Header writerId={items.writer_id} title={items.title_bn} setFontSize={setFontSize} fontSize={fontSize} time={items.created_at} count={items.count_post} user={items.user} headImage ={items.image} postCat={items.post_to_cat}/>
   {/* <ZoomBtn setFontSize={setFontSize} fontSize={fontSize} className="" /> */}
   <div className='my-12 grid grid-cols-3 gap-8 md:flex md:flex-col'>
