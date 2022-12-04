@@ -49,7 +49,7 @@ export async function getStaticProps() {
 function Allvideos({dataAll}) {
 
     return (<>
-      <div className='flex justify-between mx-48 border-b-2 my-12 lg:mx-10'>
+      <div className='flex justify-between mx-48 border-b-2 my-12 lg:mx-10 md:mx-5'>
    
   <h1  className='flex   items-center text-base text-3xl text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 mb-1"/>ছবির গল্প</h1>
    
@@ -57,7 +57,7 @@ function Allvideos({dataAll}) {
          {dataAll?.map((group) => {
             return (
               <div key={group?.id} className='w-full mt-24'>
-                  <div className="grid grid-cols-4 mb-4 gap-10 mx-48 lg:mx-10  md:grid-cols-2">
+                  <div className="grid grid-cols-4 mb-4 gap-10 mx-48 lg:mx-10  md:grid-cols-2  md:mx-3 md:gap-5">
                    
           {
            group?.vid?.map(items => {
@@ -68,7 +68,7 @@ function Allvideos({dataAll}) {
             )
           }
                   </div>
-                  <div className='mx-48 flex justify-center items-center lg:mx-10'>   
+                  <div className='mx-48 flex justify-center items-center lg:mx-10 md:mx-3'>   
                   <a key={group?.ad?.id} href={group?.ad?.add_url}><img className=' w-full my-24 object-cover' src= {`${group?.ad?.image}`} alt=""/></a>
                   </div>
               </div>

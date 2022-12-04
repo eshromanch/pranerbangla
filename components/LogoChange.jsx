@@ -16,10 +16,10 @@ useEffect(()=> {
     if(!mounted) return null
 if (currentTheme==="light") {
     return (
-        <Link href={`/`} className="btn btn-ghost normal-case text-xl " legacyBehavior><div className='md:w-40 sm:w-[7rem]'>
+        <Link href={`/`} className="btn btn-ghost normal-case text-xl  " legacyBehavior><div className='md:w-40 sm:w-[7rem] cursor-pointer'>
         <Image  src={Logo}/></div></Link>
     );
     
 } else {
-    return <Link href={`/`} className="btn btn-ghost normal-case text-xl" legacyBehavior><div className='md:w-40 sm:w-[7rem]'><Image src={DarkLogo}/></div></Link>;
+    return <Link href={`/`} className="btn btn-ghost normal-case text-xl " legacyBehavior><div className='md:w-40 sm:w-[7rem] cursor-pointer'><Image src={DarkLogo}/></div></Link>;
 }}
