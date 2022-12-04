@@ -153,9 +153,9 @@ const dataAll2 = groupArticle2.map((item, index) => ({
 
      
 
-<div className='mx-48 lg:mx-10'>
+<div className='mx-48 lg:mx-10 md:mx-3 '>
 
-<div className='my-12 w-full grid grid-cols-3 gap-10 sm:flex sm:flex-col'>
+<div className='my-12 w-full grid grid-cols-3 gap-10 sm:flex md:flex-col'>
 <div className='col-span-2'><div><b><h1 className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 "/> শেষ সংযুক্তি </h1></b></div>
 <div className='grid grid-cols-3 gap-4'>
       <div className='col-span-2 w-full h-full'>
@@ -178,7 +178,7 @@ const dataAll2 = groupArticle2.map((item, index) => ({
 
 {homeData?.slice(0,2).map(homeDatas=>{
 
-  return <div key={homeDatas.id} className='my-12 mx-48 lg:mx-10 '>
+  return <div key={homeDatas.id} className='my-12 mx-48 lg:mx-10 md:mx-2 '>
     {adds.slice(0,1).map(items=>{
   return <div key={items.id} className='w-full flex justify-center'><a href={items.add_url}><img className=' w-[60.625rem] mb-12 object-cover' src= {`${items.image}`} alt=""/></a></div>
 })}   
@@ -194,7 +194,7 @@ const dataAll2 = groupArticle2.map((item, index) => ({
 
 })}
   </div>
-  <div className='grid grid-cols-4  gap-10 md:grid-cols-2'>
+  <div className='grid grid-cols-4  gap-10 md:grid-cols-2 md:gap-5'>
 {[homeDatas.category]?.map(catItems=>{
   const rows = homeDatas.num_of_row * 4
  return catItems?.post_to_category?.slice(0,rows).map(post=>{
@@ -274,7 +274,7 @@ return     <div  key={catItems.id}  className='mx-80 h-[40vh]  grid grid-cols-4 
 {dataAll.map(homeDatas=>{
 
 
-return <div  key={homeDatas.id}  className='my-12 mx-48 lg:mx-10 '>
+return <div  key={homeDatas.id}  className='my-12 mx-48 lg:mx-10 md:mx-2 '>
 
 <div key={homeDatas.id}>
 
@@ -292,7 +292,7 @@ homeDatas.articles.map(item=>{
 })
 }
 </div>
-<div className='grid grid-cols-4  gap-10 md:grid-cols-2'>
+<div className='grid grid-cols-4  gap-10 md:grid-cols-2 md:gap-5'>
 {homeDatas.articles?.map(catItems=>{
   // console.log(catItems.num_of_row)
 const rows = catItems.num_of_row * 4
@@ -312,7 +312,7 @@ return catItems.category?.post_to_category.slice(0,rows).map(post=>{
 
 
 </div>
-<div className='mx-48 flex justify-center items-center lg:mx-10'>   
+<div className='mx-48 flex justify-center items-center lg:mx-10 md:mx-2'>   
 
         <a href={homeDatas.ad?.add_url}><img className=' w-full my-6 object-cover' src= {`${homeDatas.ad?.image}`} alt=""/></a>
         </div>
@@ -330,7 +330,7 @@ return catItems.category?.post_to_category.slice(0,rows).map(post=>{
 {dataAll2.map(homeDatas=>{
 
 
-return <div  key={homeDatas.id}  className='my-12 mx-48 lg:mx-10 '>
+return <div  key={homeDatas.id}  className='my-12 mx-48 lg:mx-10 md:mx-2'>
 
 <div key={homeDatas.id}>
 
@@ -348,7 +348,7 @@ homeDatas.articles.map(item=>{
 })
 }
 </div>
-<div className='grid grid-cols-4  gap-10 md:grid-cols-2'>
+<div className='grid grid-cols-4  gap-10 md:grid-cols-2 md:gap-5'>
 {homeDatas.articles?.map(catItems=>{
   // console.log(catItems.num_of_row)
 const rows = catItems.num_of_row * 4
@@ -365,7 +365,7 @@ return catItems.category?.post_to_category.slice(0,rows).map(post=>{
 
 
 </div>
-<div className='mx-48 flex justify-center items-center lg:mx-10'>   
+<div className='mx-48 flex justify-center items-center lg:mx-10 md:mx-2'>   
 
         <a href={homeDatas.ad?.add_url}><img className=' w-full my-6 object-cover' src= {`${homeDatas.ad?.image}`} alt=""/></a>
         </div>
@@ -374,8 +374,8 @@ return catItems.category?.post_to_category.slice(0,rows).map(post=>{
 })}
 
 
-<div className='w-full h-1/2 bg-[#202426] p-10   '>
-<div className='mx-80 flex justify-between items-center lg:mx-10'><b><h1 className='flex  justify-between items-center text-lg  text-white mb-4 dark:text-white'><Circle className=" h-3  pr-2 mb-1"/>ছবির গল্প </h1></b>
+<div className='w-full h-1/2 bg-[#202426] p-10 md:p-5   '>
+<div className='mx-80 flex justify-between items-center lg:mx-10 md:mx-2'><b><h1 className='flex  justify-between items-center text-lg  text-white mb-4 dark:text-white'><Circle className=" h-3  pr-2 mb-1"/>ছবির গল্প </h1></b>
 <b><Link legacyBehavior href={"Allimages"}><a className='btn btn-ghost text-base text-white mb-4 dark:text-white' href="#">
 <h4 className='flex '><Plus className="h-5 pr-2 mt-0"/> আরো দেখুন</h4></a></Link></b>
 </div>

@@ -229,14 +229,14 @@ const num  = parseInt(ids)
       <div className='w-full'>
          {[advertise[0]].map((ad)=> {
 if (ad?.add_space==="categoty") {
-return <div key={ad.id} className='-my-12 flex justify-center items-center lg:mx-10  '>
+return <div key={ad.id} className='-my-12 flex justify-center items-center lg:mx-10 md:mx-2 '>
             
  <a href={ad?.add_url}><img className=' w-[60.625rem] my-24 object-cover' src= {`${ad?.image}`} alt=""  /></a>
  </div>
 }
           })}
 
-          <div className='flex justify-between mx-48 border-b-2 my-8 lg:mx-10'>
+          <div className='flex justify-between mx-48 border-b-2 my-8 lg:mx-10 md:mx-5'>
          
           {[pages[0]]?.map((pageItem)=>{
      return  <h1 key={pageItem.id} className='flex   items-center text-base text-3xl text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 mb-1"/>{pageItem?.category_name_bn}</h1>
@@ -295,7 +295,7 @@ pages?.map(pageItem=>{
 {dataAll.map((group) => {
   return (
     <div key={group?.id} className='w-full'>
-        <div className="grid grid-cols-4 mb-4 gap-10 mx-48 lg:mx-10  md:grid-cols-2">
+        <div className="grid grid-cols-4 mb-4 gap-10 mx-48 lg:mx-10  md:grid-cols-2 md:mx-2 md:gap-5">
          
 {
  group?.articles.map(pageItem => {
@@ -309,7 +309,7 @@ pages?.map(pageItem=>{
   )
 }
         </div>
-        <div className='mx-48 flex justify-center items-center lg:mx-10'>   
+        <div className='mx-48 flex justify-center items-center lg:mx-10 md:mx-2'>   
         <a key={group?.ad?.id} href={group?.ad?.add_url}><img className=' w-full my-24 object-cover' src= {`${group?.ad?.image}`} alt=""/></a>
         </div>
     </div>

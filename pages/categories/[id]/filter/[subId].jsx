@@ -104,7 +104,7 @@ useEffect(()=>{
 
 
     return (
-        <div className='grid grid-cols-4 mb-4 gap-10 mx-48'>   
+        <div className='grid grid-cols-4 mb-4 gap-10 mx-48 md:mx-5 md:gap-5'>   
             {data?.map(pageItem=>{
                 return (
                     <Link
