@@ -104,13 +104,14 @@ useEffect(()=>{
 
 
     return (
-        <div className='grid grid-cols-4 mb-4 gap-10 mx-48 md:mx-5 md:gap-5'>   
+        <div className='grid grid-cols-4 mb-4 gap-10 mx-48 md:mx-5 md:gap-5 py-10'>   
             {data?.map(pageItem=>{
+              console.log(pageItem)
                 return (
                     <Link
                         key={pageItem.id}
                         href={`/categories/${ids}/articles/${pageItem.id}`}
-                        legacyBehavior><Cards title={pageItem.title_bn} catagory={pageItem.category_name_bn} time={pageItem.created_at} imgSrc={pageItem.image} route={pageItem.id} status={pageItem.status}/></Link>
+                        ><Cards title={pageItem.title_bn} catagory={pageItem.category_name_bn}  readed={pageItem?.count_post}  time={pageItem.created_at} imgSrc={pageItem.image} route={pageItem.id} status={pageItem.status}/></Link>
                 );
             })}
         </div>

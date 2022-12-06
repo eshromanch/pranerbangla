@@ -71,6 +71,13 @@ body {
   text-align: center;
   color: black;
 }
+.ImgSpaceForPaidArticles p{
+  line-height: 33px;
+  font-size: 1.2em;
+}
+.ImgSpaceForPaidArticles img{
+  display: none;
+}
 /* Loading */
 
 #bird1{

@@ -6,7 +6,7 @@ import React, { useEffect,useState } from 'react'
 import Link from 'next/link';
 import {useRouter} from 'next/router'
  
-
+import Head from 'next/head'
 let token;
 
 if (typeof window !== 'undefined') {
@@ -258,9 +258,14 @@ return <div key={ad.id} className='-my-12 flex justify-center items-center lg:mx
 
 
           if (main.id === num) {
-            // console.log(main.childs)
+            console.log(main.description_bn)
             return (
               <div key={main.id} className='flex mx-48 gap-10 mb-4'>
+                        <Head>
+        <title>{main.description_bn} | Pranerbangla</title>
+        <meta name="description" content={main.description_bn} />
+        {/* <meta name="keywords" content={group.meta_tag} /> */}
+      </Head>
               {main?.childs?.map((items)=>{
               // console.log(items?.id)
             return (
@@ -296,7 +301,7 @@ pages?.map(pageItem=>{
   return (
     <div key={group?.id} className='w-full'>
         <div className="grid grid-cols-4 mb-4 gap-10 mx-48 lg:mx-10  md:grid-cols-2 md:mx-2 md:gap-5">
-         
+
 {
  group?.articles.map(pageItem => {
   return <Link

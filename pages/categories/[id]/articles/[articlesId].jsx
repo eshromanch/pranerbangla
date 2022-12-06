@@ -68,7 +68,6 @@ export async function getStaticPaths() {
     const resAdd = await fetch("http://pranerbangla.com.bd/api/vb1/advertisement")
   const adData = await resAdd.json()
 const adds = adData["data"]
-    // console.log(data)
     data?.map(items=>{
       //  f = items.category_id
       items["post_to_cat"]?.map(it=>{
@@ -278,7 +277,6 @@ const { asPath, pathname } = useRouter();
 
 {
   add?.slice(2).map(pageItems=>{
-    console.log(pageItems)
     return <div key={pageItems.id} className='mb-12 flex justify-center items-center lg:mx-10'>   
            
     <a href={pageItems?.add_url}><img className=' w-full my-24 object-cover' src= {`${pageItems?.image}`} alt=""/></a>
