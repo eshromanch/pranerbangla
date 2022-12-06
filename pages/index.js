@@ -186,7 +186,7 @@ const dataAll2 = groupArticle2.map((item, index) => ({
 
 {[homeDatas.category]?.map((cat)=>{
   ids= cat?.id;
-  return   <div key={cat.id} className='flex  justify-between items-center'>
+  return   <div key={cat?.id} className='flex  justify-between items-center'>
   
   <b><h1 className='flex   items-center text-base text-lg text-black mb-4 dark:text-white'><Circle className=" h-3 pr-2 mb-1"/>{cat?.name_bn} </h1></b>
 <b><Link legacyBehavior href={`/categories/`+ids}><a className='btn btn-ghost text-lg text-base-100  dark:text-white' href="#"><h4 className='flex -mt-5'><Plus className="h-5 pr-2 mt-1"/> আরো পড়ুন </h4></a></Link></b>
