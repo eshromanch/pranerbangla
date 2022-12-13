@@ -258,7 +258,7 @@ return <div key={ad.id} className='-my-12 flex justify-center items-center lg:mx
 
 
           if (main.id === num) {
-            console.log(main.description_bn)
+         
             return (
               <div key={main.id} className='flex mx-48 gap-10 mb-4'>
                         <Head>

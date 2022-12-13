@@ -52,7 +52,7 @@ function Purchase(props) {
         const JSONdata = JSON.stringify(data)
     
         
-        const endpoint = 'https://pranerbangla.com.bd/api/vb1/package-purchase'
+        const endpoint = 'http://pranerbangla.com.bd/api/vb1/package-purchase'
     
       
         const options = {
@@ -62,8 +62,9 @@ function Purchase(props) {
     
             headers: {
         
-                    // "Content-Type": 'application/json',
-                    'Accept': 'application/json',
+                    "Content-Type": 'application/json',
+                    
+                    // 'Accept': 'application/json',
                     "Authorization": `Bearer ` + token
   
             },
@@ -76,6 +77,8 @@ function Purchase(props) {
      
 
         const result = await response.json()
+        // console.log(result)
+        // console.log(token)
 
         const [user] = [result].map(item =>{
           return item.userData

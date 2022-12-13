@@ -38,7 +38,7 @@ useEffect(()=>{
       <div className='col-span-2'>
       {
           allVideo?.slice(1,2).map(items =>{
-            console.log(items)
+          
             return <Videos key={items.id} link={items.video_url} img={items.image}/>
           })
         }

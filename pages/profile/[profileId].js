@@ -87,15 +87,10 @@ return (
   <Link
     key={pageItem?.id}
     href={`/categories/${ids}/articles/${pageItem?.id}`}
-    ><Cards title={pageItem?.title_bn} catagory={pageItem?.category_name_bn} time={pageItem?.created_at} imgSrc={pageItem?.image} route={pageItem?.id} status={pageItem?.status} readed={pageItem.count_post}/></Link>
+    ><Cards title={pageItem?.title_bn} catagory={pageItem?.post_to_cat[0]?.category?.name_bn} time={pageItem?.created_at} imgSrc={pageItem?.image} route={pageItem?.id} status={pageItem?.status} readed={pageItem.count_post}/></Link>
 );
 })}
-{/* <Cards/>
-<Cards/>
-<Cards/>
-<Cards/>
-<Cards/>
-<Cards/> */}
+
 </div>
 </div>
       </div>

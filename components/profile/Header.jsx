@@ -38,9 +38,12 @@ import React from 'react'
 import Background from '../../components/svgs/ProfileBg'
 import ShareProfileButtons from '../profile/ShareProfileButtons';
 
-
+import Head from 'next/head';
 function Header(props) {
   return (<>
+        <Head>
+        <title>{props.author.name} | Pranerbangla</title>
+      </Head>
        <div className="w-full h-full relative md:hidden  ">
     <Background className=" w-full h-full object-fill "/>
 

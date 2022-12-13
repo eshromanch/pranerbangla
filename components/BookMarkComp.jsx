@@ -72,69 +72,10 @@ function BookMarkComp(props) {
       );
       const {data} = await res.json();
       setData(data)
-      
     }
     fetchData()
   },[]);
-// }
 
-
-// const bookMarksItems = async (event)=>{
-// //   if (typeof window !== 'undefined') {
-// //  bookMarksItem = JSON.parse(localStorage.getItem("bookMarks")) ; 
-// // }
-// // window.addEventListener("storage", ()=> bookMarksItem = JSON.parse(localStorage.getItem("bookMarks")))
-
-// // event.preventDefault()
-// const endpoint = `https://pranerbangla.com.bd/api/vb1/bookmark-list`
-
-
-// const options = {
-
-//   method: 'GET',
-  
-//   headers: {
-//     // "Content-Type": 'application/json',
-//     'Accept': 'application/json',
-//     "Authorization": `Bearer ` + token
-//   },
-  
-// }
-
-// const response = await fetch(endpoint, options)
-
-//  const result = await response.json()
-// //  result["data"]?.map(items=>{
-// //   bookMarksList.push(items)
-// //   console.log(items)
-
-  
-// //  })
-
-// bookMarksList.push(result["data"])
-// // console.log( bookMarksList)
-
-// bookMarksList.map(e=>{
-//   console.log(e)
-//   e.map(p=>{
-//     console.log(p)
-//   })
-// })
-
-
-
-
-// }
-
-// let [bookMarksItem, setbookMark] = useState();
-// useEffect(() => {
-//   bookMarksItems()
-//   if(bookMarksItem)  setbookMark(bookMarksItem) 
-// }, [])
-
-
-
-// console.log(bookMarksItem)
 
 async function  removeData(id){
     
@@ -175,8 +116,8 @@ const response = await fetch(endpoint, options)
         <label tabIndex="0" className="btn btn-ghost m-1"><BookMark className="h-5 dark:stroke-white"/></label>
         <ul tabIndex="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-96 md:-ml-80 sm:w-60 sm:-ml-40">
           {data?.map(items=>{
-            
-            return <li key={items.id} className='flex justify-between p-4'><Link href={`categories/`}  legacyBehavior><a className='text-white w-60 sm:w-36'>{items.post?.title_bn}</a></Link> <button key={items.id} onClick={()=>removeData(items.id)} className='btn text-white'>-</button></li>;
+            // console.log(items.post?.post_to_cat[0].category_id)
+            return <li key={items.id} className='flex justify-between p-4'><Link href={`categories/${items.post?.post_to_cat[0].category_id}/articles/${items.post?.id}`}  legacyBehavior><a className='text-white w-60 sm:w-36'>{items.post?.title_bn}</a></Link> <button key={items.id} onClick={()=>removeData(items.id)} className='btn text-white'>-</button></li>;
 
               
           })}

@@ -48,7 +48,7 @@ function Signup(props) {
     // If server returns the name submitted, that means the form works.
     const result = await response.json()
 
-    console.log(result)
+ 
 
     localStorage.setItem('token', result["access_token"]);
     localStorage.setItem('user', JSON.stringify( result["userData"]));
