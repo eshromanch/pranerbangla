@@ -53,7 +53,7 @@ function Signup(props) {
     localStorage.setItem('token', result["access_token"]);
     localStorage.setItem('user', JSON.stringify( result["userData"]));
    
-    const token = localStorage.getItem('token');
+    // const token = localStorage.getItem('token');
     
 
 
