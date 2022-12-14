@@ -44,13 +44,15 @@ if(!mounted) return null
     {/* <h1 className='text-4xl font-medium text-primary flex flex-col '>{items?.title_bn} <br /> <span className='text-black text-4xl'>কেন  ?  </span></h1> */}
     <p className='text-black'  dangerouslySetInnerHTML={{ __html: items?.content_bn }}></p>
   </div>
-{aboutLogo?.map(e=>{
-  return  <div key={e?.id} className='flex flex-col'>
-  <div className='w-full h-full bg-[#f2eddc] top-0 '> <img src={e?.logo} className="w-full"></img> </div>
+
+
+
+  <div key={aboutLogo[0]?.id} className='flex flex-col'>
+  <div className='w-full h-full bg-[#f2eddc] top-0 '> <img src={aboutLogo[0]?.logo} className="w-full"></img> </div>
   {/* <h1 className='text-4xl font-medium text-primary flex flex-col '></h1> */}
-  <p className='text-black '   dangerouslySetInnerHTML={{ __html: e?.content_bn}}></p>
+  <p className='text-black '   dangerouslySetInnerHTML={{ __html: aboutLogo[0]?.content_bn}}></p>
 </div>
-})}
+
 </div>
 })}
 
@@ -96,3 +98,11 @@ if(!mounted) return null
 }
 
 export default About
+
+// {aboutLogo?.map(e=>{
+//   return  <div key={aboutLogo[0]?.id} className='flex flex-col'>
+//   <div className='w-full h-full bg-[#f2eddc] top-0 '> <img src={aboutLogo[0]?.logo} className="w-full"></img> </div>
+//   {/* <h1 className='text-4xl font-medium text-primary flex flex-col '></h1> */}
+//   <p className='text-black '   dangerouslySetInnerHTML={{ __html: aboutLogo[0]?.content_bn}}></p>
+// </div>
+// })}
