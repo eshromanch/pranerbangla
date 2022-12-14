@@ -3,28 +3,33 @@ import Cards from '../components/About/Cards'
 
 import Link from 'next/link';
 export async function getStaticProps() {
-
-  const res = await fetch('https://pranerbangla.com.bd/api/vb1/team-member')
-  const posts = await res.json()
-  const data = posts["data"]
-  const resAbout = await fetch('https://pranerbangla.com.bd/api/vb1/about-us')
-  const postsAbout = await resAbout.json()
-  const aboutData = postsAbout["data"]
-  const resLogo = await fetch('https://pranerbangla.com.bd/api/vb1/logo-info')
-  const postsLogo = await resLogo.json()
-  const aboutLogo = postsLogo["data"]
-
-
-  return {
-    props: {
-      data,
-      aboutData,
-
-      aboutLogo
-    },
-    revalidate: 10,
-  }
+  try {
+    const res = await fetch('https://pranerbangla.com.bd/api/vb1/team-member')
+    const posts = await res.json()
+    const data = posts["data"]
+    const resAbout = await fetch('https://pranerbangla.com.bd/api/vb1/about-us')
+    const postsAbout = await resAbout.json()
+    const aboutData = postsAbout["data"]
+    const resLogo = await fetch('https://pranerbangla.com.bd/api/vb1/logo-info')
+    const postsLogo = await resLogo.json()
+    const aboutLogo = postsLogo["data"]
+    if (!data) {
+      return { notFound: true };
+    }
+    return {
+      props: {
+        data,
+        aboutData,
   
+        aboutLogo
+      },
+      revalidate: 10,
+    }
+  } catch (err) {
+    return { notFound: true };
+  }
+ 
+
 }
 
 
@@ -44,15 +49,13 @@ if(!mounted) return null
     {/* <h1 className='text-4xl font-medium text-primary flex flex-col '>{items?.title_bn} <br /> <span className='text-black text-4xl'>কেন  ?  </span></h1> */}
     <p className='text-black'  dangerouslySetInnerHTML={{ __html: items?.content_bn }}></p>
   </div>
-
-
-
-  <div key={aboutLogo[0]?.id} className='flex flex-col'>
-  <div className='w-full h-full bg-[#f2eddc] top-0 '> <img src={aboutLogo[0]?.logo} className="w-full"></img> </div>
+{aboutLogo?.map(e=>{
+  return  <div key={e?.id} className='flex flex-col'>
+  <div className='w-full h-full bg-[#f2eddc] top-0 '> <img src={e?.logo} className="w-full"></img> </div>
   {/* <h1 className='text-4xl font-medium text-primary flex flex-col '></h1> */}
-  <p className='text-black '   dangerouslySetInnerHTML={{ __html: aboutLogo[0]?.content_bn}}></p>
+  <p className='text-black '   dangerouslySetInnerHTML={{ __html: e?.content_bn}}></p>
 </div>
-
+})}
 </div>
 })}
 
@@ -98,11 +101,3 @@ if(!mounted) return null
 }
 
 export default About
-
-// {aboutLogo?.map(e=>{
-//   return  <div key={aboutLogo[0]?.id} className='flex flex-col'>
-//   <div className='w-full h-full bg-[#f2eddc] top-0 '> <img src={aboutLogo[0]?.logo} className="w-full"></img> </div>
-//   {/* <h1 className='text-4xl font-medium text-primary flex flex-col '></h1> */}
-//   <p className='text-black '   dangerouslySetInnerHTML={{ __html: aboutLogo[0]?.content_bn}}></p>
-// </div>
-// })}
