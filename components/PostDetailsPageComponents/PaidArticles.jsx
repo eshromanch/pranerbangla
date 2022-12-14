@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React,{useEffect, useState} from 'react';
 
 
 // export function Article({
@@ -13,6 +14,14 @@ import React from 'react';
 // }
 //   export default Article;
 
+
+let token;
+if (typeof window !== 'undefined') {
+  token = localStorage.getItem("token")
+   console.log(status)
+}
+
+
 const credential = false
 
 export function Article(props) {
@@ -21,6 +30,29 @@ export function Article(props) {
   //   return { __html: props.content };
   // }
   
+  const [data, setData] =useState()
+  useEffect(()=>{
+    async function fetchData() {
+      const res = await fetch(
+        'http://pranerbangla.com.bd/api/vb1/user-package-list',{
+          headers: {
+      
+                  "Content-Type": 'application/json',
+                  // 'Accept': 'application/json',
+                  "Authorization": `Bearer ` + token
+  
+          }
+        }
+      );
+      const data = await res.json();
+      setData(data)
+    }
+    
+  if (token!==null) {
+    fetchData()
+  }
+  },[]);
+
   // console.log(  props.content.length / 2)
   const num =  props.content.length / 3;
 
@@ -33,13 +65,14 @@ export function Article(props) {
   return <div className=''>
 
   {(()=>{
-    if (credential===false) {
-      return <div className='relative text-black dark:text-white ImgSpaceForPaidArticles' dangerouslySetInnerHTML={{ __html: myArr }}> 
+    if (data?.PackageUser[0]?.status === "1") {
+      return <div className='relative text-black dark:text-white ImgSpace' dangerouslySetInnerHTML={{ __html: myArr2 }}> 
   
       </div>
+
       
     }else{
-      return <div className='relative text-black dark:text-white ImgSpace' dangerouslySetInnerHTML={{ __html: myArr2 }}> 
+      return <div className='relative text-black dark:text-white ImgSpaceForPaidArticles' dangerouslySetInnerHTML={{ __html: myArr }}> 
   
       </div>
     }

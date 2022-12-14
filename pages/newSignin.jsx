@@ -48,8 +48,8 @@ function signup(props) {
 
         // response.status(200).json({ message: 'Hello from Next.js!' })
         localStorage.setItem('token', result["access_token"]);
+        // localStorage.setItem('status', data?.PackageUser[0]?.status);
         localStorage.setItem('user', JSON.stringify( result["userData"]));
-        // localStorage.setItem('user', {name:user.name, email:user.email});
         // alert(`Is this your full name: ${result}`)
 
         const token = localStorage.getItem('token');
