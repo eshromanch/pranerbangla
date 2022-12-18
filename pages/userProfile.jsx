@@ -54,7 +54,7 @@ const [data, setData] =useState()
 useEffect(()=>{
   async function fetchData() {
     const res = await fetch(
-      'http://pranerbangla.com.bd/api/vb1/user-package-list',{
+      'https://pranerbangla.com.bd/api/vb1/user-package-list',{
         headers: {
     
                 "Content-Type": 'application/json',
@@ -64,13 +64,13 @@ useEffect(()=>{
         }
       }
     );
-    const {data} = await res.json();
+    const data = await res.json();
     
     setData(data)
 
     localStorage.setItem('status', data?.PackageUser[0]?.status);
   }
-  console.log(data)
+  
   fetchData()
 },[]);
 
@@ -85,7 +85,7 @@ useEffect(()=>{
 //       return { notFound: true };
 //     }
 // })
-console.log()
+console.log(data)
     return (
         
 <>
