@@ -70,9 +70,9 @@ useEffect(()=>{
 
     localStorage.setItem('status', data?.PackageUser[0]?.status);
   }
-  
+  console.log(data)
   fetchData()
-});
+},[]);
 
 // window.addEventListener("onload", async()=>{
 //       try {
