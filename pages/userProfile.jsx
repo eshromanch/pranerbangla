@@ -13,29 +13,33 @@ if (typeof window !== 'undefined') {
 
 
 //   try {
-//     const res = await fetch('https://pranerbangla.com.bd/api/vb1/user-package-list',{
-//       headers: {
-  
-//               "Content-Type": 'application/json',
-//               // 'Accept': 'application/json',
-//               "Authorization": `Bearer ` + token
+//     const res = await fetch(
+//       'http://pranerbangla.com.bd/api/vb1/user-package-list',{
+//         headers: {
+    
+//                 "Content-Type": 'application/json',
+//                 // 'Accept': 'application/json',
+//                 "Authorization": `Bearer ` + token
 
+//         }
 //       }
-//     })
+//     );
 //     const data = await res.json()
 //     // const data = posts["data"]
-   
+
+//     console.log(res)
+
 //     if (!data) {
 //       return { notFound: true };
 //     }
-//     return { props: { data} };
+//     return { props: { data } };
 //   } catch (err) {
 //     return { notFound: true };
 //   }
-// }
+//   }
 
 
-function UserProfile(props) {
+function UserProfile() {
     const logout = ()=>{
         window.localStorage.removeItem('user');
         window.localStorage.removeItem('token');
@@ -44,6 +48,8 @@ function UserProfile(props) {
     // const data =JSON?.parse(user)
 
     // console.log(data?.user.user)
+
+
 const [data, setData] =useState()
 useEffect(()=>{
   async function fetchData() {
@@ -66,7 +72,7 @@ useEffect(()=>{
   }
   
   fetchData()
-},[]);
+});
 
 // window.addEventListener("onload", async()=>{
 //       try {
