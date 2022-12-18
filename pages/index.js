@@ -18,7 +18,8 @@ const Edotorial = dynamic(()=> import ('../components/HomepageComponents/Edotori
 const LongCarouselMobile= dynamic(()=> import ('../components/LongCarouselMobile'),{ssr:false})
 // import PostDetails from './categories/post'
 import React, { useEffect,useState } from 'react'
-import PopUp from '../components/HomepageComponents/PopUp'
+const PopUp = dynamic(()=> import   ('../components/HomepageComponents/PopUp'),{ssr:false, })
+
 
 
 
