@@ -145,7 +145,7 @@ function Footer(props) {
   }
 </div> 
 
-<div className='flex justify-center items-center'><Archive className="h-20 dark:fill-white"/> <h1 className='text-black text-2xl font-bold dark:text-white'>আর্কাইভ </h1></div>
+<Link href={`/archive`}><div className='flex justify-center items-center'><Archive className="h-20 dark:fill-white"/> <h1 className='text-black text-2xl font-bold dark:text-white'>আর্কাইভ </h1></div></Link>
 <div className="md:mt-6 gap-4"  >
   <span className="text-base font-semibold text-black dark:text-white">অনুসরণ করুন</span> 
   <div className="grid grid-flow-col gap-4 ">
