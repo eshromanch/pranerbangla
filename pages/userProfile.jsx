@@ -64,7 +64,7 @@ useEffect(()=>{
         }
       }
     );
-    const data = await res.json();
+    const {data} = await res.json();
     
     setData(data)
 
