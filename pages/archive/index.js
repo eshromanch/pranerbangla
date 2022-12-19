@@ -29,7 +29,7 @@ function Archive({yearData,cat}) {
             <div className="grid grid-cols-2 mx-48 my-12 md:mx-10">
                 <div>
                     {yearData?.map(items=>{
-                        return <Link key={items?.year} href={`/archive/year/${items?.year}`}> <h1 className="text-black ">{items?.year} ({items?.total})</h1></Link>
+                        return <Link key={items?.year} href={`/archive/${items?.year}`}> <h1 className="text-black ">{items?.year} ({items?.total})</h1></Link>
                     })}
                 </div>
                 <div >
