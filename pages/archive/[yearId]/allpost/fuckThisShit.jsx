@@ -23,7 +23,7 @@ function fuckThisShit(props) {
         <div className=' mx-48 my-12 md:mx-10'>
             {data?.post.map(e=>{
     
-                return <Link key={e.id} href={`/categories/${e.category_id}/articles/${e.post_id}`}><h1 className='text-black'>{e.title_bn}</h1></Link>
+                return <Link key={e?.id} href={`/categories/${e?.category_id}/articles/${e?.post_id}`}><h1 className='text-black'>{e?.title_bn}</h1></Link>
             })}
         </div>
     );
