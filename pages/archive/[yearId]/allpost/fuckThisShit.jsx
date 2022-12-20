@@ -2,7 +2,7 @@ import React from 'react';
 import {useState, useEffect} from "react"
 import { useRouter } from "next/router";
 import Link from "next/link"
-function fuckThisShit(props) {
+function FuckThisShit(props) {
 
     const router = useRouter()
     const yearIds = router.query.year;
@@ -29,4 +29,4 @@ function fuckThisShit(props) {
     );
 }
 
-export default fuckThisShit;
+export default FuckThisShit;
