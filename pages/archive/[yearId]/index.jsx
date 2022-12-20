@@ -53,7 +53,7 @@ const {yearId}= router.query
 
                 <div >
                     {yearData?.map(items=>{
-                        return <Link key={items?.category_id} href={{pathname:`/archive/${yearId}/allpost/allposts` , query: {id: items?.category_id}}}><h1 className="text-black ">{items?.name_bn} ({items?.post_count})</h1></Link>
+                        return <Link key={items?.category_id} href={{pathname:`/archive/${yearId}/allpost/fuckThisShit`, query:{catId: items.category_id, year: yearId}}}><h1 className="text-black ">{items?.name_bn} ({items?.post_count})</h1></Link>
                     })}
                 </div>
             </div>
