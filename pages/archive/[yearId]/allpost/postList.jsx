@@ -24,7 +24,7 @@ function FuckThisShit(props) {
 
     return (<>
     <div className='flex justify-between mx-48 border-b-2 my-8 lg:mx-10 md:mx-5'>
-        <h1 className='flex   items-center text-base text-3xl text-black mb-4 dark:text-white'><Circle  className=" h-3 pr-2 mb-1"/>{data?.category.name_bn}</h1>
+        <h1 className='flex   items-center text-base text-3xl text-black mb-4 dark:text-white'><Circle  className=" h-3 pr-2 mb-1"/>{data?.category?.name_bn}</h1>
     </div>
         <div className='grid grid-cols-4 mb-4 gap-10 mx-48 lg:mx-10  md:grid-cols-2 md:mx-2 md:gap-5'>
             {data?.post.map(e=>{
