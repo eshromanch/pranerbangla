@@ -34,7 +34,7 @@ export function Article(props) {
   useEffect(()=>{
     async function fetchData() {
       const res = await fetch(
-        'http://pranerbangla.com.bd/api/vb1/user-package-list',{
+        'https://pranerbangla.com.bd/api/vb1/user-package-list',{
           headers: {
       
                   "Content-Type": 'application/json',
