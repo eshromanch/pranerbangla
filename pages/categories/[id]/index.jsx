@@ -177,7 +177,7 @@ function CatagoryPage({pages,advertise , childNav,ids,childNavContents,language}
 
 
 
-  const hedarCount = childNav.find(e => e?.id === parseInt(id))
+  const hedarCount = childNav?.find(e => e?.id === parseInt(id))
 
 
 
