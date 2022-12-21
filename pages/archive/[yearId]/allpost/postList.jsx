@@ -35,9 +35,7 @@ function FuckThisShit(props) {
                 <div className="card-body">
                   <h2 className="card-title text-black">{e?.title_bn}</h2>
                   <p className='text-black'>{date}</p>
-                  {/* <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Learn now!</button>
-                  </div> */}
+
                 </div>
               </div></Link>
             })}
