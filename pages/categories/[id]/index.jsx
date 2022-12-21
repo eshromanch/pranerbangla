@@ -184,7 +184,7 @@ function CatagoryPage({pages,advertise , childNav,ids,childNavContents,language}
 
   const mergedArrayOfArticles = pages?.concat(childNavContents)
 
-  const sortedActivities = mergedArrayOfArticles.sort((a, b) =>new Date(b?.created_at ).getTime()- new Date(a?.created_at ).getTime())
+  const sortedActivities = mergedArrayOfArticles?.sort((a, b) =>new Date(b?.created_at ).getTime()- new Date(a?.created_at ).getTime())
 
 
 
