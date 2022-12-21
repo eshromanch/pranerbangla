@@ -22,6 +22,8 @@ export async function getStaticProps() {
   }
   
 
+  
+
 function Archive({yearData,cat}) {
 
     return (
