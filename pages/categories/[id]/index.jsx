@@ -177,14 +177,14 @@ function CatagoryPage({pages,advertise , childNav,ids,childNavContents,language}
 
 
 
-  const hedarCount = childNav.find(e => e.id === parseInt(id))
+  const hedarCount = childNav.find(e => e?.id === parseInt(id))
 
 
 
 
   const mergedArrayOfArticles = pages.concat(childNavContents)
 
-  const sortedActivities = mergedArrayOfArticles.sort((a, b) =>new Date(b.created_at ).getTime()- new Date(a.created_at ).getTime())
+  const sortedActivities = mergedArrayOfArticles.sort((a, b) =>new Date(b?.created_at ).getTime()- new Date(a?.created_at ).getTime())
 
 
 
@@ -207,7 +207,7 @@ if(!mounted) return null
 const groupArticle = sliceArrayIntoGroups(sortedActivities, 8);
 
 var newAdArray=[]
- advertise.map((ads) =>{
+ advertise?.map((ads) =>{
  
   if (ads.add_space==="categoty") {
     newAdArray.push(ads)
@@ -257,12 +257,12 @@ return <div key={ad.id} className='-my-12 flex justify-center items-center lg:mx
           {childNav?.map((main)=>{
 
 
-          if (main.id === num) {
+          if (main?.id === num) {
          
             return (
-              <div key={main.id} className='flex mx-48 gap-10 mb-4'>
+              <div key={main?.id} className='flex mx-48 gap-10 mb-4'>
                         <Head>
-        <title>{main.description_bn} | Pranerbangla</title>
+        <title>{main?.description_bn} | Pranerbangla</title>
         <meta name="description" content={main.description_bn} />
         {/* <meta name="keywords" content={group.meta_tag} /> */}
       </Head>
