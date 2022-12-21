@@ -28,7 +28,8 @@ function FuckThisShit(props) {
     </div>
         <div className='grid grid-cols-4 mb-4 gap-10 mx-48 lg:mx-10  md:grid-cols-2 md:mx-2 md:gap-5'>
             {data?.post.map(e=>{
-    let date = new Date(`${e?.time}`).toLocaleString('en-uk',{day:"numeric",month:'short', year:'numeric'})
+              // console.log(e?.time)
+    let date = new Date(`${e?.created_at}`).toLocaleString('en-uk',{day:"numeric",month:'short', year:'numeric'})
                 return <Link key={e?.id} href={`/categories/${e?.category_id}/articles/${e?.post_id}`}><div className="card w-full h-full glass">
                 <figure className='h-52'><img src={`${e?.image}`} className="h-full object-fill"/></figure>
                 <div className="card-body">
