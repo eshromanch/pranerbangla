@@ -59,7 +59,7 @@ function Purchase(props) {
       
           method: 'POST',
           
-    
+          mode: 'no-cors',
             headers: {
         
                     "Content-Type": 'application/json',
