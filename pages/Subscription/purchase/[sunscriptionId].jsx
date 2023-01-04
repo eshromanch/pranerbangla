@@ -52,7 +52,7 @@ function Purchase(props) {
         const JSONdata = JSON.stringify(data)
     
         
-        const endpoint = 'http://pranerbangla.com.bd/api/vb1/package-purchase'
+        const endpoint = 'https://pranerbangla.com.bd/api/vb1/package-purchase'
     
       
         const options = {
